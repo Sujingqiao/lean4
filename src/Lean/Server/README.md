@@ -1,5 +1,71 @@
 # Language Server
 
+total 584
+-rw-r--r--   1 sujingqiao  staff    66K 10  3 18:52 Watchdog.lean
+-rw-r--r--   1 sujingqiao  staff    48K 10  3 18:52 FileWorker.lean
+-rw-r--r--   1 sujingqiao  staff    35K 10  3 18:52 Requests.lean
+-rw-r--r--   1 sujingqiao  staff    31K 10  3 18:52 References.lean
+-rw-r--r--   1 sujingqiao  staff    21K 10  3 18:52 InfoUtils.lean
+-rw-r--r--   1 sujingqiao  staff    10K 10  3 18:52 GoTo.lean
+-rw-r--r--   1 sujingqiao  staff   9.0K 10  3 18:52 README.md
+-rw-r--r--   1 sujingqiao  staff   8.1K 10  3 18:52 Utils.lean
+-rw-r--r--   1 sujingqiao  staff   5.7K 10  3 18:52 ServerTask.lean
+-rw-r--r--   1 sujingqiao  staff   4.9K 10  3 18:52 AsyncList.lean
+-rw-r--r--   1 sujingqiao  staff   4.6K 10  3 18:52 FileSource.lean
+-rw-r--r--   1 sujingqiao  staff   3.1K 10  3 18:52 RequestCancellation.lean
+-rw-r--r--   1 sujingqiao  staff   2.6K 10  3 18:52 Completion.lean
+-rw-r--r--   1 sujingqiao  staff   2.2K 10  3 18:52 Snapshots.lean
+drwxr-xr-x  10 sujingqiao  staff   320B 10  3 18:59 Completion
+drwxr-xr-x  10 sujingqiao  staff   320B 10  3 18:59 FileWorker
+-rw-r--r--   1 sujingqiao  staff   318B 10  3 18:52 Rpc.lean
+-rw-r--r--   1 sujingqiao  staff   311B 10  3 18:52 CodeActions.lean
+-rw-r--r--   1 sujingqiao  staff   296B 10  3 18:52 Test.lean
+drwxr-xr-x   6 sujingqiao  staff   192B 10  3 18:59 CodeActions
+drwxr-xr-x   5 sujingqiao  staff   160B 10  3 18:59 Rpc
+drwxr-xr-x   5 sujingqiao  staff   160B 10  3 18:59 Test
+(py311) sujingqiao@sujingqiao-2 Server % ll */
+Completion/:
+total 152
+-rw-r--r--  1 sujingqiao  staff    23K 10  3 18:52 CompletionCollectors.lean
+-rw-r--r--  1 sujingqiao  staff    13K 10  3 18:52 SyntheticCompletion.lean
+-rw-r--r--  1 sujingqiao  staff   6.7K 10  3 18:52 ImportCompletion.lean
+-rw-r--r--  1 sujingqiao  staff   5.8K 10  3 18:52 CompletionInfoSelection.lean
+-rw-r--r--  1 sujingqiao  staff   4.1K 10  3 18:52 CompletionItemCompression.lean
+-rw-r--r--  1 sujingqiao  staff   3.5K 10  3 18:52 EligibleHeaderDecls.lean
+-rw-r--r--  1 sujingqiao  staff   3.4K 10  3 18:52 CompletionUtils.lean
+-rw-r--r--  1 sujingqiao  staff   3.3K 10  3 18:52 CompletionResolution.lean
+
+FileWorker/:
+total 208
+-rw-r--r--  1 sujingqiao  staff    23K 10  3 18:52 RequestHandling.lean
+-rw-r--r--  1 sujingqiao  staff    17K 10  3 18:52 WidgetRequests.lean
+-rw-r--r--  1 sujingqiao  staff    12K 10  3 18:52 SemanticHighlighting.lean
+-rw-r--r--  1 sujingqiao  staff    10K 10  3 18:52 InlayHints.lean
+-rw-r--r--  1 sujingqiao  staff    10K 10  3 18:52 SignatureHelp.lean
+-rw-r--r--  1 sujingqiao  staff   4.5K 10  3 18:52 SetupFile.lean
+-rw-r--r--  1 sujingqiao  staff   4.1K 10  3 18:52 ExampleHover.lean
+-rw-r--r--  1 sujingqiao  staff   3.5K 10  3 18:52 Utils.lean
+
+CodeActions/:
+total 88
+-rw-r--r--  1 sujingqiao  staff    13K 10  3 18:52 UnknownIdentifier.lean
+-rw-r--r--  1 sujingqiao  staff   8.7K 10  3 18:52 Provider.lean
+-rw-r--r--  1 sujingqiao  staff   7.4K 10  3 18:52 Basic.lean
+-rw-r--r--  1 sujingqiao  staff   6.5K 10  3 18:52 Attr.lean
+
+Rpc/:
+total 48
+-rw-r--r--  1 sujingqiao  staff   7.6K 10  3 18:52 Basic.lean
+-rw-r--r--  1 sujingqiao  staff   5.9K 10  3 18:52 RequestHandling.lean
+-rw-r--r--  1 sujingqiao  staff   5.6K 10  3 18:52 Deriving.lean
+
+Test/:
+total 72
+-rw-r--r--  1 sujingqiao  staff    24K 10  3 18:52 Runner.lean
+-rw-r--r--  1 sujingqiao  staff   5.9K 10  3 18:52 Cancel.lean
+-rw-r--r--  1 sujingqiao  staff   537B 10  3 18:52 Refs.lean
+
+
 This directory contains the implementation of the Lean Language Server, an implementation as well as extension of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) used for communicating with Lean extensions in editors.
 
 ## Building & Developing

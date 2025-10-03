@@ -1,5 +1,5 @@
 # Language Server
-
+```text 
 total 584
 -rw-r--r--   1 sujingqiao  staff    66K 10  3 18:52 Watchdog.lean
 -rw-r--r--   1 sujingqiao  staff    48K 10  3 18:52 FileWorker.lean
@@ -64,7 +64,7 @@ total 72
 -rw-r--r--  1 sujingqiao  staff    24K 10  3 18:52 Runner.lean
 -rw-r--r--  1 sujingqiao  staff   5.9K 10  3 18:52 Cancel.lean
 -rw-r--r--  1 sujingqiao  staff   537B 10  3 18:52 Refs.lean
-
+```
 
 This directory contains the implementation of the Lean Language Server, an implementation as well as extension of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) used for communicating with Lean extensions in editors.
 

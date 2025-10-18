@@ -1,0 +1,442 @@
+src/lake/Lake/DSL/Targets.lean:@[builtin_command_elab leanLibCommand]
+src/lake/Lake/DSL/Targets.lean:@[builtin_command_elab leanExeCommand]
+src/lake/Lake/DSL/Targets.lean:@[builtin_command_elab inputFileCommand]
+src/lake/Lake/DSL/Targets.lean:@[builtin_command_elab inputDirCommand]
+src/lake/Lake/DSL/Meta.lean:@[builtin_command_elab metaIf]
+src/lake/Lake/DSL/Package.lean:@[builtin_command_elab packageCommand]
+src/Lean/PremiseSelection/Basic.lean:@[builtin_command_elab setPremiseSelectorCmd, inherit_doc setPremiseSelectorCmd]
+src/Lean/Elab/Declaration.lean:@[builtin_command_elab declaration, builtin_incremental]
+src/Lean/Elab/Declaration.lean:@[builtin_command_elab «mutual», builtin_incremental]
+src/Lean/Elab/Declaration.lean:@[builtin_command_elab «attribute»] def elabAttr : CommandElab := fun stx => do
+src/Lean/Elab/Declaration.lean:@[builtin_command_elab Lean.Parser.Command.«initialize»] def elabInitialize : CommandElab
+src/Lean/Elab/BinderPredicates.lean:@[builtin_command_elab binderPredicate] def elabBinderPred : CommandElab := fun stx => do
+src/Lean/Elab/Macro.lean:@[builtin_command_elab Lean.Parser.Command.macro] def elabMacro : CommandElab
+src/Lean/Elab/MacroRules.lean:@[builtin_command_elab «macro_rules»] def elabMacroRules : CommandElab :=
+src/Lean/Elab/lean_prototypes.txt:def checkEndHeader : Name → List Scope → Option Name | .anonymous, _ => none | .str p s, { header := h, .. } :: scopes => if h == s then (.str · s) <$> checkEndHeader p scopes else some <| .mkSimple h | _, _ => some .anonymous -- should not happen @[builtin_command_elab «namespace»] def elabNamespace : CommandElab
+src/Lean/Elab/lean_prototypes.txt:def elabCheckFailure : CommandElab | `(#check_failure $term) => do failIfSucceeds <| elabCheckCore (ignoreStuckTC := false) (← `(#check $term)) | _ => throwUnsupportedSyntax @[builtin_command_elab «synth»] def elabSynth : CommandElab
+src/Lean/Elab/lean_prototypes.txt:def elabWithExporting : CommandElab | `(Parser.Command.withExporting| #with_exporting $cmd) => withExporting do elabCommand cmd | _ => throwUnsupportedSyntax @[builtin_command_elab Parser.Command.dumpAsyncEnvState] def elabDumpAsyncEnvState : CommandElab
+src/Lean/Elab/lean_prototypes.txt:def expandInCmd : Macro | `($cmd₁ in%$tk $cmd₂) => -- Limit ref variability for incrementality; see Note [Incremental Macros] withRef tk `(section $cmd₁:command $endLocalScopeSyntax:command $cmd₂ end) | _ => Macro.throwUnsupported @[builtin_command_elab Parser.Command.addDocString] def elabAddDeclDoc : CommandElab
+src/Lean/Elab/Time.lean:@[builtin_command_elab Lean.Parser.timeCmd] def elabTimeCmd : CommandElab
+src/Lean/Elab/GuardMsgs.lean:@[builtin_command_elab Lean.guardMsgsCmd] def elabGuardMsgs : CommandElab
+src/Lean/Elab/Print.lean:@[builtin_command_elab «print»] def elabPrint : CommandElab
+src/Lean/Elab/Print.lean:@[builtin_command_elab «printSig»] def elabPrintSig : CommandElab := fun stx =>
+src/Lean/Elab/Print.lean:@[builtin_command_elab «printAxioms»] def elabPrintAxioms : CommandElab
+src/Lean/Elab/Print.lean:@[builtin_command_elab «printEqns»] def elabPrintEqns : CommandElab := fun stx => do
+src/Lean/Elab/CheckTactic.lean:@[builtin_command_elab Lean.Parser.checkTactic]
+src/Lean/Elab/CheckTactic.lean:@[builtin_command_elab Lean.Parser.checkTacticFailure]
+src/Lean/Elab/RecommendedSpelling.lean:@[builtin_command_elab «recommended_spelling»] def elabRecommendedSpelling : CommandElab
+src/Lean/Elab/GenInjective.lean:@[builtin_command_elab genInjectiveTheorems] def elabGenInjectiveTheorems : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab moduleDoc] def elabModuleDoc : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «namespace»] def elabNamespace : CommandElab := fun stx =>
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «section»] def elabSection : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab InternalSyntax.end_local_scope] def elabEndLocalScope : CommandElab := fun _ => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «end»] def elabEnd : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab choice] def elabChoice : CommandElab := fun stx =>
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «universe»] def elabUniverse : CommandElab := fun n => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «init_quot»] def elabInitQuot : CommandElab := fun _ => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «docs_to_verso»] def elabDocsToVerso : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «export»] def elabExport : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «open»] def elabOpen : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «variable»] def elabVariable : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Lean.Parser.Command.check] def elabCheck : CommandElab := elabCheckCore (ignoreStuckTC := true)
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Lean.reduceCmd] def elabReduce : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «check_failure»] def elabCheckFailure : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «synth»] def elabSynth : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab «set_option»] def elabSetOption : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.addDocString] def elabAddDeclDoc : CommandElab := fun stx => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Lean.Parser.Command.include] def elabInclude : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Lean.Parser.Command.omit] def elabOmit : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab version] def elabVersion : CommandElab := fun _ => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.exit] def elabExit : CommandElab := fun _ =>
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.import] def elabImport : CommandElab := fun _ =>
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.eoi] def elabEoi : CommandElab := fun _ =>
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.where] def elabWhere : CommandElab := fun _ => do
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.withExporting] def elabWithExporting : CommandElab
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_command_elab Parser.Command.dumpAsyncEnvState] def elabDumpAsyncEnvState : CommandElab :=
+src/Lean/Elab/Command.lean:  mkElabAttribute CommandElab `builtin_command_elab `command_elab `Lean.Parser.Command `Lean.Elab.Command.CommandElab "command"
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_command_elab Lean.Parser.Command.grindPattern]
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_command_elab Lean.Parser.resetGrindAttrs]
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_command_elab Lean.Parser.Command.initGrindNorm]
+src/Lean/Elab/ElabRules.lean:@[builtin_command_elab «elab_rules»] def elabElabRules : CommandElab :=
+src/Lean/Elab/ElabRules.lean:@[builtin_command_elab Lean.Parser.Command.elab]
+src/Lean/Elab/ErrorExplanation.lean:@[builtin_command_elab registerErrorExplanationStx] def elabRegisterErrorExplanation : CommandElab
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_command_elab guardExprCmd]
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_command_elab guardCmd]
+src/Lean/Elab/BuiltinEvalCommand.lean:@[builtin_command_elab «eval»]
+src/Lean/Elab/BuiltinEvalCommand.lean:@[builtin_command_elab evalBang]
+src/Lean/Elab/BuiltinEvalCommand.lean:@[builtin_command_elab runCmd]
+src/Lean/Elab/BuiltinEvalCommand.lean:@[builtin_command_elab runElab]
+src/Lean/Elab/BuiltinEvalCommand.lean:@[builtin_command_elab runMeta]
+src/Lean/Elab/Notation.lean:@[builtin_command_elab Lean.Parser.Command.notation] def elabNotation : CommandElab
+src/Lean/Elab/Tactic/NormCast.lean:@[builtin_command_elab Parser.Tactic.normCastAddElim] def elabAddElim : CommandElab := fun stx => do
+src/Lean/Elab/Tactic/Doc.lean:@[builtin_command_elab «tactic_extension»] def elabTacticExtension : CommandElab
+src/Lean/Elab/Tactic/Doc.lean:@[builtin_command_elab «register_tactic_tag»] def elabRegisterTacticTag : CommandElab
+src/Lean/Elab/Tactic/Doc.lean:@[builtin_command_elab printTacTags] def elabPrintTacTags : CommandElab := fun _stx => do
+src/Lean/Elab/Tactic/DiscrTreeKey.lean:@[builtin_command_elab Lean.Parser.discrTreeKeyCmd]
+src/Lean/Elab/Tactic/DiscrTreeKey.lean:@[builtin_command_elab Lean.Parser.discrTreeSimpKeyCmd]
+src/Lean/Elab/Tactic/Simproc.lean:@[builtin_command_elab Lean.Parser.simprocPattern] def elabSimprocPattern : CommandElab := fun stx => do
+src/Lean/Elab/Tactic/Simproc.lean:@[builtin_command_elab Lean.Parser.simprocPatternBuiltin] def elabSimprocPatternBuiltin : CommandElab := fun stx => do
+src/Lean/Elab/AuxDef.lean:@[builtin_command_elab «aux_def»]
+src/Lean/Elab/Deriving/Basic.lean:@[builtin_command_elab «deriving»] def elabDeriving : CommandElab
+src/Lean/Elab/InfoTrees.lean:@[builtin_command_elab infoTreesCmd, inherit_doc guardMsgsCmd]
+src/Lean/Elab/Syntax.lean:@[builtin_command_elab syntaxCat] def elabDeclareSyntaxCat : CommandElab := fun stx => do
+src/Lean/Elab/Syntax.lean:@[builtin_command_elab «syntax»] private def elabSyntaxAux : CommandElab := fun stx =>
+src/Lean/Elab/Syntax.lean:@[builtin_command_elab «syntaxAbbrev»] def elabSyntaxAbbrev : CommandElab := fun stx => do
+src/lake/Lake/DSL/VerLit.lean:@[builtin_term_elab verLit]
+src/lake/Lake/DSL/Config.lean:@[builtin_term_elab nameConst]
+src/lake/Lake/DSL/Config.lean:@[builtin_term_elab dirConst]
+src/lake/Lake/DSL/Config.lean:@[builtin_term_elab getConfig]
+src/lake/Lake/DSL/Meta.lean:@[builtin_term_elab runIO]
+src/Lean/KeyedDeclsAttribute.lean:  /-- Builtin attribute name, if any (e.g., `builtin_term_elab) -/
+src/Lean/Elab/Extra.lean:@[builtin_term_elab forInMacro] def elabForIn : TermElab :=  fun stx expectedType? => do
+src/Lean/Elab/Extra.lean:@[builtin_term_elab forInMacro'] def elabForIn' : TermElab :=  fun stx expectedType? => do
+src/Lean/Elab/Extra.lean:@[builtin_term_elab binop] def elabBinOp : TermElab := elabOp
+src/Lean/Elab/Extra.lean:@[builtin_term_elab binop_lazy] def elabBinOpLazy : TermElab := elabOp
+src/Lean/Elab/Extra.lean:@[builtin_term_elab leftact] def elabLeftact : TermElab := elabOp
+src/Lean/Elab/Extra.lean:@[builtin_term_elab rightact] def elabRightact : TermElab := elabOp
+src/Lean/Elab/Extra.lean:@[builtin_term_elab unop] def elabUnOp : TermElab := elabOp
+src/Lean/Elab/Extra.lean:@[builtin_term_elab binrel] def elabBinRel : TermElab := elabBinRelCore false
+src/Lean/Elab/Extra.lean:@[builtin_term_elab binrel_no_prop] def elabBinRelNoProp : TermElab := elabBinRelCore true
+src/Lean/Elab/Extra.lean:@[builtin_term_elab defaultOrOfNonempty]
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «forall»] def elabForall : TermElab := fun stx _ =>
+src/Lean/Elab/Binders.lean:@[builtin_term_elab arrow] def elabArrow : TermElab := fun stx _ =>
+src/Lean/Elab/Binders.lean:@[builtin_term_elab depArrow] def elabDepArrow : TermElab := fun stx _ =>
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «fun»] partial def elabFun : TermElab := fun stx expectedType? =>
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «let»] def elabLetDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «have»] def elabHaveDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «let_fun»] def elabLetFunDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «let_delayed»] def elabLetDelayedDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «let_tmp»] def elabLetTmpDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «letI»] def elabLetIDecl : TermElab :=
+src/Lean/Elab/Binders.lean:@[builtin_term_elab «haveI»] def elabHaveIDecl : TermElab :=
+src/Lean/Elab/Match.lean:@[builtin_term_elab inaccessible] def elabInaccessible : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Match.lean:@[builtin_term_elab «match»] def elabMatch : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Match.lean:@[builtin_term_elab «nomatch»] def elabNoMatch : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Match.lean:@[builtin_term_elab «nofun»] def elabNoFun : TermElab := fun stx expectedType? => do
+src/Lean/Elab/App.lean:@[builtin_term_elab app] def elabApp : TermElab := fun stx expectedType? =>
+src/Lean/Elab/App.lean:@[builtin_term_elab ident] def elabIdent : TermElab := elabAtom
+src/Lean/Elab/App.lean:@[builtin_term_elab namedPattern] def elabNamedPattern : TermElab := elabAtom
+src/Lean/Elab/App.lean:@[builtin_term_elab dotIdent] def elabDotIdent : TermElab := elabAtom
+src/Lean/Elab/App.lean:@[builtin_term_elab explicitUniv] def elabExplicitUniv : TermElab := elabAtom
+src/Lean/Elab/App.lean:@[builtin_term_elab pipeProj] def elabPipeProj : TermElab
+src/Lean/Elab/App.lean:@[builtin_term_elab explicit] def elabExplicit : TermElab := fun stx expectedType? =>
+src/Lean/Elab/App.lean:@[builtin_term_elab choice] def elabChoice : TermElab := elabAtom
+src/Lean/Elab/App.lean:@[builtin_term_elab proj] def elabProj : TermElab := elabAtom
+src/Lean/Elab/LetRec.lean:@[builtin_term_elab «letrec»] def elabLetRec : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Do.lean:@[builtin_term_elab liftMethod] def elabLiftMethod : TermElab := fun stx _ =>
+src/Lean/Elab/Do.lean:@[builtin_term_elab «do»] def elabDo : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Quotation.lean:  `(@[builtin_term_elab $kind:ident] def elabQuot : TermElab := adaptExpander stxQuot.expand)
+src/Lean/Elab/Quotation.lean:@[builtin_term_elab «match»] def elabMatchSyntax : TermElab :=
+src/Lean/Elab/Quotation.lean:@[builtin_term_elab noErrorIfUnused] def elabNoErrorIfUnused : TermElab := fun stx expectedType? =>
+src/Lean/Elab/StructInst.lean:@[builtin_term_elab structInst] def elabStructInst : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Term/TermElabM.lean:  mkElabAttribute TermElab `builtin_term_elab `term_elab `Lean.Parser.Term `Lean.Elab.Term.TermElab "term" ref
+src/Lean/Elab/lean_prototypes.txt:def expandDbgTrace : Macro | `(dbg_trace $arg:interpolatedStr; $body) => `(dbgTrace (s! $arg) fun _ => $body) | `(dbg_trace $arg:term; $body) => `(dbgTrace (toString $arg) fun _ => $body) | _ => Macro.throwUnsupported @[builtin_term_elab «sorry»] def elabSorry : TermElab
+src/Lean/Elab/lean_prototypes.txt:def expandForall : Macro | `(forall $binders* : $ty, $term) => do let binders ← binders.mapM (expandSimpleBinderWithType ty) `(forall $binders*, $term) | _ => Macro.throwUnsupported @[builtin_term_elab «forall»] def elabForall : TermElab
+src/Lean/Elab/lean_prototypes.txt:def expandParen : Macro | `(($h:hygieneInfo $e)) => return (← expandCDot? e h.getHygieneInfo).getD e | _ => Macro.throwUnsupported @[builtin_macro Lean.Parser.Term.tuple] def expandTuple : Macro | `(()) => ``(Unit.unit) | `(($h:hygieneInfo $e, $es,*)) => do let pairs ← mkPairs (#[e] ++ es) return (← expandCDot? pairs h.getHygieneInfo).getD pairs | _ => Macro.throwUnsupported @[builtin_macro Lean.Parser.Term.typeAscription] def expandTypeAscription : Macro | `(($h:hygieneInfo $e : $(type)?)) => do match (← expandCDot? e h.getHygieneInfo) with | some e => `(($e : $(type)?)) | none => Macro.throwUnsupported | _ => Macro.throwUnsupported @[builtin_term_elab typeAscription] def elabTypeAscription : TermElab | `(($e : $type)), _ => do let type ← withSynthesize (postpone := .yes) <| elabType type let e ← elabTerm e type ensureHasType type e | `(($e :)), expectedType? => do let e ← withSynthesize (postpone := .no) <| elabTerm e none ensureHasType expectedType? e | _, _ => throwUnsupportedSyntax /-- Return `true` if `lhs` is a free variable and `rhs` does not depend on it. -/ private def isSubstCandidate (lhs rhs : Expr) : MetaM Bool
+src/Lean/Elab/lean_prototypes.txt:def getMatchGeneralizing? : Syntax → Option Bool | `(match (generalizing := true) $[$motive]? $_discrs,* with $_alts:matchAlt*) => some true | `(match (generalizing := false) $[$motive]? $_discrs,* with $_alts:matchAlt*) => some false | _ => none /-- Given the `stx` of a single match alternative, return a corresponding `MatchAltView`. -/ def getMatchAlt : Syntax → Option MatchAltView | alt@`(matchAltExpr| | $patterns,* => $rhs) => some { ref := alt, patterns := patterns, lhs := alt[1], rhs := rhs } | _ => none /-- Given `stx` a match-expression, return its alternatives. -/ def getMatchAlts : Syntax → Array MatchAltView | `(match $[$gen]? $[$motive]? $_discrs,* with $alts:matchAlt*) => alts.filterMap getMatchAlt | _ => #[] @[builtin_term_elab inaccessible] def elabInaccessible : TermElab
+src/Lean/Elab/lean_prototypes.txt:def precheckArrow : Precheck | `($dom:term -> $rng) => do precheck dom precheck rng | _ => throwUnsupportedSyntax @[builtin_term_elab arrow] def elabArrow : TermElab
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «prop»] def elabProp : TermElab := fun _ _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «sort»] def elabSort : TermElab := fun stx _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «type»] def elabTypeStx : TermElab := fun stx _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «pipeCompletion»] def elabPipeCompletion : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «completion»] def elabCompletion : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «hole»] def elabHole : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «syntheticHole»] def elabSyntheticHole : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab Lean.Parser.Term.omission] def elabOmission : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «letMVar»] def elabLetMVar : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «waitIfTypeMVar»] def elabWaitIfTypeMVar : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «waitIfTypeContainsMVar»] def elabWaitIfTypeContainsMVar : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «waitIfContainsMVar»] def elabWaitIfContainsMVar : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab byTactic] def elabByTactic : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab noImplicitLambda] def elabNoImplicitLambda : TermElab := fun stx expectedType? =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab Lean.Parser.Term.cdot] def elabBadCDot : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab str] def elabStrLit : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab num] def elabNumLit : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab rawNatLit] def elabRawNatLit : TermElab :=  fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab scientific]
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab char] def elabCharLit : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab quotedName] def elabQuotedName : TermElab := fun stx _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab doubleQuotedName] def elabDoubleQuotedName : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab declName] def elabDeclName : TermElab := adaptExpander fun _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab Parser.Term.withDeclName] def elabWithDeclName : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab typeOf] def elabTypeOf : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab ensureTypeOf] def elabEnsureTypeOf : TermElab := fun stx _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab ensureExpectedType] def elabEnsureExpectedType : TermElab := fun stx expectedType? =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab valueOf] def elabValueOf : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab clear] def elabClear : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «open»] def elabOpen : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «set_option»] def elabSetOption : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab withAnnotateTerm] def elabWithAnnotateTerm : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab includeStr] def elabIncludeStr : TermElab
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab Lean.Parser.Term.namedPattern] def elabNamedPatternErr : TermElab := fun stx _ =>
+src/Lean/Elab/BuiltinTerm.lean:@[builtin_term_elab «privateDecl»] def elabPrivateDecl : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Calc.lean:@[builtin_term_elab Lean.calc]
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab coeNotation] def elabCoe : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab coeFunNotation] def elabCoeFunNotation : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab coeSortNotation] def elabCoeSortNotation : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab anonymousCtor] def elabAnonymousCtor : TermElab := fun stx expectedType? =>
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab borrowed] def elabBorrowed : TermElab := fun stx expectedType? =>
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab Lean.Parser.Term.show] def elabShow : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab «leading_parser»] def elabLeadingParserMacro : TermElab :=
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab «trailing_parser»] def elabTrailingParserMacro : TermElab :=
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab Lean.Parser.Term.panic] def elabPanic : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab Lean.Parser.Term.debugAssert]  def elabDebugAssert : TermElab :=
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab «sorry»] def elabSorry : TermElab := fun _ expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab typeAscription] def elabTypeAscription : TermElab
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab subst] def elabSubst : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab stateRefT] def elabStateRefT : TermElab := fun stx _ => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab noindex] def elabNoindex : TermElab := fun stx expectedType? => do
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab «unsafe»]
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_term_elab byElab] def elabRunElab : TermElab := fun stx expectedType? =>
+src/Lean/Elab/Quotation/Precheck.lean:@[builtin_term_elab precheckedQuot] def elabPrecheckedQuot : TermElab := fun stx expectedType? => do
+src/Lean/Elab/ErrorExplanation.lean:@[builtin_term_elab throwNamedErrorMacro, builtin_term_elab throwNamedErrorAtMacro,
+src/Lean/Elab/ErrorExplanation.lean:  builtin_term_elab logNamedErrorMacro, builtin_term_elab logNamedErrorAtMacro,
+src/Lean/Elab/ErrorExplanation.lean:  builtin_term_elab logNamedWarningMacro, builtin_term_elab logNamedWarningAtMacro]
+src/Lean/Elab/Tactic/ShowTerm.lean:@[builtin_term_elab showTermElabImpl] def elabShowTerm : TermElab
+src/Lean/Elab/Tactic/NormCast.lean:@[builtin_term_elab modCast] def elabModCast : TermElab := fun stx expectedType? => do
+src/Lean/Elab/Tactic/Do/Syntax.lean:@[inherit_doc Triple, builtin_doc, builtin_term_elab triple]
+src/Lean/Elab/Tactic/LibrarySearch.lean:@[builtin_term_elab Lean.Parser.Syntax.exact?]
+src/lake/Lake/DSL/Targets.lean:@[builtin_macro moduleFacetDecl]
+src/lake/Lake/DSL/Targets.lean:@[builtin_macro packageFacetDecl]
+src/lake/Lake/DSL/Targets.lean:@[builtin_macro libraryFacetDecl]
+src/lake/Lake/DSL/Targets.lean:@[builtin_macro targetCommand]
+src/lake/Lake/DSL/Targets.lean:@[builtin_macro externLibCommand]
+src/lake/Lake/DSL/Key.lean:@[builtin_macro moduleTargetKeyLit]
+src/lake/Lake/DSL/Key.lean:@[builtin_macro packageTargetKeyLit]
+src/lake/Lake/DSL/Script.lean:@[builtin_macro scriptDecl]
+src/lake/Lake/DSL/Require.lean:@[builtin_macro requireDecl]
+src/lake/Lake/DSL/Package.lean:@[builtin_macro postUpdateDecl]
+src/Lean/Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.declaration]
+src/Lean/Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+src/Lean/Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+src/Lean/Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+src/Lean/Elab/Binders.lean:@[builtin_macro Lean.Parser.Term.forall] def expandForall : Macro
+src/Lean/Elab/Binders.lean:@[builtin_macro Parser.Term.fun] partial def expandFun : Macro
+src/Lean/Elab/Binders.lean:@[builtin_macro Parser.Term.explicit] partial def expandExplicitFun : Macro := fun stx =>
+src/Lean/Elab/lean_prototypes.txt:def expandFun : Macro | `(fun $binders* : $ty => $body) => do let binders ← binders.mapM (expandSimpleBinderWithType ty) `(fun $binders* => $body) | `(fun $binders* => $body) => do -- if there is a type ascription, we assume all binders are already simple let (binders, body, expandedPattern) ← expandFunBinders binders body if expandedPattern then `(fun $binders* => $body) else Macro.throwUnsupported | stx@`(fun $m:matchAlts) => expandMatchAltsIntoMatch stx m (useExplicit := false) | _ => Macro.throwUnsupported @[builtin_macro Parser.Term.explicit] partial def expandExplicitFun : Macro
+src/Lean/Elab/lean_prototypes.txt:def expandParen : Macro | `(($h:hygieneInfo $e)) => return (← expandCDot? e h.getHygieneInfo).getD e | _ => Macro.throwUnsupported @[builtin_macro Lean.Parser.Term.tuple] def expandTuple : Macro | `(()) => ``(Unit.unit) | `(($h:hygieneInfo $e, $es,*)) => do let pairs ← mkPairs (#[e] ++ es) return (← expandCDot? pairs h.getHygieneInfo).getD pairs | _ => Macro.throwUnsupported @[builtin_macro Lean.Parser.Term.typeAscription] def expandTypeAscription : Macro | `(($h:hygieneInfo $e : $(type)?)) => do match (← expandCDot? e h.getHygieneInfo) with | some e => `(($e : $(type)?)) | none => Macro.throwUnsupported | _ => Macro.throwUnsupported @[builtin_term_elab typeAscription] def elabTypeAscription : TermElab | `(($e : $type)), _ => do let type ← withSynthesize (postpone := .yes) <| elabType type let e ← elabTerm e type ensureHasType type e | `(($e :)), expectedType? => do let e ← withSynthesize (postpone := .no) <| elabTerm e none ensureHasType expectedType? e | _, _ => throwUnsupportedSyntax /-- Return `true` if `lhs` is a free variable and `rhs` does not depend on it. -/ private def isSubstCandidate (lhs rhs : Expr) : MetaM Bool
+src/Lean/Elab/MatchExpr.lean:@[builtin_macro Lean.Parser.Term.matchExpr] def expandMatchExpr : Macro := fun stx =>
+src/Lean/Elab/MatchExpr.lean:@[builtin_macro Lean.Parser.Term.letExpr] def expandLetExpr : Macro := fun stx =>
+src/Lean/Elab/Do.lean:@[builtin_macro Lean.Parser.Term.termFor]
+src/Lean/Elab/Do.lean:@[builtin_macro Lean.Parser.Term.termTry]
+src/Lean/Elab/Do.lean:@[builtin_macro Lean.Parser.Term.termUnless]
+src/Lean/Elab/Do.lean:@[builtin_macro Lean.Parser.Term.termReturn]
+src/Lean/Elab/CheckTactic.lean:@[builtin_macro Lean.Parser.checkSimp]
+src/Lean/Elab/CheckTactic.lean:@[builtin_macro Lean.Parser.checkSimpFailure]
+src/Lean/Elab/BuiltinCommand.lean:@[builtin_macro Lean.Parser.Command.«in»] def expandInCmd : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.show] def expandShow : Macro := fun stx =>
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.suffices] def expandSuffices : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.unreachable]  def expandUnreachable : Macro := fun _ =>
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.assert]  def expandAssert : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.dbgTrace]  def expandDbgTrace : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.paren] def expandParen : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.tuple] def expandTuple : Macro
+src/Lean/Elab/BuiltinNotation.lean:@[builtin_macro Lean.Parser.Term.typeAscription] def expandTypeAscription : Macro
+src/Lean/Elab/Mixfix.lean:@[builtin_macro Lean.Parser.Command.mixfix] def expandMixfix : Macro := fun stx =>
+src/Lean/Elab/StructInst.lean:@[builtin_macro Lean.Parser.Term.structInst] def expandStructInstExpectedType : Macro := fun stx =>
+src/Lean/Elab/StructInst.lean:@[builtin_macro Lean.Parser.Term.structInst] def expandStructInstFields : Macro | stx => do
+src/Lean/Elab/Util.lean:  mkElabAttribute Macro `builtin_macro `macro Name.anonymous `Lean.Macro "macro" ref
+src/Lean/PremiseSelection/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.suggestPremises] def evalSuggestPremises : Tactic := fun _ =>
+src/Lean/Parser/Tactic.lean:@[builtin_tactic_parser] def «unknown»    := leading_parser
+src/Lean/Parser/Tactic.lean:@[builtin_tactic_parser] def nestedTactic := tacticSeqBracketed
+src/Lean/Parser/Tactic.lean:@[builtin_tactic_parser] def «match» := leading_parser:leadPrec
+src/Lean/Parser/Tactic.lean:@[builtin_tactic_parser] def introMatch := leading_parser
+src/Lean/Parser/Term/Basic.lean:  registerBuiltinParserAttribute `builtin_tactic_parser ``Category.tactic .both
+src/Lean/Parser/Command.lean:@[builtin_tactic_parser] def «open» := leading_parser:leadPrec
+src/Lean/Parser/Command.lean:@[builtin_tactic_parser] def «set_option» := leading_parser:leadPrec
+src/Lean/Language/Lean.lean:@[builtin_tactic cdot] def evalTacticCDot : Tactic := fun stx => do
+src/Lean/Elab/lean_prototypes.txt:def elabMStart : Tactic | _ => discard mStartMainGoal @[builtin_tactic Lean.Parser.Tactic.mstop] def elabMStop : Tactic | _ => do -- parse goal let mvar ← getMainGoal mvar.withContext do let goal ← instantiateMVars <| ← mvar.getType -- check if already in proof mode let some mgoal
+src/Lean/Elab/lean_prototypes.txt:def evalCase : Tactic | stx@`(tactic| case%$caseTk $[$tag $hs*]|* =>%$arr $tac:tacticSeq1Indented) => -- disable incrementality if body is run multiple times Term.withoutTacticIncrementality (tag.size > 1) do for tag in tag, hs in hs do let (g, gs) ← getCaseGoals tag let g ← renameInaccessibles g hs setGoals [g] g.setTag Name.anonymous withCaseRef arr tac <| closeUsingOrAdmit <| withTacticInfoContext (mkNullNode #[caseTk, arr]) <| Term.withNarrowedArgTacticReuse (argIdx := 3) (evalTactic ·) stx setGoals gs | _ => throwUnsupportedSyntax @[builtin_tactic «case'»] def evalCase' : Tactic | `(tactic| case'%$caseTk $[$tag $hs*]|* =>%$arr $tac:tacticSeq) => do let mut acc
+src/Lean/Elab/lean_prototypes.txt:def evalRenameInaccessibles : Tactic | `(tactic| rename_i $hs*) => do replaceMainGoal [← renameInaccessibles (← getMainGoal) hs] | _ => throwUnsupportedSyntax @[builtin_tactic «first»] partial def evalFirst : Tactic
+src/Lean/Elab/Tactic/RCases.lean:@[builtin_tactic Lean.Parser.Tactic.rcases] def evalRCases : Tactic := fun stx => do
+src/Lean/Elab/Tactic/RCases.lean:@[builtin_tactic Lean.Parser.Tactic.obtain] def evalObtain : Tactic := fun stx => do
+src/Lean/Elab/Tactic/RCases.lean:@[builtin_tactic Lean.Parser.Tactic.rintro] def evalRIntro : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Delta.lean:@[builtin_tactic Lean.Parser.Tactic.delta] def evalDelta : Tactic := fun stx => do
+src/Lean/Elab/Tactic/SimpArith.lean:@[builtin_tactic Lean.Parser.Tactic.simpArith] def evalSimpArith : Tactic := fun stx => do
+src/Lean/Elab/Tactic/SimpArith.lean:@[builtin_tactic Lean.Parser.Tactic.simpArithBang] def evalSimpArithBang : Tactic := fun stx => do
+src/Lean/Elab/Tactic/SimpArith.lean:@[builtin_tactic Lean.Parser.Tactic.simpAllArith] def evalSimpAllArith : Tactic := fun stx => do
+src/Lean/Elab/Tactic/SimpArith.lean:@[builtin_tactic Lean.Parser.Tactic.simpAllArithBang] def evalSimpAllArithBang : Tactic := fun stx => do
+src/Lean/Elab/Tactic/FalseOrByContra.lean:@[builtin_tactic Lean.Parser.Tactic.falseOrByContra]
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_tactic Lean.Parser.Tactic.grind] def evalGrind : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_tactic Lean.Parser.Tactic.grindTrace] def evalGrindTrace : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_tactic Lean.Parser.Tactic.cutsat] def evalCutsat : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Grind/Main.lean:@[builtin_tactic Lean.Parser.Tactic.grobner] def evalGrobner : Tactic := fun stx => do
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic «exact»] def evalExact : Tactic := fun stx => do
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic «refine»] def evalRefine : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic «refine'»] def evalRefine' : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic «specialize»] def evalSpecialize : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.apply] def evalApply : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.constructor] def evalConstructor : Tactic := fun _ =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.withReducible] def evalWithReducible : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.withReducibleAndInstances] def evalWithReducibleAndInstances : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.withUnfoldingAll] def evalWithUnfoldingAll : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.rename] def evalRename : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.decide] def evalDecide : Tactic := fun stx => do
+src/Lean/Elab/Tactic/ElabTerm.lean:@[builtin_tactic Lean.Parser.Tactic.nativeDecide] def evalNativeDecide : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Classical.lean:@[builtin_tactic Lean.Parser.Tactic.classical, builtin_incremental]
+src/Lean/Elab/Tactic/Induction.lean:@[builtin_tactic Lean.Parser.Tactic.induction, builtin_incremental]
+src/Lean/Elab/Tactic/Induction.lean:@[builtin_tactic Lean.Parser.Tactic.funInduction, builtin_incremental]
+src/Lean/Elab/Tactic/Induction.lean:@[builtin_tactic Lean.Parser.Tactic.cases, builtin_incremental]
+src/Lean/Elab/Tactic/Induction.lean:@[builtin_tactic Lean.Parser.Tactic.funCases, builtin_incremental]
+src/Lean/Elab/Tactic/Match.lean:@[builtin_tactic Lean.Parser.Tactic.match]
+src/Lean/Elab/Tactic/Omega/Frontend.lean:@[builtin_tactic Lean.Parser.Tactic.omega]
+src/Lean/Elab/Tactic/AsAuxLemma.lean:@[builtin_tactic as_aux_lemma]
+src/Lean/Elab/Tactic/Injection.lean:@[builtin_tactic «injection»] def evalInjection : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Injection.lean:@[builtin_tactic «injections»] def evalInjections : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardExpr]
+src/Lean/Elab/Tactic/Guard.lean:-- TODO: This is workaround. We currently allow two occurrences of `builtin_tactic`.
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardExprConv]
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardTarget]
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardTargetConv]
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardHyp]
+src/Lean/Elab/Tactic/Guard.lean:@[builtin_tactic guardHypConv]
+src/Lean/Elab/Tactic/ShowTerm.lean:@[builtin_tactic showTerm] def evalShowTerm : Tactic := fun stx =>
+src/Lean/Elab/Tactic/ExposeNames.lean:@[builtin_tactic Lean.Parser.Tactic.exposeNames] def evalExposeNames : Tactic := fun _ =>
+src/Lean/Elab/Tactic/Rewrites.lean:@[builtin_tactic Lean.Parser.Tactic.rewrites?]
+src/Lean/Elab/Tactic/Rewrite.lean:@[builtin_tactic Lean.Parser.Tactic.rewriteSeq] def evalRewriteSeq : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic withAnnotateState, builtin_incremental] def evalWithAnnotateState : Tactic :=
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.«done»] def evalDone : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic seq1] def evalSeq1 : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic paren, builtin_incremental] def evalParen : Tactic :=
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic tacticSeq1Indented, builtin_incremental]
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic tacticSeqBracketed, builtin_incremental]
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.cdot, builtin_incremental]
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.focus, builtin_incremental] def evalFocus : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.rotateLeft] def evalRotateLeft : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.rotateRight] def evalRotateRight : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.open] def evalOpen : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.set_option] def elabSetOption : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.allGoals] def evalAllGoals : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.anyGoals] def evalAnyGoals : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic tacticSeq, builtin_incremental]
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic choice] def evalChoice : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic skip] def evalSkip : Tactic := fun _ => pure ()
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic unknown] def evalUnknown : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic failIfSuccess] def evalFailIfSuccess : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic traceState] def evalTraceState : Tactic := fun _ => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic traceMessage] def evalTraceMessage : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.assumption] def evalAssumption : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.contradiction] def evalContradiction : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.eqRefl] def evalRefl : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.intro] def evalIntro : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.introMatch] def evalIntroMatch : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «intros»] def evalIntros : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.revert] def evalRevert : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.clear] def evalClear : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.clearValue] def evalClearValue : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.subst] def evalSubst : Tactic := fun stx =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.substVars] def evalSubstVars : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Lean.Parser.Tactic.substEqs] def evalSubstEqs : Tactic := fun _ =>
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «case», builtin_incremental]
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «case'»] def evalCase' : Tactic
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «renameI»] def evalRenameInaccessibles : Tactic
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «first»] partial def evalFirst : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic «fail»] def evalFail : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic Parser.Tactic.dbgTrace] def evalDbgTrace : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic sleep] def evalSleep : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic left] def evalLeft : Tactic := fun _stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic right] def evalRight : Tactic := fun _stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic replace] def evalReplace : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BuiltinTactic.lean:@[builtin_tactic runTac] def evalRunTac : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Ext.lean:@[builtin_tactic applyExtTheorem] def evalApplyExtTheorem : Tactic := fun _ => do
+src/Lean/Elab/Tactic/Ext.lean:@[builtin_tactic ext] def evalExt : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.simp] def evalSimp : Tactic := fun stx => withMainContext do withSimpDiagnostics do
+src/Lean/Elab/Tactic/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.simpAll] def evalSimpAll : Tactic := fun stx => withMainContext do withSimpDiagnostics do
+src/Lean/Elab/Tactic/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.dsimp] def evalDSimp : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Try.lean:@[builtin_tactic Lean.Parser.Tactic.tryTrace] def evalTryTrace : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Congr.lean:@[builtin_tactic Parser.Tactic.congr] def evalCongr : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Basic.lean:  mkElabAttribute Tactic `builtin_tactic `tactic `Lean.Parser.Tactic `Lean.Elab.Tactic.Tactic "tactic"
+src/Lean/Elab/Tactic/Conv/Delta.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.delta] def evalDelta : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Rewrite.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.rewrite] def evalRewrite : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.simp] def evalSimp : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.simpTrace] def evalSimpTrace : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.simpMatch] def evalSimpMatch : Tactic := fun _ => withMainContext do
+src/Lean/Elab/Tactic/Conv/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.dsimp] def evalDSimp : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Simp.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.dsimpTrace] def evalDSimpTrace : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.skip] def evalSkip : Tactic := fun _ => pure ()
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.congr] def evalCongr : Tactic := fun _ => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.arg] def elabArg : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.lhs] def evalLhs : Tactic := fun _ => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.rhs] def evalRhs : Tactic := fun _ => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.«fun»] def evalFun : Tactic := fun _ => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.ext] def evalExt : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Congr.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.enter] def evalEnter : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.whnf] def evalWhnf : Tactic := fun _ =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.reduce] def evalReduce : Tactic := fun _ =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.zeta] def evalZeta : Tactic := fun _ =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.clear] def evalClear : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.convSeq1Indented] def evalConvSeq1Indented : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.convSeqBracketed] def evalConvSeqBracketed : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.nestedConv] def evalNestedConv : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.convSeq] def evalConvSeq : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.convConvSeq] def evalConvConvSeq : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.paren] def evalParen : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.nestedTacticCore] def evalNestedTacticCore : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.nestedTactic] def evalNestedTactic : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.convTactic] def evalConvTactic : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.conv] def evalConv : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Conv/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.first] partial def evalFirst : Tactic :=
+src/Lean/Elab/Tactic/Repeat.lean:@[builtin_tactic repeat']
+src/Lean/Elab/Tactic/Repeat.lean:@[builtin_tactic repeat1']
+src/Lean/Elab/Tactic/Conv/Change.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.change] def evalChange : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Calc.lean:@[builtin_tactic Lean.calcTactic]
+src/Lean/Elab/Tactic/Do/VCGen.lean:@[builtin_tactic Lean.Parser.Tactic.mvcgen]
+src/Lean/Elab/Tactic/Conv/Unfold.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.unfold] def evalUnfold : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Generalize.lean:@[builtin_tactic Lean.Parser.Tactic.generalize] def evalGeneralize : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Conv/Pattern.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.pattern] def evalPattern : Tactic := fun stx => withMainContext do
+src/Lean/Elab/Tactic/Conv/Lets.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.extractLets] def evalExtractLets : Tactic
+src/Lean/Elab/Tactic/Conv/Lets.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.liftLets] def evalLiftLets : Tactic
+src/Lean/Elab/Tactic/Conv/Lets.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.letToHave] def evalLetToHave : Tactic
+src/Lean/Elab/Tactic/Do/ProofMode/RenameI.lean:@[builtin_tactic Lean.Parser.Tactic.mrenameI]
+src/Lean/Elab/Tactic/Symm.lean:@[builtin_tactic Lean.Parser.Tactic.symm]
+src/Lean/Elab/Tactic/Symm.lean:@[builtin_tactic Lean.Parser.Tactic.symmSaturate]
+src/Lean/Elab/Tactic/Do/ProofMode/Clear.lean:@[builtin_tactic Lean.Parser.Tactic.mclear]
+src/Lean/Elab/Tactic/SimpTrace.lean:@[builtin_tactic simpTrace] def evalSimpTrace : Tactic := fun stx => withMainContext do withSimpDiagnostics do
+src/Lean/Elab/Tactic/SimpTrace.lean:@[builtin_tactic simpAllTrace] def evalSimpAllTrace : Tactic := fun stx => withMainContext do withSimpDiagnostics do
+src/Lean/Elab/Tactic/SimpTrace.lean:@[builtin_tactic dsimpTrace] def evalDSimpTrace : Tactic := fun stx => withMainContext do withSimpDiagnostics do
+src/Lean/Elab/Tactic/Do/ProofMode/Exact.lean:@[builtin_tactic Lean.Parser.Tactic.mexact]
+src/Lean/Elab/Tactic/Rfl.lean:@[builtin_tactic Lean.Parser.Tactic.applyRfl] def evalApplyRfl : Tactic := fun stx =>
+src/Lean/Elab/Tactic/Do/ProofMode/LeftRight.lean:@[builtin_tactic Lean.Parser.Tactic.mleft]
+src/Lean/Elab/Tactic/Do/ProofMode/LeftRight.lean:@[builtin_tactic Lean.Parser.Tactic.mright]
+src/Lean/Elab/Tactic/Monotonicity.lean:@[builtin_tactic Lean.Order.monotonicity]
+src/Lean/Elab/Tactic/Show.lean:@[builtin_tactic «show»] def evalShow : Tactic
+src/Lean/Elab/Tactic/Do/ProofMode/Assumption.lean:@[builtin_tactic Lean.Parser.Tactic.massumption]
+src/Lean/Elab/Tactic/Change.lean:@[builtin_tactic change] def evalChange : Tactic
+src/Lean/Elab/Tactic/Do/ProofMode/Pure.lean:@[builtin_tactic Lean.Parser.Tactic.mpure]
+src/Lean/Elab/Tactic/Unfold.lean:@[builtin_tactic Lean.Parser.Tactic.unfold] def evalUnfold : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Do/ProofMode/Exfalso.lean:@[builtin_tactic Lean.Parser.Tactic.mexfalso]
+src/Lean/Elab/Tactic/Split.lean:@[builtin_tactic Lean.Parser.Tactic.split] def evalSplit : Tactic := fun stx => do
+src/Lean/Elab/Tactic/Do/ProofMode/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.mstart]
+src/Lean/Elab/Tactic/Do/ProofMode/Basic.lean:@[builtin_tactic Lean.Parser.Tactic.mstop]
+src/Lean/Elab/Tactic/NormCast.lean:@[builtin_tactic normCast0]
+src/Lean/Elab/Tactic/NormCast.lean:@[builtin_tactic Lean.Parser.Tactic.Conv.normCast]
+src/Lean/Elab/Tactic/NormCast.lean:@[builtin_tactic pushCast]
+src/Lean/Elab/Tactic/Do/ProofMode/Have.lean:@[builtin_tactic Lean.Parser.Tactic.mdup]
+src/Lean/Elab/Tactic/Do/ProofMode/Have.lean:@[builtin_tactic Lean.Parser.Tactic.mhave]
+src/Lean/Elab/Tactic/Do/ProofMode/Have.lean:@[builtin_tactic Lean.Parser.Tactic.mreplace]
+src/Lean/Elab/Tactic/SolveByElim.lean:@[builtin_tactic Lean.Parser.Tactic.applyAssumption]
+src/Lean/Elab/Tactic/SolveByElim.lean:@[builtin_tactic Lean.Parser.Tactic.applyRules]
+src/Lean/Elab/Tactic/SolveByElim.lean:@[builtin_tactic Lean.Parser.Tactic.solveByElim]
+src/Lean/Elab/Tactic/Do/ProofMode/Revert.lean:@[builtin_tactic Lean.Parser.Tactic.mrevert]
+src/Lean/Elab/Tactic/Do/ProofMode/Refine.lean:@[builtin_tactic Lean.Parser.Tactic.mrefine]
+src/Lean/Elab/Tactic/Do/ProofMode/Refine.lean:@[builtin_tactic Lean.Parser.Tactic.mexists]
+src/Lean/Elab/Tactic/Do/ProofMode/Specialize.lean:@[builtin_tactic Lean.Parser.Tactic.mspecialize]
+src/Lean/Elab/Tactic/Do/ProofMode/Specialize.lean:@[builtin_tactic Lean.Parser.Tactic.mspecializePure]
+src/Lean/Elab/Tactic/Do/ProofMode/Constructor.lean:@[builtin_tactic Lean.Parser.Tactic.mconstructor]
+src/Lean/Elab/Tactic/BVDecide/Frontend/BVCheck.lean:@[builtin_tactic Lean.Parser.Tactic.bvCheck]
+src/Lean/Elab/Tactic/Do/ProofMode/Frame.lean:@[builtin_tactic Lean.Parser.Tactic.mframe]
+src/Lean/Elab/Tactic/BVDecide/Frontend/Normalize.lean:@[builtin_tactic Lean.Parser.Tactic.bvNormalize]
+src/Lean/Elab/Tactic/Do/ProofMode/Cases.lean:@[builtin_tactic Lean.Parser.Tactic.mcases]
+src/Lean/Elab/Tactic/Do/ProofMode/Intro.lean:@[builtin_tactic Lean.Parser.Tactic.mintro]
+src/Lean/Elab/Tactic/Do/Spec.lean:@[builtin_tactic Lean.Parser.Tactic.mspecNoBind]
+src/Lean/Elab/Tactic/BVDecide/Frontend/BVDecide.lean:@[builtin_tactic Lean.Parser.Tactic.bvDecide]
+src/Lean/Elab/Tactic/LibrarySearch.lean:@[builtin_tactic Lean.Parser.Tactic.exact?]
+src/Lean/Elab/Tactic/LibrarySearch.lean:@[builtin_tactic Lean.Parser.Tactic.apply?]
+src/Lean/Elab/Tactic/Simpa.lean:@[builtin_tactic Lean.Parser.Tactic.simpa] def evalSimpa : Tactic := fun stx => do
+src/Lean/Elab/Tactic/BVDecide/Frontend/BVTrace.lean:@[builtin_tactic Lean.Parser.Tactic.bvTrace]
+src/Lean/Elab/Tactic/Lets.lean:@[builtin_tactic extractLets] def evalExtractLets : Tactic
+src/Lean/Elab/Tactic/Lets.lean:@[builtin_tactic liftLets] def evalLiftLets : Tactic
+src/Lean/Elab/Tactic/Lets.lean:@[builtin_tactic letToHave] def evalLetToHave : Tactic
+src/Lean/Meta/Tactic/AC/Main.lean:@[builtin_tactic acRfl] def acRflTactic : Lean.Elab.Tactic.Tactic := fun _ => do
+src/Lean/Meta/Tactic/AC/Main.lean:@[builtin_tactic acNf0]
+tests/lean/run/175.lean:@[builtin_tactic clear] def myEvalClear : Tactic := -- this fails in the old-frontend because it eagerly resolves `clear` as `Lean.Meta.clear`.

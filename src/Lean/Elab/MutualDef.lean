@@ -5,58 +5,59 @@ Authors: Leonardo de Moura
 -/
 
 /-
-private def checkModifiers (m₁ m₂ : Modifiers) : TermElabM Unit := do
-private def checkKinds (k₁ k₂ : DefKind) : TermElabM Unit := do
-private def check (prevHeaders : Array DefViewElabHeader) (newHeader : DefViewElabHeader) : TermElabM Unit := do
-private def registerFailedToInferDefTypeInfo (type : Expr) (view : DefView) :
-    -- Use def name (or keyword if anonymous) as fallback location
-private def isMultiConstant? (views : Array DefView) : Option (List Name) :=
-private def getPendingMVarErrorMessage (views : Array DefView) : MessageData :=
-private def cleanupOfNat (type : Expr) : MetaM Expr := do
-private def elabHeaders (views : Array DefView) (expandedDeclIds : Array ExpandDeclIdResult)
-private partial def withFunLocalDecls {α} (headers : Array DefViewElabHeader) (k : Array Expr → TermElabM α) : TermElabM α :=
-private def expandWhereStructInst : Macro := fun whereStx => do
-private def declValToTerm (declVal : Syntax) (expectedType : Expr) : TermElabM Syntax := withRef declVal do
-private def declValToTerminationHint (declVal : Syntax) : TermElabM TerminationHints :=
-private def declValToWhereFinally (declVal : Syntax) : TermElabM WhereFinallyView := withRef declVal do
-private def withHeaderSecVars {α} (vars : Array Expr) (sc : Command.Scope) (headers : Array DefViewElabHeader)
-private def useProofAsSorry (k : DefKind) : CoreM Bool := do
-private def elabFunValues (headers : Array DefViewElabHeader) (vars : Array Expr) (sc : Command.Scope) : TermElabM (Array Expr) :=
-private def collectUsed (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLift)
-private def removeUnusedVars (vars : Array Expr) (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLift)
-private def withUsed {α} (vars : Array Expr) (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLift)
-private def isExample (views : Array DefView) : Bool :=
-private def isTheorem (views : Array DefView) : Bool :=
-private def instantiateMVarsAtHeader (header : DefViewElabHeader) : TermElabM DefViewElabHeader := do
-private def instantiateMVarsAtLetRecToLift (toLift : LetRecToLift) : TermElabM LetRecToLift := do
-private def typeHasRecFun (type : Expr) (funFVars : Array Expr) (letRecsToLift : List LetRecToLift) : Option FVarId :=
-private def getFunName (fvarId : FVarId) (letRecsToLift : List LetRecToLift) : TermElabM Name := do
-private def checkLetRecsToLiftTypes (funVars : Array Expr) (letRecsToLift : List LetRecToLift) : TermElabM Unit :=
-private def ExprWithHoles.getHoles (e : ExprWithHoles) : TermElabM (Array MVarId) := withRef e.ref do
-private def fillHolesFromWhereFinally (name : Name) (es : Array ExprWithHoles) (whereFinally : WhereFinallyView) : TermElabM PUnit := do
-private def mkInitialUsedFVarsMap [Monad m] [MonadMCtx m] (sectionVars : Array Expr) (mainFVarIds : Array FVarId) (letRecsToLift : Array LetRecToLift)
-private def isModified : M Bool := do pure (← get).modified
-private def resetModified : M Unit := modify fun s => { s with modified := false }
-private def markModified : M Unit := modify fun s => { s with modified := true }
-private def getUsedFVarsMap : M UsedFVarsMap := do pure (← get).usedFVarsMap
-private def modifyUsedFVars (f : UsedFVarsMap → UsedFVarsMap) : M Unit := modify fun s => { s with usedFVarsMap := f s.usedFVarsMap }
-private def merge (s₁ s₂ : FVarIdSet) : M FVarIdSet :=
-private def updateUsedVarsOf (fvarId : FVarId) : M Unit := do
-private partial def fixpoint : Unit → M Unit
-private def mkFreeVarMap [Monad m] [MonadMCtx m]
-private def pickMaxFVar? (lctx : LocalContext) (fvarIds : Array FVarId) : Option FVarId :=
-private def preprocess (e : Expr) : TermElabM Expr := do
-private def pushNewVars (toProcess : Array FVarId) (s : CollectFVars.State) : Array FVarId :=
-private def pushLocalDecl (toProcess : Array FVarId) (fvarId : FVarId) (userName : Name) (type : Expr) (bi : BinderInfo) (kind : LocalDeclKind)
-private partial def mkClosureForAux (toProcess : Array FVarId) : StateRefT ClosureState TermElabM Unit := do
-private partial def mkClosureFor (freeVars : Array FVarId) (localDecls : Array LocalDecl) : TermElabM ClosureState := do
-private def mkLetRecClosureFor (toLift : LetRecToLift) (freeVars : Array FVarId) : TermElabM LetRecClosure := do
-private def mkLetRecClosures (sectionVars : Array Expr) (mainFVarIds : Array FVarId) (recFVarIds : Array FVarId) (letRecsToLift : Array LetRecToLift) : TermElabM (List LetRecClosure) := do
-private def getAllUserLevelNames (headers : Array DefViewElabHeader) : List Name :=
-private def levelMVarToParamHeaders (views : Array DefView) (headers : Array DefViewElabHeader) : TermElabM (Array DefViewElabHeader) := do
-private def checkAllDeclNamesDistinct (preDefs : Array PreDefinition) : TermElabM Unit := do
-        -- ... there is an `@[expose]` attribute directly on the def (of any kind or phase)
-private def logGoalsAccomplishedSnapshotTask (views : Array DefView)
+
+ def checkModifiers (m₁ m₂ : Modifiers) : TermElabM Unit 
+ def checkKinds (k₁ k₂ : DefKind) : TermElabM Unit 
+ def check (prevHeaders : Array DefViewElabHeader) (newHeader : DefViewElabHeader) : TermElabM Unit 
+ def registerFailedToInferDefTypeInfo (type : Expr) (view : DefView) :
+     -- Use def name (or keyword if anonymous) as fallback location
+ def isMultiConstant? (views : Array DefView) : Option (List Name) 
+ def getPendingMVarErrorMessage (views : Array DefView) : MessageData 
+ def cleanupOfNat (type : Expr) : MetaM Expr 
+ def elabHeaders (views : Array DefView) (expandedDeclIds : Array ExpandDeclIdResult)
+ partial def withFunLocalDecls {α} (headers : Array DefViewElabHeader) (k : Array Expr → TermElabM α) : TermElabM α 
+ def expandWhereStructInst : Macro 
+ def declValToTerm (declVal : Syntax) (expectedType : Expr) : TermElabM Syntax 
+ def declValToTerminationHint (declVal : Syntax) : TermElabM TerminationHints 
+ def declValToWhereFinally (declVal : Syntax) : TermElabM WhereFinallyView 
+ def withHeaderSecVars {α} (vars : Array Expr) (sc : Command.Scope) (headers : Array DefViewElabHeader)
+ def useProofAsSorry (k : DefKind) : CoreM Bool 
+ def elabFunValues (headers : Array DefViewElabHeader) (vars : Array Expr) (sc : Command.Scope) : TermElabM (Array Expr) 
+ def collectUsed (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLift)
+ def removeUnusedVars (vars : Array Expr) (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLif t)
+ def withUsed {α} (vars : Array Expr) (headers : Array DefViewElabHeader) (values : Array Expr) (toLift : List LetRecToLift)
+ def isExample (views : Array DefView) : Bool
+ def isTheorem (views : Array DefView) : Bool 
+ def instantiateMVarsAtHeader (header : DefViewElabHeader) : TermElabM DefViewElabHeader     
+ def instantiateMVarsAtLetRecToLift (toLift : LetRecToLift) : TermElabM LetRecToLift 
+ def typeHasRecFun (type : Expr) (funFVars : Array Expr) (letRecsToLift : List LetRecToLift) : Option FVarId
+ def getFunName (fvarId : FVarId) (letRecsToLift : List LetRecToLift) : TermElabM Name 
+ def checkLetRecsToLiftTypes (funVars : Array Expr) (letRecsToLift : List LetRecToLift) : TermElabM Unit
+ def ExprWithHoles.getHoles (e : ExprWithHoles) : TermElabM (Array MVarId) 
+ def fillHolesFromWhereFinally (name : Name) (es : Array ExprWithHoles) (whereFinally : WhereFinallyView) : TermElabM PUnit
+ def mkInitialUsedFVarsMap [Monad m] [MonadMCtx m] (sectionVars : Array Expr) (mainFVarIds : Array FVarId) (letRecsToLift : Ar ray LetRecToLift)
+ def isModified : M Bool 
+ def resetModified : M Unit
+ def markModified : M Unit 
+ def getUsedFVarsMap : M UsedFVarsMap                                                        
+ def modifyUsedFVars (f : UsedFVarsMap → UsedFVarsMap) : M Unit                              
+ def merge (s₁ s₂ : FVarIdSet) : M FVarIdSet                                                 
+ def updateUsedVarsOf (fvarId : FVarId) : M Unit 
+ partial def fixpoint : Unit → M Unit
+ def mkFreeVarMap [Monad m] [MonadMCtx m]
+ def pickMaxFVar? (lctx : LocalContext) (fvarIds : Array FVarId) : Option FVarId             
+ def preprocess (e : Expr) : TermElabM Expr 
+ def pushNewVars (toProcess : Array FVarId) (s : CollectFVars.State) : Array FVarId          
+ def pushLocalDecl (toProcess : Array FVarId) (fvarId : FVarId) (userName : Name) (type : Expr) (bi : BinderInfo) (kind : Loca lDeclKind)
+ partial def mkClosureForAux (toProcess : Array FVarId) : StateRefT ClosureState TermElabM Unit 
+ partial def mkClosureFor (freeVars : Array FVarId) (localDecls : Array LocalDecl) : TermElabM ClosureState
+ def mkLetRecClosureFor (toLift : LetRecToLift) (freeVars : Array FVarId) : TermElabM LetRecClosure 
+ def mkLetRecClosures (sectionVars : Array Expr) (mainFVarIds : Array FVarId) (recFVarIds : Array FVarId) (letRecsToLift : Arr ay LetRecToLift) : TermElabM (List LetRecClosure)  
+ def getAllUserLevelNames (headers : Array DefViewElabHeader) : List Name 
+ def levelMVarToParamHeaders (views : Array DefView) (headers : Array DefViewElabHeader) : TermElabM (Array DefViewElabHeader)  
+ def checkAllDeclNamesDistinct (preDefs : Array PreDefinition) : TermElabM Unit 
+ def logGoalsAccomplishedSnapshotTask (views : Array DefView)    
+
 
 -/
 module

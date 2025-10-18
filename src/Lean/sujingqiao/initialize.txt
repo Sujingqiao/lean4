@@ -1,0 +1,707 @@
+
+src/Lean/Compiler/Main.lean:builtin_initialize
+src/Lean/Compiler/MetaAttr.lean:private builtin_initialize metaExt : TagDeclarationExtension ←
+src/Lean/Compiler/MetaAttr.lean:private builtin_initialize notMetaExt : EnvExtension NameSet ←
+src/Lean/Compiler/ExternAttr.lean:builtin_initialize externAttr : ParametricAttribute ExternAttrData ←
+src/Lean/Compiler/ExportAttr.lean:builtin_initialize exportAttr : ParametricAttribute Name ←
+src/Lean/Compiler/IR.lean:builtin_initialize
+src/Lean/Compiler/NoncomputableAttr.lean:builtin_initialize noncomputableExt : TagDeclarationExtension ← mkTagDeclarationExtension
+src/Lean/Compiler/CSimpAttr.lean:builtin_initialize ext : SimpleScopedEnvExtension Entry State ←
+src/Lean/Compiler/InitAttr.lean:  Run the initializer of the given module (without `builtin_initialize` commands).
+src/Lean/Compiler/InitAttr.lean:builtin_initialize interpretedModInits : IO.Ref NameSet ← IO.mkRef {}
+src/Lean/Compiler/InitAttr.lean:builtin_initialize regularInitAttr : ParametricAttribute Name ← registerInitAttr `init true
+src/Lean/Compiler/InitAttr.lean:builtin_initialize builtinInitAttr : ParametricAttribute Name ← registerInitAttr `builtin_init false
+src/Lean/Compiler/Specialize.lean:builtin_initialize nospecializeAttr : TagAttribute ←
+src/Lean/Compiler/Specialize.lean:builtin_initialize specializeAttr : ParametricAttribute (Array Nat) ←
+src/Lean/Compiler/ClosedTermCache.lean:builtin_initialize closedTermCacheExt : EnvExtension ClosedTermCache ←
+src/Lean/Compiler/IR/PushProj.lean:builtin_initialize registerTraceClass `compiler.ir.push_proj (inherited := true)
+src/Lean/Compiler/IR/Meta.lean:builtin_initialize
+src/Lean/Compiler/IR/CompilerM.lean:private builtin_initialize declMetaExt : EnvExtension (List Name × NameSet) ←
+src/Lean/Compiler/IR/CompilerM.lean:builtin_initialize declMapExt : SimplePersistentEnvExtension Decl DeclMap ←
+src/Lean/Compiler/IR/ResetReuse.lean:builtin_initialize registerTraceClass `compiler.ir.reset_reuse (inherited := true)
+src/Lean/Compiler/IR/ElimDeadBranches.lean:builtin_initialize functionSummariesExt : SimplePersistentEnvExtension (FunId × Value) FunctionSummaries ←
+src/Lean/Compiler/IR/ElimDeadBranches.lean:builtin_initialize registerTraceClass `compiler.ir.elim_dead_branches (inherited := true)
+tests/pkg/user_plugin/UserPlugin.lean:builtin_initialize IO.println "Ran builtin initializer"
+src/Lean/Compiler/IR/UnboxResult.lean:builtin_initialize unboxAttr : TagAttribute ←
+tests/pkg/user_plugin/UserEnvPlugin.lean:builtin_initialize valExt : EnvExtension String ←
+src/Lean/Compiler/IR/SimpCase.lean:builtin_initialize registerTraceClass `compiler.ir.simp_case (inherited := true)
+src/Lean/Compiler/IR/RC.lean:builtin_initialize registerTraceClass `compiler.ir.rc (inherited := true)
+src/Lean/Compiler/IR/ToIRType.lean:builtin_initialize irTypeExt : LCNF.CacheExtension Name IRType ←
+src/Lean/Compiler/IR/ToIRType.lean:builtin_initialize ctorLayoutExt : LCNF.CacheExtension Name CtorLayout ←
+src/Lean/Compiler/IR/Borrow.lean:builtin_initialize registerTraceClass `compiler.ir.borrow (inherited := true)
+src/Lean/Compiler/IR/ElimDeadVars.lean:builtin_initialize registerTraceClass `compiler.ir.elim_dead (inherited := true)
+src/Lean/Compiler/IR/Boxing.lean:builtin_initialize registerTraceClass `compiler.ir.boxing (inherited := true)
+src/Lean/Compiler/IR/ExpandResetReuse.lean:builtin_initialize registerTraceClass `compiler.ir.expand_reset_reuse (inherited := true)
+src/Lean/Compiler/InlineAttrs.lean:builtin_initialize inlineAttrs : EnumAttributes InlineAttributeKind ←
+src/Lean/Compiler/NeverExtractAttr.lean:builtin_initialize neverExtractAttr : TagAttribute ←
+src/Lean/Compiler/LCNF/ReduceJpArity.lean:builtin_initialize
+src/Lean/Compiler/LCNF/PhaseExt.lean:private builtin_initialize publicDeclsExt : EnvExtension (List Name × NameSet) ← mkDeclSetExt
+src/Lean/Compiler/LCNF/PhaseExt.lean:private builtin_initialize baseTransparentDeclsExt : EnvExtension (List Name × NameSet) ← mkDeclSetExt
+src/Lean/Compiler/LCNF/PhaseExt.lean:private builtin_initialize monoTransparentDeclsExt : EnvExtension (List Name × NameSet) ← mkDeclSetExt
+src/Lean/Compiler/LCNF/PhaseExt.lean:builtin_initialize baseExt : DeclExt ← mkDeclExt .base
+src/Lean/Compiler/LCNF/PhaseExt.lean:builtin_initialize monoExt : DeclExt ← mkDeclExt .mono
+src/Lean/Compiler/LCNF/Main.lean:builtin_initialize
+src/Lean/Compiler/LCNF/MonoTypes.lean:builtin_initialize trivialStructureInfoExt : CacheExtension Name (Option TrivialStructureInfo) ←
+src/Lean/Compiler/LCNF/MonoTypes.lean:builtin_initialize monoTypeExt : CacheExtension Name Expr ← CacheExtension.register
+src/Lean/Compiler/LCNF/CSE.lean:builtin_initialize
+src/Lean/Compiler/LCNF/SpecInfo.lean:builtin_initialize specExtension : SimplePersistentEnvExtension SpecEntry SpecState ←
+src/Lean/Compiler/LCNF/SpecInfo.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Simp.lean:builtin_initialize
+src/Lean/Compiler/LCNF/ReduceArity.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Simp/ConstantFold.lean:builtin_initialize folderExt : PersistentEnvExtension FolderOleanEntry FolderEntry (List FolderEntry × SMap Name Folder) ←
+src/Lean/Compiler/LCNF/Simp/JpCases.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Simp/InlineCandidate.lean:builtin_initialize
+src/Lean/Compiler/LCNF/StructProjCases.lean:builtin_initialize registerTraceClass `Compiler.structProjCases (inherited := true)
+src/Lean/Compiler/LCNF/FloatLetIn.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Probing.lean:builtin_initialize
+src/Lean/Compiler/LCNF/JoinPoints.lean:builtin_initialize
+src/Lean/Compiler/LCNF/JoinPoints.lean:builtin_initialize
+src/Lean/Compiler/LCNF/JoinPoints.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Passes.lean:builtin_initialize passManagerExt : PersistentEnvExtension Name (Name × PassManager) (List Name × PassManager) ←
+src/Lean/Compiler/LCNF/Passes.lean:builtin_initialize
+src/Lean/Compiler/LCNF/Passes.lean:builtin_initialize
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize packageAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize packageDepAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize postUpdateAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize scriptAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize defaultScriptAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize leanLibAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize leanExeAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize externLibAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize inputFileAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize inputDirAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize targetAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize defaultTargetAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize testDriverAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize lintDriverAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize moduleFacetAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize packageFacetAttr : OrderedTagAttribute ←
+src/lake/Lake/DSL/AttributesCore.lean:public builtin_initialize libraryFacetAttr : OrderedTagAttribute ←
+src/Lean/Compiler/LCNF/AuxDeclCache.lean:builtin_initialize auxDeclCacheExt : CacheExtension Decl Name ← CacheExtension.register
+src/Lean/Compiler/LCNF/Specialize.lean:builtin_initialize specCacheExt : SimplePersistentEnvExtension CacheEntry Cache ←
+src/Lean/Compiler/LCNF/Specialize.lean:builtin_initialize
+src/lake/Lake/DSL/Attributes.lean:public builtin_initialize
+src/Lean/Compiler/LCNF/ElimDeadBranches.lean:builtin_initialize functionSummariesExt : SimplePersistentEnvExtension (Name × Value) FunctionSummaries ←
+src/Lean/Compiler/LCNF/ElimDeadBranches.lean:builtin_initialize
+src/Lean/Compiler/LCNF/BaseTypes.lean:builtin_initialize baseTypeExt : CacheExtension Name Expr ← CacheExtension.register
+src/lake/Lake/DSL/Extensions.lean:public builtin_initialize nameExt : EnvExtension Name ←
+src/lake/Lake/DSL/Extensions.lean:public builtin_initialize dirExt : EnvExtension (Option System.FilePath) ←
+src/lake/Lake/DSL/Extensions.lean:public builtin_initialize optsExt : EnvExtension (Option (NameMap String)) ←
+src/Lean/Compiler/LCNF/LambdaLifting.lean:builtin_initialize
+src/Lean/ResolveName.lean:builtin_initialize reservedNamePredicatesRef : IO.Ref (Array (Environment → Name → Bool)) ← IO.mkRef #[]
+src/Lean/ResolveName.lean:builtin_initialize reservedNamePredicatesExt : EnvExtension (Array (Environment → Name → Bool)) ←
+src/Lean/ResolveName.lean:builtin_initialize aliasExtension : SimplePersistentEnvExtension AliasEntry AliasState ←
+src/Lean/Compiler/LCNF/ExtractClosed.lean:builtin_initialize registerTraceClass `Compiler.extractClosed (inherited := true)
+src/Lean/PremiseSelection/Basic.lean:builtin_initialize moduleDenyListExt : SimplePersistentEnvExtension String (List String) ←
+src/Lean/PremiseSelection/Basic.lean:builtin_initialize nameDenyListExt : SimplePersistentEnvExtension String (List String) ←
+src/Lean/PremiseSelection/Basic.lean:builtin_initialize typePrefixDenyListExt : SimplePersistentEnvExtension Name (List Name) ←
+src/Lean/PremiseSelection/Basic.lean:builtin_initialize premiseSelectorExt : EnvExtension (Option Selector) ←
+src/Lean/Compiler/LCNF/Visibility.lean:builtin_initialize
+src/library/dynlib.cpp:    // imported (e.g., an environment extension defined with builtin_initialize).
+src/Lean/ScopedEnvExtension.lean:builtin_initialize scopedEnvExtensionsRef : IO.Ref (Array (ScopedEnvExtension EnvExtensionEntry EnvExtensionEntry EnvExtensionState)) ← IO.mkRef #[]
+src/Lean/Compiler/LCNF/ToMono.lean:builtin_initialize
+src/Lean/CoreM.lean:builtin_initialize registerTraceClass `Kernel
+src/Lean/CoreM.lean:builtin_initialize
+src/Lean/Exception.lean:builtin_initialize interruptExceptionId : InternalExceptionId ← registerInternalExceptionId `interrupt
+src/Lean/Compiler/LCNF/PullFunDecls.lean:builtin_initialize
+src/Lean/Compiler/LCNF/PullLetDecls.lean:builtin_initialize
+src/Lean/Linter/MissingDocs.lean:builtin_initialize builtinHandlersRef : IO.Ref (NameMap Handler) ← IO.mkRef {}
+src/Lean/Linter/MissingDocs.lean:builtin_initialize missingDocsExt :
+src/Lean/Linter/MissingDocs.lean:builtin_initialize addLinter missingDocs
+src/Lean/Linter/MissingDocs.lean:builtin_initialize
+src/Lean/Linter/UnusedSimpArgs.lean:builtin_initialize addLinter unusedSimpArgs
+src/Lean/Compiler/ImplementedByAttr.lean:builtin_initialize implementedByAttr : ParametricAttribute Name ← registerParametricAttribute {
+src/Lean/Linter/Basic.lean:builtin_initialize linterSetsExt : SimplePersistentEnvExtension (Name × NameSet) LinterSets ← Lean.registerSimplePersistentEnvExtension {
+src/Lean/Linter/Builtin.lean:builtin_initialize addLinter suspiciousUnexpanderPatterns
+src/Lean/Linter/Omit.lean:builtin_initialize addLinter «omit»
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize builtinUnusedVariablesIgnoreFnsRef : IO.Ref <| Array IgnoreFunction ← IO.mkRef #[]
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize unusedVariablesIgnoreFnsExt :
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack _ =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack opts =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack opts =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack opts =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addBuiltinUnusedVariablesIgnoreFn (fun _ stack opts =>
+src/Lean/Linter/UnusedVariables.lean:builtin_initialize addLinter unusedVariables
+src/Lean/Linter/DocsOnAlt.lean:builtin_initialize addLinter docsOnAlt
+src/Lean/Linter/List.lean:builtin_initialize addLinter indexLinter
+src/Lean/Linter/List.lean:builtin_initialize addLinter listVariablesLinter
+src/Lean/Data/Options.lean:private builtin_initialize optionDeclsRef : IO.Ref OptionDecls ← IO.mkRef (mkNameMap OptionDecl)
+src/Lean/Data/Options.lean:  `($[$doc?]? $[$vis?:visibility]? builtin_initialize $name : Lean.Option $type ← Lean.Option.register $(quote name.getId) $decl)
+src/Lean/Linter/ConstructorAsVariable.lean:builtin_initialize addLinter constructorNameAsVariable
+src/Lean/Linter/Deprecated.lean:builtin_initialize deprecatedAttr : ParametricAttribute DeprecationEntry ←
+src/Lean/Namespace.lean:builtin_initialize namespacesExt : SimplePersistentEnvExtension Name NameSSet ←
+src/Lean/Util/PPExt.lean:builtin_initialize ppFnsRef : IO.Ref PPFns ←
+src/Lean/Util/PPExt.lean:builtin_initialize ppExt : EnvExtension PPFns ←
+src/lake/Lake/Load/Lean/Elab.lean:private builtin_initialize importEnvCache :
+src/Lean/Util/Trace.lean:builtin_initialize inheritedTraceOptions : IO.Ref (Std.HashSet Name) ← IO.mkRef ∅
+src/Lean/Util/Path.lean:builtin_initialize searchPathRef : IO.Ref SearchPath ← IO.mkRef {}
+src/lake/tests/precompileLink/Foo/Baz.lean:builtin_initialize greetingRef : IO.Ref String ← IO.mkRef greeting
+src/Lean/ErrorExplanation.lean:builtin_initialize errorExplanationExt : SimplePersistentEnvExtension (Name × ErrorExplanation) (NameMap ErrorExplanation) ←
+src/Lean/ProjFns.lean:builtin_initialize projectionFnInfoExt : MapDeclarationExtension ProjectionFunctionInfo ← mkMapDeclarationExtension
+src/Lean/LoadDynlib.lean:are declared with the `initialize` or `builtin_initialize` commands.
+src/Lean/Widget/UserWidget.lean:private builtin_initialize builtinModulesRef : IO.Ref (Std.TreeMap UInt64 (Name × Module)) ←
+src/Lean/Widget/UserWidget.lean:private builtin_initialize moduleRegistry : ModuleRegistry ←
+src/Lean/Widget/UserWidget.lean:builtin_initialize widgetModuleAttrImpl : AttributeImpl ←
+src/Lean/Widget/UserWidget.lean:builtin_initialize
+src/Lean/Widget/UserWidget.lean:private builtin_initialize panelWidgetsExt : PanelWidgetsExt ←
+src/Lean/Widget/UserWidget.lean:builtin_initialize
+src/Lean/Shell.lean:private builtin_initialize maxMemory : Lean.Option Nat ←
+src/Lean/Shell.lean:private builtin_initialize timeout : Lean.Option Nat ←
+src/Lean/AddDecl.lean:private builtin_initialize privateConstKindsExt : MapDeclarationExtension ConstantKind ←
+src/Lean/ImportingFlag.lean:private builtin_initialize importingRef : IO.Ref Bool ← IO.mkRef false
+src/Lean/ImportingFlag.lean:private builtin_initialize runInitializersRef : IO.Ref Bool ← IO.mkRef false
+src/Lean/ImportingFlag.lean:We say Lean is "initializing" when it is executing `builtin_initialize` declarations or importing modules.
+src/Lean/KeyedDeclsAttribute.lean:            /- builtin_initialize @addBuiltin $(mkConst valueTypeName) $(mkConst attrDeclName) $(key) $(declName) $(mkConst declName) -/
+src/Lean/AuxRecursor.lean:builtin_initialize auxRecExt : TagDeclarationExtension ← mkTagDeclarationExtension
+src/Lean/AuxRecursor.lean:builtin_initialize noConfusionExt : TagDeclarationExtension ← mkTagDeclarationExtension
+src/Lean/Structure.lean:private builtin_initialize structureExt : PersistentEnvExtension StructureInfo StructureInfo (Unit × StructureState) ← registerPersistentEnvExtension {
+src/Lean/Structure.lean:builtin_initialize structureResolutionExt : EnvExtension StructureResolutionState ←
+src/Lean/DeclarationRange.lean:builtin_initialize builtinDeclRanges : IO.Ref (NameMap DeclarationRanges) ← IO.mkRef {}
+src/Lean/DeclarationRange.lean:builtin_initialize declRangeExt : MapDeclarationExtension DeclarationRanges ←
+src/Lean/Class.lean:builtin_initialize classExtension : SimplePersistentEnvExtension ClassEntry ClassState ←
+src/Lean/LabelAttribute.lean:builtin_initialize labelExtensionMapRef : IO.Ref LabelExtensionMap ← IO.mkRef {}
+src/Lean/DocString/Links.lean:builtin_initialize manualRoot : String ←
+src/Lean/DocString/Extension.lean:private builtin_initialize builtinDocStrings : IO.Ref (NameMap String) ← IO.mkRef {}
+src/Lean/DocString/Extension.lean:builtin_initialize docStringExt : MapDeclarationExtension String ←
+src/Lean/DocString/Extension.lean:private builtin_initialize inheritDocStringExt : MapDeclarationExtension Name ←
+src/Lean/DocString/Extension.lean:private builtin_initialize builtinVersoDocStrings : IO.Ref (NameMap VersoDocString) ← IO.mkRef {}
+src/Lean/DocString/Extension.lean:builtin_initialize versoDocStringExt : MapDeclarationExtension VersoDocString ←
+src/Lean/DocString/Extension.lean:private builtin_initialize moduleDocExt :
+src/Lean/DocString/Extension.lean:private builtin_initialize versoModuleDocExt :
+src/Lean/DocString/Parser.lean:builtin_initialize
+src/Lean/BuiltinDocAttr.lean:builtin_initialize
+src/Lean/PrettyPrinter.lean:builtin_initialize
+src/Lean/PrettyPrinter.lean:builtin_initialize
+src/Lean/Attributes.lean:builtin_initialize attributeMapRef : IO.Ref (Std.HashMap Name AttributeImpl) ← IO.mkRef {}
+src/Lean/Attributes.lean:builtin_initialize attributeImplBuilderTableRef : IO.Ref AttributeImplBuilderTable ← IO.mkRef {}
+src/Lean/Attributes.lean:builtin_initialize attributeExtension : AttributeExtension ←
+src/Lean/Parser/Extra.lean:builtin_initialize
+src/Lean/Parser/Term.lean:builtin_initialize
+src/Lean/Parser/Tactic.lean:builtin_initialize
+src/Lean/Parser/Tactic.lean:builtin_initialize
+src/Lean/Parser/Level.lean:builtin_initialize
+src/Lean/Parser/Do.lean:builtin_initialize registerBuiltinParserAttribute `builtin_doElem_parser ``Category.doElem
+src/Lean/Parser/Do.lean:builtin_initialize registerBuiltinDynamicParserAttribute `doElem_parser `doElem
+src/Lean/Parser/Do.lean:builtin_initialize
+src/Lean/Parser/Basic.lean:builtin_initialize categoryParserFnRef : IO.Ref CategoryParserFn ← IO.mkRef fun (_ : Name) => whitespace
+src/Lean/Parser/Basic.lean:builtin_initialize categoryParserFnExtension : EnvExtension CategoryParserFn ← registerEnvExtension $ categoryParserFnRef.get
+src/Lean/Parser/Syntax.lean:builtin_initialize
+src/Lean/Parser/Syntax.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize builtinTokenTable : IO.Ref TokenTable ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize builtinSyntaxNodeKindSetRef : IO.Ref SyntaxNodeKindSet ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize builtinParserCategoriesRef : IO.Ref ParserCategories ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize parserAliasesRef : IO.Ref (NameMap ParserAliasValue) ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize parserAlias2kindRef : IO.Ref (NameMap SyntaxNodeKind) ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize parserAliases2infoRef : IO.Ref (NameMap ParserAliasInfo) ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize parserAttributeHooks : IO.Ref (List ParserAttributeHook) ← IO.mkRef {}
+src/Lean/Parser/Extension.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize parserExtension : ParserExtension ←
+src/Lean/Parser/Extension.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize
+src/Lean/Parser/Extension.lean:builtin_initialize registerBuiltinParserAttribute `builtin_term_parser ``Category.term
+src/Lean/Parser/Extension.lean:builtin_initialize registerBuiltinDynamicParserAttribute `term_parser `term
+src/Lean/Parser/Extension.lean:builtin_initialize registerBuiltinParserAttribute `builtin_command_parser ``Category.command
+src/Lean/Parser/Extension.lean:builtin_initialize registerBuiltinDynamicParserAttribute `command_parser `command
+src/Lean/Parser/Extension.lean:builtin_initialize aliasExtension : EnvExtension (NameMap ParserAliasValue) ←
+src/Lean/Parser/Term/Basic.lean:builtin_initialize
+src/Lean/Parser/Term/Basic.lean:builtin_initialize
+src/Lean/Parser/Term/Basic.lean:builtin_initialize
+src/Lean/Parser/Term/Doc.lean:builtin_initialize recommendedSpellingByNameExt
+src/Lean/Parser/Term/Doc.lean:builtin_initialize recommendedSpellingExt
+src/Lean/Parser/Attr.lean:builtin_initialize
+src/Lean/Parser/Attr.lean:builtin_initialize
+src/Lean/Parser/Command.lean:  "initialize " <|> "builtin_initialize "
+src/Lean/Parser/Command.lean:builtin_initialize
+src/Lean/Parser/Command.lean:builtin_initialize
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize tacticAlternativeExt
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize knownTacticTagExt
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize tacticTagExt
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize tacticDocExtExt
+src/Lean/Parser/Tactic/Doc.lean:builtin_initialize
+src/Lean/DefEqAttrib.lean:builtin_initialize defeqAttr : TagAttribute ←
+src/Lean/Language/Lean.lean:builtin_initialize registerBuiltinIncrementalTactic ``cdot
+src/Lean/Server/FileWorker.lean:private builtin_initialize importsLoadedRef : IO.Ref Bool ← IO.mkRef false
+src/Lean/Server/Rpc/Basic.lean:builtin_initialize freshWithRpcRefId : IO.Ref USize ← IO.mkRef 1
+src/Lean/Server/Rpc/RequestHandling.lean:private builtin_initialize builtinRpcProcedures : IO.Ref (PHashMap Name RpcProcedure) ←
+src/Lean/Server/Rpc/RequestHandling.lean:builtin_initialize userRpcProcedures : MapDeclarationExtension Name ←
+src/Lean/Server/Rpc/RequestHandling.lean:builtin_initialize
+src/Lean/Server/Rpc/RequestHandling.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Server/Completion/EligibleHeaderDecls.lean:builtin_initialize eligibleHeaderDeclsMutex : Std.Mutex (Option EligibleHeaderDecls) ←
+src/Lean/Server/CodeActions/Basic.lean:private builtin_initialize builtinCodeActionProviders : IO.Ref (NameMap CodeActionProvider) ←
+src/Lean/Server/CodeActions/Basic.lean:builtin_initialize codeActionProviderExt : SimplePersistentEnvExtension Name NameSet ← registerSimplePersistentEnvExtension {
+src/Lean/Server/CodeActions/Basic.lean:builtin_initialize
+src/Lean/Server/CodeActions/Basic.lean:builtin_initialize
+src/Lean/Server/CodeActions/Basic.lean:builtin_initialize
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize holeCodeActionExt :
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize builtinCmdCodeActions : IO.Ref CommandCodeActions ← IO.mkRef {}
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize cmdCodeActionExt :
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize
+src/Lean/Server/CodeActions/Attr.lean:builtin_initialize
+src/Lean/Server/Requests.lean:builtin_initialize requestHandlers : IO.Ref (PersistentHashMap String RequestHandler) ←
+src/Lean/Server/Requests.lean:builtin_initialize statefulRequestHandlers : IO.Ref (PersistentHashMap String StatefulRequestHandler) ←
+src/Lean/Server/FileWorker/InlayHints.lean:builtin_initialize
+src/Lean/Server/FileWorker/SemanticHighlighting.lean:builtin_initialize
+src/Lean/Server/FileWorker/RequestHandling.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize registerBuiltinRpcProcedure ``lazyTraceChildrenToInteractive _ _ lazyTraceChildrenToInteractive
+src/Lean/Server/FileWorker/WidgetRequests.lean:builtin_initialize registerBuiltinRpcProcedure ``highlightMatches _ _ highlightMatches
+src/Lean/Environment.lean:private builtin_initialize envExtensionsRef : IO.Ref (Array (EnvExtension EnvExtensionState)) ← IO.mkRef #[]
+src/Lean/Environment.lean:builtin_initialize persistentEnvExtensionsRef : IO.Ref (Array (PersistentEnvExtension EnvExtensionEntry EnvExtensionEntry EnvExtensionState)) ← IO.mkRef #[]
+src/Lean/Elab/Extra.lean:builtin_initialize
+src/Lean/Elab/Declaration.lean:builtin_initialize
+src/Lean/Elab/Binders.lean:builtin_initialize
+src/Lean/Elab/Match.lean:builtin_initialize
+src/Lean/Elab/MutualDef.lean:builtin_initialize
+src/Lean/Elab/MutualDef.lean:builtin_initialize
+src/Lean/Elab/MutualDef.lean:builtin_initialize
+src/Lean/Elab/MutualDef.lean:builtin_initialize
+src/Lean/Elab/SyntheticMVars.lean:builtin_initialize
+tests/lean/versoDocMissing.lean.expected.out:versoDocMissing.lean:10:0: error: unexpected end of input; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'
+src/Lean/Elab/App.lean:builtin_initialize elabWithoutExpectedTypeAttr : TagAttribute ←
+src/Lean/Elab/App.lean:builtin_initialize elabAsElim : TagAttribute ←
+src/Lean/Elab/App.lean:builtin_initialize
+src/Lean/Elab/Term.lean:builtin_initialize
+src/Lean/Elab/Term.lean:builtin_initialize incrementalAttr : TagAttribute ←
+src/Lean/Elab/Term.lean:builtin_initialize builtinIncrementalElabs : IO.Ref NameSet ← IO.mkRef {}
+src/Lean/Elab/Term.lean:builtin_initialize
+src/Lean/Elab/Term.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:private builtin_initialize modDocstringStateExt : EnvExtension (Option ModuleDocstringState) ←
+src/Lean/Elab/DocString.lean:builtin_initialize codeSuggestionExt : SimpleScopedEnvExtension Name NameSet ←
+src/Lean/Elab/DocString.lean:builtin_initialize codeBlockSuggestionExt : SimpleScopedEnvExtension Name NameSet ←
+src/Lean/Elab/DocString.lean:builtin_initialize docRoleExt : SimpleScopedEnvExtension (Name × Name) (NameMap (Array Name)) ←
+src/Lean/Elab/DocString.lean:builtin_initialize builtinDocRoles : IO.Ref (NameMap (Array (Name × DocRoleExpander))) ← IO.mkRef {}
+src/Lean/Elab/DocString.lean:builtin_initialize docCodeBlockExt : SimpleScopedEnvExtension (Name × Name) (NameMap (Array Name)) ←
+src/Lean/Elab/DocString.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:builtin_initialize docDirectiveExt : SimpleScopedEnvExtension (Name × Name) (NameMap (Array Name)) ←
+src/Lean/Elab/DocString.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:builtin_initialize docCommandExt : SimpleScopedEnvExtension (Name × Name) (NameMap (Array Name)) ←
+src/Lean/Elab/DocString.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/DocString.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/Do.lean:builtin_initialize registerTraceClass `Elab.do
+src/Lean/Elab/DocString/Builtin.lean:private builtin_initialize
+src/Lean/Elab/Deriving/SizeOf.lean:builtin_initialize
+src/Lean/Elab/Deriving/BEq.lean:builtin_initialize
+src/Lean/Elab/Deriving/Ord.lean:builtin_initialize
+src/Lean/Elab/Deriving/Basic.lean:builtin_initialize derivingHandlersRef : IO.Ref (NameMap (List DerivingHandler)) ← IO.mkRef {}
+src/Lean/Elab/Deriving/Basic.lean:builtin_initialize
+src/Lean/Elab/Deriving/Nonempty.lean:builtin_initialize
+src/Lean/Elab/Deriving/ToExpr.lean:builtin_initialize
+src/Lean/Elab/Deriving/Inhabited.lean:builtin_initialize
+src/Lean/Elab/Deriving/Repr.lean:builtin_initialize
+src/Lean/Elab/Deriving/LawfulBEq.lean:builtin_initialize
+src/Lean/Elab/Deriving/ReflBEq.lean:builtin_initialize
+src/Lean/Elab/Deriving/DecEq.lean:builtin_initialize
+src/Lean/Elab/Deriving/FromToJson.lean:builtin_initialize
+src/Lean/Elab/Deriving/Hashable.lean:builtin_initialize
+src/Lean/Elab/MutualInductive.lean:builtin_initialize
+src/Lean/Elab/MutualInductive.lean:builtin_initialize inductiveElabAttr : KeyedDeclsAttribute InductiveElabDescr ←
+src/Lean/Elab/Quotation.lean:builtin_initialize
+src/Lean/Elab/Syntax.lean:builtin_initialize
+src/Lean/Elab/StructInst.lean:builtin_initialize
+src/Lean/Elab/Util.lean:builtin_initialize macroAttribute : KeyedDeclsAttribute Macro ← mkMacroAttribute decl_name%
+src/Lean/Elab/Util.lean:builtin_initialize
+src/Lean/Elab/Term/TermElabM.lean:builtin_initialize termElabAttribute : KeyedDeclsAttribute TermElab ← mkTermElabAttribute decl_name%
+src/Lean/Elab/Term/TermElabM.lean:builtin_initialize registerTraceClass `Elab.letrec
+src/Lean/Elab/ComputedFields.lean:builtin_initialize computedFieldAttr : TagAttribute ←
+src/Lean/Elab/Exception.lean:builtin_initialize postponeExceptionId : InternalExceptionId ← registerInternalExceptionId `postpone
+src/Lean/Elab/Exception.lean:builtin_initialize unsupportedSyntaxExceptionId : InternalExceptionId ← registerInternalExceptionId `unsupportedSyntax
+src/Lean/Elab/Exception.lean:builtin_initialize abortCommandExceptionId : InternalExceptionId ← registerInternalExceptionId `abortCommandElab
+src/Lean/Elab/Exception.lean:builtin_initialize abortTermExceptionId : InternalExceptionId ← registerInternalExceptionId `abortTermElab
+src/Lean/Elab/Exception.lean:builtin_initialize abortTacticExceptionId : InternalExceptionId ← registerInternalExceptionId `abortTactic
+src/Lean/Elab/Exception.lean:builtin_initialize autoBoundImplicitExceptionId : InternalExceptionId ← registerInternalExceptionId `autoBoundImplicit
+src/Lean/Elab/DefView.lean:builtin_initialize registerTraceClass `Elab.definition
+src/Lean/Elab/DefView.lean:builtin_initialize registerTraceClass `Elab.instance.mkInstanceName
+src/Lean/Elab/InheritDoc.lean:public builtin_initialize
+src/Lean/Elab/BuiltinEvalCommand.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/WF/Main.lean:builtin_initialize registerTraceClass `Elab.definition.wf
+src/Lean/Elab/PreDefinition/WF/Eqns.lean:public builtin_initialize eqnInfoExt : MapDeclarationExtension EqnInfo ←
+src/Lean/Elab/PreDefinition/WF/Eqns.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/WF/Eqns.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/WF/Unfold.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/WF/Preprocess.lean:builtin_initialize wfPreprocessSimpExtension : SimpExtension ←
+src/Lean/Elab/PreDefinition/Main.lean:builtin_initialize
+src/Lean/Elab/Command.lean:builtin_initialize lintersRef : IO.Ref (Array Linter) ← IO.mkRef #[]
+src/Lean/Elab/Command.lean:builtin_initialize registerTraceClass `Elab.lint
+src/Lean/Elab/Command.lean:unsafe builtin_initialize commandElabAttribute : KeyedDeclsAttribute CommandElab ←
+src/Lean/Elab/Command.lean:builtin_initialize registerTraceClass `Elab.command
+src/Lean/Elab/Command.lean:builtin_initialize registerTraceClass `Elab.input
+src/Lean/Elab/Command.lean:builtin_initialize
+src/Lean/Elab/Structure.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/Structural/Basic.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/Structural/Eqns.lean:public builtin_initialize eqnInfoExt : MapDeclarationExtension EqnInfo ←
+src/Lean/Elab/PreDefinition/Structural/Eqns.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/Nonrec/Eqns.lean:builtin_initialize
+src/Lean/Elab/Tactic/NormCast.lean:builtin_initialize registerTraceClass `Tactic.norm_cast
+src/Lean/Elab/Tactic/Grind/Basic.lean:unsafe builtin_initialize grindTacElabAttribute : KeyedDeclsAttribute GrindTactic ←
+src/Lean/Elab/PreDefinition/Eqns.lean:builtin_initialize
+src/Lean/Elab/Tactic/Induction.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/PartialFixpoint/Main.lean:builtin_initialize Lean.registerTraceClass `Elab.definition.partialFixpoint
+src/Lean/Elab/Tactic/Omega/Frontend.lean:builtin_initialize bitvec_to_nat : SimpExtension ←
+src/Lean/Elab/PreDefinition/PartialFixpoint/Induction.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/PartialFixpoint/Induction.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/PartialFixpoint/Induction.lean:builtin_initialize Lean.registerTraceClass `Elab.definition.partialFixpoint.induction
+src/Lean/Elab/PreDefinition/PartialFixpoint/Eqns.lean:public builtin_initialize eqnInfoExt : MapDeclarationExtension EqnInfo ←
+src/Lean/Elab/PreDefinition/PartialFixpoint/Eqns.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/FixedParams.lean:builtin_initialize
+src/Lean/Elab/PreDefinition/EqUnfold.lean:builtin_initialize
+src/Lean/Elab/Tactic/TreeTacAttr.lean:builtin_initialize treeTacExt : SimpExtension
+src/Lean/Elab/Tactic/BVDecide/Frontend/Normalize/Enums.lean:builtin_initialize
+src/Lean/Elab/Tactic/BVDecide/Frontend/Normalize/Enums.lean:builtin_initialize
+src/Lean/Elab/Tactic/Ext.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/Tactic/Try.lean:builtin_initialize tryTacticElabAttribute : KeyedDeclsAttribute TryTactic ← do
+src/Lean/Elab/Tactic/Basic.lean:unsafe builtin_initialize tacticElabAttribute : KeyedDeclsAttribute Tactic ←
+src/Lean/Elab/Tactic/Basic.lean:builtin_initialize registerTraceClass `Elab.tactic
+src/Lean/Elab/Tactic/Basic.lean:builtin_initialize registerTraceClass `Elab.tactic.backtrack
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize registerTraceClass `Meta.Tactic.sat
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize registerTraceClass `Meta.Tactic.bv
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize bvNormalizeExt : Meta.SimpExtension ←
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize intToBitVecExt : Meta.SimpExtension ←
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize builtinBVNormalizeSimprocsRef : IO.Ref Meta.Simp.Simprocs ← IO.mkRef {}
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize bvNormalizeSimprocExt : Meta.Simp.SimprocExtension ←
+src/Lean/Elab/Tactic/BVDecide/Frontend/Attr.lean:builtin_initialize
+src/Lean/Elab/Tactic/Monotonicity.lean:builtin_initialize monotoneExt :
+src/Lean/Elab/Tactic/Monotonicity.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Elab/Tactic/Monotonicity.lean:builtin_initialize Lean.registerTraceClass `Elab.Tactic.monotonicity
+src/Lean/Elab/Tactic/Do/Spec.lean:builtin_initialize registerTraceClass `Elab.Tactic.Do.spec
+src/Lean/Elab/Tactic/Do/Attr.lean:builtin_initialize registerTraceClass `Elab.Tactic.Do.specAttr
+src/Lean/Elab/Tactic/Do/Attr.lean:builtin_initialize mvcgenSimpExt : Meta.SimpExtension ←
+src/Lean/Elab/Tactic/Do/Attr.lean:builtin_initialize specAttr : SpecExtension ← registerSimpleScopedEnvExtension mkSpecExt
+src/Lean/Elab/Tactic/Do/Attr.lean:builtin_initialize registerBuiltinAttribute (mkSpecAttr specAttr)
+src/Lean/Elab/Tactic/Do/VCGen/Basic.lean:builtin_initialize registerTraceClass `Elab.Tactic.Do.vcgen
+src/Lean/Elab/Tactic/BoolToPropSimps.lean:builtin_initialize bool_to_prop : Lean.Meta.SimpExtension ←
+src/Lean/Elab/Quotation/Precheck.lean:unsafe builtin_initialize precheckAttribute : KeyedDeclsAttribute Precheck ←
+src/Lean/Meta/CompletionName.lean:builtin_initialize completionBlackListExt : TagDeclarationExtension ← mkTagDeclarationExtension
+src/Lean/Meta/Match.lean:builtin_initialize registerTraceClass `Meta.Match
+src/Lean/Meta/AppBuilder.lean:builtin_initialize do
+src/Lean/Meta/SizeOf.lean:builtin_initialize
+src/Lean/Meta/Coe.lean:builtin_initialize coeDeclAttr : TagAttribute ←
+src/Lean/Meta/CongrTheorems.lean:builtin_initialize registerTraceClass `congr.thm
+src/Lean/Meta/CongrTheorems.lean:builtin_initialize congrKindsExt : MapDeclarationExtension (Array CongrArgKind) ← mkMapDeclarationExtension
+src/Lean/Meta/CongrTheorems.lean:builtin_initialize registerReservedNamePredicate fun env n =>
+src/Lean/Meta/CongrTheorems.lean:builtin_initialize
+src/Lean/Meta/Injective.lean:builtin_initialize
+src/Lean/Meta/UnificationHint.lean:builtin_initialize unificationHintExtension : SimpleScopedEnvExtension UnificationHintEntry UnificationHints ←
+src/Lean/Meta/UnificationHint.lean:builtin_initialize
+src/Lean/Meta/UnificationHint.lean:builtin_initialize
+src/Lean/Meta/Basic.lean:builtin_initialize isDefEqStuckExceptionId : InternalExceptionId ← registerInternalExceptionId `isDefEqStuck
+src/Lean/Meta/Basic.lean:builtin_initialize
+src/Lean/Meta/Basic.lean:builtin_initialize
+src/Lean/Meta/Eqns.lean:builtin_initialize recExt : TagDeclarationExtension ←
+src/Lean/Meta/Eqns.lean:builtin_initialize registerReservedNamePredicate fun env n => Id.run do
+src/Lean/Meta/Eqns.lean:private builtin_initialize getEqnsFnsRef : IO.Ref (List GetEqnsFn) ← IO.mkRef []
+src/Lean/Meta/Eqns.lean:builtin_initialize eqnsExt : EnvExtension EqnsExtState ←
+src/Lean/Meta/Eqns.lean:private builtin_initialize getUnfoldEqnFnsRef : IO.Ref (List GetUnfoldEqnFn) ← IO.mkRef []
+src/Lean/Meta/Eqns.lean:builtin_initialize
+src/Lean/Meta/IndPredBelow.lean:builtin_initialize
+src/Lean/Meta/WHNF.lean:builtin_initialize
+src/Lean/Meta/DecLevel.lean:builtin_initialize
+src/Lean/Meta/CoeAttr.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Meta/Constructions/CasesOn.lean:builtin_initialize
+src/Lean/Meta/Constructions/CtorElim.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Meta/Constructions/NoConfusion.lean:builtin_initialize
+src/Lean/ExtraModUses.lean:builtin_initialize extraModUses : SimplePersistentEnvExtension ExtraModUse (PHashSet ExtraModUse) ←
+src/Lean/ExtraModUses.lean:builtin_initialize isExtraRevModUseExt : SimplePersistentEnvExtension Unit Unit ←
+src/Lean/ExtraModUses.lean:builtin_initialize
+src/Lean/Meta/Constructions/BRecOn.lean:builtin_initialize
+src/Lean/Meta/Check.lean:builtin_initialize
+src/Lean/Meta/GlobalInstances.lean:builtin_initialize globalInstanceExtension : SimpleScopedEnvExtension Name (PersistentHashMap Name Unit)  ←
+src/Lean/Meta/SynthInstance.lean:builtin_initialize
+src/Lean/PrettyPrinter/Parenthesizer.lean:unsafe builtin_initialize parenthesizerAttribute : KeyedDeclsAttribute Parenthesizer ←
+src/Lean/PrettyPrinter/Parenthesizer.lean:unsafe builtin_initialize categoryParenthesizerAttribute : KeyedDeclsAttribute CategoryParenthesizer ←
+src/Lean/PrettyPrinter/Parenthesizer.lean:unsafe builtin_initialize combinatorParenthesizerAttribute : ParserCompiler.CombinatorAttribute ←
+src/Lean/PrettyPrinter/Parenthesizer.lean:builtin_initialize parenthesizerAliasesRef : IO.Ref (NameMap ParenthesizerAliasValue) ← IO.mkRef {}
+src/Lean/PrettyPrinter/Parenthesizer.lean:builtin_initialize
+src/Lean/Meta/ExprDefEq.lean:builtin_initialize checkAssignmentExceptionId : InternalExceptionId ← registerInternalExceptionId `checkAssignment
+src/Lean/Meta/ExprDefEq.lean:builtin_initialize outOfScopeExceptionId : InternalExceptionId ← registerInternalExceptionId `outOfScope
+src/Lean/Meta/ExprDefEq.lean:builtin_initialize
+src/Lean/PrettyPrinter/Formatter.lean:unsafe builtin_initialize formatterAttribute : KeyedDeclsAttribute Formatter ←
+src/Lean/PrettyPrinter/Formatter.lean:unsafe builtin_initialize combinatorFormatterAttribute : ParserCompiler.CombinatorAttribute ←
+src/Lean/PrettyPrinter/Formatter.lean:builtin_initialize formatterAliasesRef : IO.Ref (NameMap FormatterAliasValue) ← IO.mkRef {}
+src/Lean/PrettyPrinter/Formatter.lean:builtin_initialize
+src/Lean/Meta/Match/Match.lean:private builtin_initialize matcherExt : EnvExtension (PHashMap MatcherKey Name) ←
+src/Lean/Meta/Match/Match.lean:builtin_initialize
+src/Lean/PrettyPrinter/Basic.lean:builtin_initialize backtrackExceptionId : InternalExceptionId ← registerInternalExceptionId `backtrackFormatter
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.trace
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.assert
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.eqc
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.internalize
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ematch
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ematch.pattern
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ematch.instance
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ematch.instance.assignment
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.eqResolution
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.issues
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.simp
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.split
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.split.candidate
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.split.resolved
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.beta
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.mbtc
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ext
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.ext.candidate
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.lookahead
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.lookahead.add (inherited := true)
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.lookahead.try (inherited := true)
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.lookahead.assert (inherited := true)
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.proofs
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.congr
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.proof
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.proj
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.parent
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.final
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.forallPropagator
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.split
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.canon
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.theorem.activate
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.ematch.pattern
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.beta
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.internalize
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.matchCond
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.matchCond.lambda
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.matchCond.proveFalse
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.mbtc
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.ematch
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.proveEq
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.pushNewFact
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.appMap
+src/Lean/Meta/Tactic/Grind.lean:builtin_initialize registerTraceClass `grind.debug.ext
+src/Lean/Meta/Match/MatchPatternAttr.lean:builtin_initialize matchPatternAttr : TagAttribute ←
+src/Lean/Meta/RecursorInfo.lean:builtin_initialize recursorAttribute : ParametricAttribute Nat ←
+src/Lean/Meta/Match/MatchEqsExt.lean:builtin_initialize matchEqnsExt : EnvExtension MatchEqnsExtState ←
+src/Lean/Meta/Tactic/Cases.lean:builtin_initialize registerTraceClass `Meta.Tactic.cases
+src/Lean/PrettyPrinter/Delaborator/TopDownAnalyze.lean:builtin_initialize analyzeFailureId : InternalExceptionId ← registerInternalExceptionId `analyzeFailure
+src/Lean/PrettyPrinter/Delaborator/TopDownAnalyze.lean:builtin_initialize
+src/Lean/PrettyPrinter/Delaborator/Attributes.lean:builtin_initialize ppUsingAnonymousConstructorAttr : TagAttribute ←
+src/Lean/PrettyPrinter/Delaborator/Attributes.lean:builtin_initialize ppNoDotAttr : TagAttribute ←
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.ac
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.ac.assert
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.ac.internalize
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.ac.basis
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.op
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.simp
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.check
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.queue
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.superpose
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize registerTraceClass `grind.debug.ac.eq
+src/Lean/Meta/Tactic/Grind/AC.lean:builtin_initialize
+src/Lean/PrettyPrinter/Delaborator/Basic.lean:builtin_initialize delabFailureId : InternalExceptionId ← registerInternalExceptionId `delabFailure
+src/Lean/PrettyPrinter/Delaborator/Basic.lean:unsafe builtin_initialize delabAttribute : KeyedDeclsAttribute Delab ←
+src/Lean/PrettyPrinter/Delaborator/Basic.lean:unsafe builtin_initialize appUnexpanderAttribute : KeyedDeclsAttribute Unexpander ←
+src/Lean/PrettyPrinter/Delaborator/Basic.lean:builtin_initialize
+src/Lean/Meta/Tactic/Simp/Main.lean:builtin_initialize congrHypothesisExceptionId : InternalExceptionId ←
+src/Lean/Meta/Tactic/Grind/Order/Types.lean:builtin_initialize orderExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Match/MatchEqs.lean:builtin_initialize matchCongrEqnsExt : EnvExtension (PHashMap Name (Array Name)) ←
+src/Lean/Meta/Match/MatchEqs.lean:builtin_initialize registerTraceClass `Meta.Match.matchEqs
+src/Lean/Meta/Match/MatchEqs.lean:builtin_initialize registerReservedNamePredicate (isMatchEqName? · · |>.isSome)
+src/Lean/Meta/Match/MatchEqs.lean:builtin_initialize registerReservedNameAction fun name => do
+src/Lean/InternalExceptionId.lean:builtin_initialize internalExceptionsRef : IO.Ref (Array Name) ← IO.mkRef #[]
+src/Lean/Meta/Match/MatcherInfo.lean:builtin_initialize extension : SimplePersistentEnvExtension Entry State ←
+src/Lean/Parser.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Types.lean:private builtin_initialize solverExtensionsRef : IO.Ref (Array (SolverExtension SolverExtensionState)) ← IO.mkRef #[]
+src/Lean/ReducibilityAttrs.lean:builtin_initialize reducibilityCoreExt : PersistentEnvExtension (Name × ReducibilityStatus) (Name × ReducibilityStatus) (NameMap ReducibilityStatus) ←
+src/Lean/ReducibilityAttrs.lean:builtin_initialize reducibilityExtraExt : SimpleScopedEnvExtension (Name × ReducibilityStatus) (SMap Name ReducibilityStatus) ←
+src/Lean/ReducibilityAttrs.lean:builtin_initialize
+src/Lean/ReducibilityAttrs.lean:builtin_initialize
+src/Lean/ReducibilityAttrs.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/ExtAttr.lean:builtin_initialize extTheoremsExt : SimpleScopedEnvExtension Name ExtTheorems ←
+src/Lean/Meta/LetToHave.lean:builtin_initialize
+src/Lean/ReservedNameAction.lean:private builtin_initialize reservedNameActionsRef : IO.Ref (Array ReservedNameAction) ← IO.mkRef #[]
+src/Lean/ReservedNameAction.lean:builtin_initialize
+src/Lean/Meta/Tactic/FunInd.lean:builtin_initialize
+src/Lean/Meta/Tactic/FunInd.lean:builtin_initialize
+src/Lean/Modifiers.lean:builtin_initialize protectedExt : TagDeclarationExtension ← mkTagDeclarationExtension
+src/Lean/Meta/LevelDefEq.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/EMatchTheorem.lean:private builtin_initialize symbolPrioExt : SimpleScopedEnvExtension SymbolPriorityEntry SymbolPriorities ←
+src/Lean/Meta/Tactic/Grind/EMatchTheorem.lean:private builtin_initialize ematchTheoremsExt : SimpleScopedEnvExtension EMatchTheorem (Theorems EMatchTheorem) ←
+src/Lean/Meta/Tactic/Induction.lean:builtin_initialize registerTraceClass `Meta.Tactic.induction
+src/Lean/Meta/Tactic/Util.lean:builtin_initialize registerTraceClass `Meta.Tactic
+src/Lean/Meta/Tactic/Subst.lean:builtin_initialize registerTraceClass `Meta.Tactic.subst
+src/Lean/Meta/Tactic/Simp/SimpAll.lean:builtin_initialize
+src/Lean/Meta/MethodSpecs.lean:builtin_initialize methodSpecsAttr : ParametricAttribute MethodSpecsAttrData ←
+src/Lean/Meta/MethodSpecs.lean:builtin_initialize methodSpecsSimpExtension : SimpExtension ←
+src/Lean/Meta/MethodSpecs.lean:builtin_initialize
+src/Lean/Meta/MethodSpecs.lean:builtin_initialize
+src/Lean/Meta/Tactic/Split.lean:builtin_initialize discrGenExId : InternalExceptionId ←
+src/Lean/Meta/Tactic/Split.lean:builtin_initialize
+src/Lean/Meta/Tactic/FunIndInfo.lean:builtin_initialize funIndInfoExt : MapDeclarationExtension FunIndInfo ← mkMapDeclarationExtension
+src/Lean/Meta/Tactic/Grind/Injective.lean:builtin_initialize registerTraceClass `grind.inj
+src/Lean/Meta/Tactic/Grind/Injective.lean:builtin_initialize registerTraceClass `grind.inj.assert
+src/Lean/Meta/Tactic/Grind/Injective.lean:builtin_initialize registerTraceClass `grind.debug.inj
+src/Lean/Meta/Tactic/Grind/Injective.lean:private builtin_initialize injectiveTheoremsExt : SimpleScopedEnvExtension InjectiveTheorem (Theorems InjectiveTheorem) ←
+src/Lean/Meta/Instances.lean:builtin_initialize instanceExtension : SimpleScopedEnvExtension InstanceEntry Instances ←
+src/Lean/Meta/Instances.lean:builtin_initialize
+src/Lean/Meta/Instances.lean:builtin_initialize defaultInstanceExtension : SimplePersistentEnvExtension DefaultInstanceEntry DefaultInstances ←
+src/Lean/Meta/Instances.lean:builtin_initialize
+src/Lean/Meta/Tactic/NormCast.lean:builtin_initialize pushCastExt : SimpExtension ←
+src/Lean/Meta/Tactic/NormCast.lean:builtin_initialize normCastExt : NormCastExtension ← pure {
+src/Lean/Meta/Tactic/NormCast.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Meta/Tactic/AuxLemma.lean:builtin_initialize auxLemmasExt : EnvExtension AuxLemmas ←
+src/Lean/Meta/Tactic/Contradiction.lean:builtin_initialize registerTraceClass `Meta.Tactic.contradiction
+src/Lean/Meta/Tactic/LibrarySearch.lean:builtin_initialize registerTraceClass `Tactic.librarySearch
+src/Lean/Meta/Tactic/LibrarySearch.lean:builtin_initialize registerTraceClass `Tactic.librarySearch.lemmas
+src/Lean/Meta/Tactic/LibrarySearch.lean:private builtin_initialize defaultLibSearchState : IO.Ref (Option (LazyDiscrTree (Name × DeclMod))) ← do
+src/Lean/Meta/Tactic/LibrarySearch.lean:private builtin_initialize ext : EnvExtension LibSearchState ←
+src/Lean/Meta/Tactic/LibrarySearch.lean:private builtin_initialize abortSpeculationId : InternalExceptionId ←
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize builtinSimprocDeclsRef : IO.Ref BuiltinSimprocs ← IO.mkRef {}
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize simprocDeclExt : PersistentEnvExtension SimprocDecl SimprocDecl SimprocDeclExtState ←
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize builtinSimprocsRef : IO.Ref Simprocs ← IO.mkRef {}
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize builtinSEvalprocsRef : IO.Ref Simprocs ← IO.mkRef {}
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize simprocExtensionMapRef : IO.Ref SimprocExtensionMap ← IO.mkRef {}
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize simprocExtension : SimprocExtension ← registerSimprocAttr `simprocAttr "Simplification procedure" (some builtinSimprocsRef)
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize simprocSEvalExtension : SimprocExtension ← registerSimprocAttr `sevalprocAttr "Symbolic evaluator procedure" (some builtinSEvalprocsRef)
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize
+src/Lean/Meta/Tactic/Simp/Simproc.lean:builtin_initialize
+src/Lean/Meta/Tactic/Rewrites.lean:builtin_initialize registerTraceClass `Tactic.rewrites
+src/Lean/Meta/Tactic/Rewrites.lean:builtin_initialize registerTraceClass `Tactic.rewrites.lemmas
+src/Lean/Meta/Tactic/Rewrites.lean:private builtin_initialize ExtState.default : IO.Ref (Option (LazyDiscrTree (Name × RwDirection))) ← do
+src/Lean/Meta/Tactic/Rewrites.lean:private builtin_initialize ext : EnvExtension ExtState ←
+src/Lean/Meta/Tactic/AC/Main.lean:builtin_initialize
+src/Lean/Meta/Tactic/Acyclic.lean:builtin_initialize
+src/Lean/Meta/Tactic/Ext.lean:builtin_initialize extExtension :
+src/Lean/Meta/Tactic/ElimInfo.lean:builtin_initialize customEliminatorExt : SimpleScopedEnvExtension CustomEliminator CustomEliminators ←
+src/Lean/Meta/Tactic/ElimInfo.lean:builtin_initialize
+src/Lean/Meta/Tactic/ElimInfo.lean:builtin_initialize
+src/Lean/Meta/Tactic/Simp/SimpTheorems.lean:builtin_initialize simpExtensionMapRef : IO.Ref SimpExtensionMap ← IO.mkRef {}
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.congr (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.discharge (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.rewrite (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.unify (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.ground (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.loopProtection (inherited := true)
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.numSteps
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Meta.Tactic.simp.heads
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Debug.Meta.Tactic.simp
+src/Lean/Meta/Tactic/Simp.lean:builtin_initialize registerTraceClass `Debug.Meta.Tactic.simp.congr (inherited := true)
+src/Lean/Meta/Tactic/Simp/SimpCongrTheorems.lean:builtin_initialize congrExtension : SimpleScopedEnvExtension SimpCongrTheorem SimpCongrTheorems ←
+src/Lean/Meta/Tactic/Simp/SimpCongrTheorems.lean:builtin_initialize
+src/Lean/Meta/Tactic/Simp/Attr.lean:builtin_initialize simpExtension : SimpExtension ← registerSimpAttr `simp "simplification theorem"
+src/Lean/Meta/Tactic/Simp/Attr.lean:builtin_initialize sevalSimpExtension : SimpExtension ← registerSimpAttr `seval "symbolic evaluator theorem"
+src/Lean/Meta/Tactic/Symm.lean:builtin_initialize symmExt :
+src/Lean/Meta/Tactic/Symm.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try.collect
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try.collect.funInd
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try.debug
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try.debug.funInd
+src/Lean/Meta/Tactic/Try.lean:builtin_initialize registerTraceClass `try.debug.chain
+src/Lean/Meta/Tactic/SplitIf.lean:builtin_initialize registerTraceClass `Meta.Tactic.splitIf
+src/Lean/Meta/Tactic/Grind/Arith/CommRing/Types.lean:builtin_initialize ringExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Tactic/Rfl.lean:builtin_initialize registerBuiltinAttribute {
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.dist
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.internalize
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.internalize.term (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.propagate
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.eq
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.eq.to (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.eq.from (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.offset.model
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.debug.offset
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize registerTraceClass `grind.debug.offset.proof
+src/Lean/Meta/Tactic/Grind/Arith/Offset.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Attr.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.nonlinear
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.model
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.assert
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.assert.trivial
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.assert.unsat
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.assert.store
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.cutsat.assert.nonlinear
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.subst
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.split (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.assign (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.conflict (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.backtrack (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.internalize
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.toInt
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.cnstrs
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.search.reorder
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize registerTraceClass `grind.debug.cutsat.elimEq
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.order
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.order.assert
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.order.internalize
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.order.internalize.term
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.debug.order
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.debug.order.add_edge (inherited := true)
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.debug.order.propagate (inherited := true)
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.debug.order.check_eq_true (inherited := true)
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize registerTraceClass `grind.debug.order.check_eq_false (inherited := true)
+src/Lean/Meta/Tactic/Grind/Order.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.internalize
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert.unsat (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert.trivial (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert.queue (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert.basis (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.assert.store (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.simp
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.superpose
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.ring.impEq
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.simp
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.proof
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.check
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.impEq
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.simpBasis
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.basis
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize registerTraceClass `grind.debug.ring.rabinowitsch
+src/Lean/Meta/Tactic/Grind/Arith/CommRing.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/AC/Types.lean:builtin_initialize acExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.internalize
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.assert
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.model
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.assert.unsat (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.assert.trivial (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.assert.store (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.linarith.assert.ignored (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.search
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.search.conflict (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.search.assign (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.search.split (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.search.backtrack (inherited := true)
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize registerTraceClass `grind.debug.linarith.subst
+src/Lean/Meta/Tactic/Grind/Arith/Linear.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:builtin_initialize cutsatExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Tactic/Grind/Arith/Offset/Types.lean:builtin_initialize offsetExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Tactic/Grind/Arith/Linear/Types.lean:builtin_initialize linearExt : SolverExtension State ← registerSolverExtension (return {})
+src/Lean/Meta/Tactic/Grind/PropagatorAttr.lean:builtin_initialize builtinPropagatorsRef : IO.Ref BuiltinPropagators ← IO.mkRef {}
+src/Lean/Meta/Tactic/Grind/PropagatorAttr.lean:builtin_initialize
+src/Lean/Meta/Tactic/Grind/Cases.lean:builtin_initialize casesExt : SimpleScopedEnvExtension CasesEntry CasesTypes ←
+src/Lean/Meta/Tactic/Grind/SimpUtil.lean:builtin_initialize normExt : SimpExtension ← mkSimpExt
+tests/lean/run/builtinInitStx.lean:The `builtin_initialize` command should allow for attributes and an `unsafe` modifier.
+tests/lean/run/builtinInitStx.lean:unsafe builtin_initialize

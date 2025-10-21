@@ -1,0 +1,96 @@
+lake/tests/order/Y.lean:def main := IO.println "root"
+lake/tests/order/foo/Y.lean:def main := IO.println "bar"
+lake/tests/order/bar/Y.lean:def main := IO.println "foo"
+lake/tests/externLib/ffi/Main.lean:def main : IO Unit :=
+lake/tests/externLib/Main.lean:def main : IO Unit :=
+lake/tests/toml/Test.lean:def main : IO UInt32 := do
+lake/tests/lean/Test.lean:def main (args : List String) : IO Unit :=
+lake/tests/cache/Main.lean:def main : IO Unit := pure ()
+lake/tests/kinds/test.sh:echo "def main : IO Unit := pure ()" > files/exe.lean
+lake/tests/packageOverrides/bar2/bar.lean:def main : IO Unit :=
+lake/tests/packageOverrides/bar1/bar.lean:def main : IO Unit :=
+lake/tests/packageOverrides/foo/foo.lean:def main : IO Unit :=
+lake/tests/driver/driver.lean:def main (args : List String) : IO PUnit := do
+lake/tests/precompileLink/orderTest.lean:def main : IO Unit := do
+lake/tests/reversion/Main.lean:def main (args : List String) : IO Unit :=
+lake/tests/clone/test/Main.lean:def main : IO Unit :=
+lake/tests/inputFile/test.lean:def main (args : List String) : IO Unit := do
+lake/tests/buildArgs/foo.lean:def main : IO Unit :=
+lake/tests/buildArgs/Main.lean:def main : IO Unit :=
+lake/tests/rebuild/Main.lean:def main : IO Unit :=
+lake/tests/query/exe.lean:def main : IO Unit := pure ()
+lake/tests/postUpdate/dep/hello.lean:def main (args : List String) : IO Unit := do
+lake/tests/llvm-bitcode-gen/Main.lean:def main : IO Unit :=
+lake/README.md:Main.lean      # main file of the executable (contains `def main`)
+lake/README.md:def main : IO Unit :=
+lake/Lake/CLI/Init.lean:def mainFileName : FilePath :=
+lake/Lake/CLI/Init.lean:def mainFileContents (libRoot : Name) :=
+lake/Lake/CLI/Init.lean:def main : IO Unit :=
+lake/Lake/CLI/Init.lean:s!"def main : IO Unit :=
+lake/Lake/Build/Run.lean:private def main (init : Array OpaqueJob) : MonitorM PUnit := do
+lake/examples/targets/src/c.lean:def main : IO PUnit :=
+lake/examples/targets/src/b.lean:def main : IO PUnit :=
+lake/examples/targets/src/a.lean:def main : IO PUnit :=
+lake/examples/ffi/app/Main.lean:def main : IO Unit :=
+lake/examples/ffi/lib/lean/Main.lean:def main : IO Unit :=
+lake/examples/deps/foo/Main.lean:def main : IO Unit :=
+lake/examples/deps/bar/Main.lean:def main : IO Unit :=
+lake/examples/hello/Main.lean:def main (args : List String) : IO Unit :=
+lake/LakeMain.lean:public def main (args : List String) : IO UInt32 := do
+Lean/Util/CollectFVars.lean:  partial def main : Expr → Visitor
+Lean/Util/CollectMVars.lean:  partial def main : Expr → Visitor
+Lean/Util/CollectLooseBVars.lean:partial def main (e : Expr) (offset : Nat) : M Unit := do
+Lean/Util/NumApps.lean:unsafe def main (e : Expr) : NameMap Nat :=
+Lean/Util/CollectLevelMVars.lean:  partial def main : Expr → Visitor
+Lean/Util/FindLevelMVar.lean:  partial def main (p : LMVarId → Bool) : Expr → Visitor
+Lean/Util/FindLevelMVar.lean:  partial def mainLevel (p : LMVarId → Bool) : Level → Visitor
+Lean/Util/NumObjs.lean:unsafe def main (e : Expr) : Nat :=
+Lean/Util/FindMVar.lean:  partial def main (p : MVarId → Bool) : Expr → Visitor
+Lean/Util/CollectLevelParams.lean:  partial def main : Expr → Visitor
+Lean/Meta/Tactic/SolveByElim.lean:def mainGoalProc (cfg : SolveByElimConfig := {}) (proc : MVarId → MetaM (List MVarId)) : SolveByElimConfig :=
+Lean/Meta/Tactic/Simp/SimpAll.lean:def main : M (Option MVarId) := do
+Lean/Meta/Tactic/Simp/Main.lean:def mainCore (e : Expr) (ctx : Context) (s : State := {}) (methods : Methods := {}) : MetaM (Result × State) := do
+Lean/Meta/Tactic/Simp/Main.lean:def main (e : Expr) (ctx : Context) (stats : Stats := {}) (methods : Methods := {}) : MetaM (Result × Stats) := do
+Lean/Meta/Tactic/Try/Collect.lean:unsafe def main (mvarId : MVarId) (config : Try.Config) : MetaM Result := mvarId.withContext do
+Lean/Meta/Tactic/FunIndCollect.lean:unsafe def main (needle : FunIndInfo) (mvarId : MVarId) : MetaM (Array Expr) := mvarId.withContext do
+Lean/Meta/Tactic/Grind/MBTC.lean:private def mainMark  := mkConst `__grind_main_arg
+Lean/Meta/Tactic/Grind/EMatch.lean:private def main (p : Expr) (cnstrs : List Cnstr) : M Unit := do
+Lean/Meta/Tactic/Grind/EMatchTheorem.lean:def main (patterns : List Expr) (symPrios : SymbolPriorities) (minPrio : Nat) : MetaM (List Expr × List HeadIndex × Std.HashSet Nat) := do
+Lean/Meta/Tactic/Grind/Main.lean:def main (mvarId : MVarId) (params : Params) (fallback : Fallback) : MetaM Result := do profileitM Exception "grind" (← getOptions) do
+Lean/Meta/LetToHave.lean:private def main (e : Expr) : MetaM Expr := do
+Lean/Meta/SynthInstance.lean:def main (type : Expr) (maxResultSize : Nat) : MetaM (Option AbstractMVarsResult) :=
+Lean/Meta/ACLt.lean:partial def main (a b : Expr) (mode : ReduceMode := .none) : MetaM Bool := do
+Lean/Meta/SizeOf.lean:partial def main (lhs rhs : Expr) : M Expr := do
+Lean/Elab/ParseImportsFast.lean:def main : Parser :=
+Lean/Elab/myfetch.lean:def main : IO Unit := do
+Lean/Elab/lean_prototypes.txt:def main : StructInstM Expr
+Lean/Elab/lean_prototypes.txt:def main : M Expr
+Lean/Elab/lean_prototypes.txt:def main : M Expr
+Lean/Elab/lean_prototypes.txt:def main (sectionVars : Array Expr) (mainHeaders : Array DefViewElabHeader) (mainFVars : Array Expr) (mainVals : Array Expr) (letRecsToLift : List LetRecToLift) : TermElabM (Array PreDefinition)
+Lean/Elab/lean_prototypes.txt:def main (alt : MatchAltView) : M MatchAltView
+Lean/Elab/lean_prototypes.txt:def main (discr : Term) (alts : Array Syntax) (elseAlt : Syntax) : MacroM Syntax
+Lean/Elab/lean_prototypes.txt:def main (patternVarDecls : Array PatternVarDecl) (ps : Array Expr) (matchType : Expr) (k : Array LocalDecl → Array Pattern → Expr → TermElabM α) : TermElabM α
+Lean/Elab/StructInst.lean:private def main : StructInstM Expr := do
+Lean/Elab/fetchFunc3.py:def main():
+Lean/Elab/fetchFunc.py:def main():
+Lean/Elab/fetchFunc2.py:def main():
+Lean/Elab/App.lean:  partial def main : M Expr := do
+Lean/Elab/App.lean:partial def main : M Expr := do
+Lean/Elab/MutualDef.lean:def main (sectionVars : Array Expr) (mainHeaders : Array DefViewElabHeader) (mainFVars : Array Expr) (mainVals : Array Expr) (letRecsToLift : List LetRecToLift)
+Lean/Elab/PatternVar.lean:def main (alt : MatchAltView) : M MatchAltView := do
+Lean/Elab/MatchExpr.lean:def main (discr : Term) (alts : Array Syntax) (elseAlt : Syntax) : MacroM Syntax := do
+Lean/Elab/Match.lean:partial def main (patternVarDecls : Array PatternVarDecl) (ps : Array Expr) (matchType : Expr) (k : Array LocalDecl → Array Pattern → Expr → TermElabM α) : TermElabM α := do
+Lean/Environment.lean:def mainModule (env : Environment) : Name :=
+Lean/Server/Test/Runner.lean:partial def main (args : List String) : IO Unit := do
+Lean/Server/Watchdog.lean:  partial def mainLoop (clientTask : ServerTask ServerEvent) : ServerM Unit := do
+Lean/Server/FileWorker.lean:  partial def mainLoop : WorkerM Unit := do
+Lean/Compiler/LCNF/LambdaLifting.lean:def main (decl : Decl) : LiftM Decl := do
+Lean/Compiler/LCNF/Specialize.lean:def main (decl : Decl) : SpecializeM Decl := do
+Binary file Lean/Compiler/LCNF/.LambdaLifting.lean.swp matches
+Lean/Compiler/LCNF/Main.lean:def main (declNames : Array Name) : CoreM Unit := do
+Lean/Compiler/IR/EmitLLVM.lean:def main : M llvmctx Unit := do
+Lean/Compiler/IR/ExpandResetReuse.lean:def main (d : Decl) : Decl :=
+Lean/Compiler/IR/EmitC.lean:def main : M Unit := do
+Lean/MetavarContext.lean:@[inline] private partial def main (pf : FVarId → Bool) (pm : MVarId → Bool) (e : Expr) : M Bool :=
+Lean/MetavarContext.lean:partial def main (e : Expr) : M Expr :=
+Leanc.lean:def main (args : List String) : IO UInt32 := do

@@ -1,0 +1,345 @@
+back__/Parser.lean:-- Close the mutual recursion loop; see corresponding `[extern]` in the parenthesizer.
+back__/AddDecl.lean:    | .defnDecl defn | .mutualDefnDecl [defn] =>
+back__/Replay.lean:mutual
+back__/Replay.lean:    -- Check that this name is still pending: a mutual block may have taken care of it.
+Compiler/LCNF/ElimDeadBranches.lean:mutual
+Compiler/LCNF/ElimDeadBranches.lean:  a single declaration or a mutual block of declarations where their
+Compiler/LCNF/back__/LCtx.lean:mutual
+Compiler/LCNF/back__/PullLetDecls.lean:mutual
+Compiler/LCNF/back__/Check.lean:mutual
+Compiler/LCNF/back__/PullFunDecls.lean:mutual
+Compiler/LCNF/back__/Renaming.lean:mutual
+Compiler/LCNF/back__/ToMono.lean:mutual
+Compiler/LCNF/back__/FixedParams.lean:We assume functions that are not in mutual block do not invoke the function being
+Compiler/LCNF/back__/FixedParams.lean:When analyzing a function call to another function in the same mutual block,
+Compiler/LCNF/back__/FixedParams.lean:  /-- Declaration in the same mutual block. -/
+Compiler/LCNF/back__/FixedParams.lean:mutual
+Compiler/LCNF/back__/FixedParams.lean:      -- Call to another function in the same mutual block.
+Compiler/LCNF/back__/FixedParams.lean:Given the (potentially mutually) recursive declarations `decls`,
+Compiler/LCNF/back__/FixedParams.lean:The function assumes that if a function `f` was declared in a mutual block, then `decls`
+Compiler/LCNF/back__/FixedParams.lean:contains all (computationally relevant) functions in the mutual block.
+Compiler/LCNF/back__/DeclHash.lean:mutual
+Compiler/LCNF/back__/ExtractClosed.lean:mutual
+Compiler/LCNF/back__/ExtractClosed.lean:mutual
+Compiler/LCNF/back__/ExtractClosed.lean:mutual
+Compiler/LCNF/back__/LambdaLifting.lean:mutual
+Compiler/LCNF/back__/Specialize.lean:mutual
+Compiler/LCNF/back__/Closure.lean:mutual
+Compiler/LCNF/back__/ElimDead.lean:mutual
+Compiler/LCNF/back__/CompilerM.lean:mutual
+Compiler/LCNF/back__/Internalize.lean:mutual
+Compiler/LCNF/back__/ToExpr.lean:mutual
+Compiler/LCNF/back__/AlphaEqv.lean:mutual
+Compiler/LCNF/back__/PrettyPrinter.lean:mutual
+Compiler/LCNF/back__/StructProjCases.lean:mutual
+Compiler/LCNF/back__/ReduceArity.lean:This module does not have similar support for mutual recursive applications.
+Compiler/LCNF/back__/Level.lean:mutual
+Compiler/LCNF/back__/InferType.lean:mutual
+Compiler/LCNF/back__/SpecInfo.lean:assumes that if a function `f` was declared in a mutual block, then `decls`
+Compiler/LCNF/back__/SpecInfo.lean:contains all (computationally relevant) functions in the mutual block.
+Compiler/LCNF/back__/Types.lean:mutual
+Compiler/LCNF/Basic.lean:mutual
+Compiler/LCNF/Basic.lean:mutual
+Compiler/LCNF/Basic.lean:mutual
+Compiler/LCNF/Basic.lean:Traverse the given block of potentially mutually recursive functions
+Compiler/LCNF/Simp/InlineCandidate.lean:  /-- `recursive = true` if the declaration being inline is in a mutually recursive block. -/
+Compiler/LCNF/Simp/Main.lean:mutual
+Compiler/LCNF/Simp/Main.lean:Note: `inlineApp?` did not use to be in this mutually recursive declaration.
+Compiler/LCNF/Simp/Used.lean:mutual
+Binary file Compiler/LCNF/.LambdaLifting.lean.swp matches
+Compiler/InlineAttrs.lean:    -- We do not allow `[macro_inline]` attributes at mutual recursive definitions
+Compiler/IR/EmitLLVM.lean:mutual
+Compiler/IR/back__/Borrow.lean:/-! We perform borrow inference in a block of mutually recursive functions.
+Compiler/IR/back__/Borrow.lean:/-! Apply the inferred borrow annotations stored at `ParamMap` to a block of mutually
+Compiler/IR/back__/Borrow.lean:  decls    : Array Decl  -- block of mutually recursive functions
+Compiler/IR/back__/LiveVars.lean:mutual
+Compiler/IR/back__/ToIR.lean:mutual
+Compiler/IR/Basic.lean:mutual
+Compiler/IR/EmitC.lean:mutual
+Compiler/Old.lean:  | .mutualDefnDecl defs     => defs.toArray.map (·.name)
+Data/Xml/Parser.lean:mutual
+Data/Xml/Parser.lean:mutual
+Data/Xml/Basic.lean:mutual
+Data/Xml/Basic.lean:mutual
+Data/Trie.lean:mutual
+Data/Json/Parser.lean:mutual
+Declaration.lean:    List of all (including this one) declarations in the same mutual block.
+Declaration.lean:    to save the information provided by the user when using mutual blocks.
+Declaration.lean:    List of all (including this one) declarations in the same mutual block.
+Declaration.lean:    List of all (including this one) declarations in the same mutual block.
+Declaration.lean:  | mutualDefnDecl  (defns : List DefinitionVal) -- All definitions must be marked as `unsafe` or `partial`
+Declaration.lean:  | .mutualDefnDecl defns   => defns.map (·.name)
+Declaration.lean:  | .mutualDefnDecl defns   => defns.map (·.name)
+Declaration.lean:  | .mutualDefnDecl vals                             => vals.foldlM (fun a v => do let a ← f a v.type; f a v.value) a
+Declaration.lean:/-- The kernel compiles (mutual) inductive declarations (see `inductiveDecls`) into a set of
+Declaration.lean:    - `Declaration.inductDecl` (for each inductive datatype in the mutual Declaration),
+Declaration.lean:    - `Declaration.ctorDecl` (for each Constructor in the mutual Declaration),
+Declaration.lean:  /-- List of all (including this one) inductive datatypes in the mutual declaration containing this one -/
+Declaration.lean:  /-- List of all inductive datatypes in the mutual declaration that generated this recursor -/
+Declaration.lean:  List of all (including this one) declarations in the same mutual block.
+DocString/Parser.lean:mutual
+DocString/Parser.lean:mutual
+Elab/Tactic/Do/LetElim.lean:mutual
+Elab/Tactic/Do/Spec.lean:mutual
+Elab/Tactic/BVDecide/Frontend/BVDecide/Reify.lean:mutual
+Elab/Tactic/Try.lean:@[extern "lean_eval_suggest_tactic"] -- forward definition to avoid mutual block
+Elab/Tactic/Omega/Core.lean:mutual
+Elab/Tactic/Omega/Frontend.lean:mutual
+Elab/Tactic/Omega/Frontend.lean:mutual
+Elab/Tactic/Induction.lean:      throwUnsupportedInductionType indVal.name "mutually inductive"
+Elab/Tactic/Induction.lean:      throwError "No functional {theoremKind} theorem for `{.ofConstName fnName}`, or function is mutually recursive "
+Elab/Tactic/Induction.lean:      throwError "No functional {theoremKind} theorem for `{.ofConstName fnName}`, or function is mutually recursive "
+Elab/Tactic/RCases.lean:mutual
+Elab/Tactic/RCases.lean:mutual
+Elab/Tactic/RCases.lean:mutual
+Elab/Structure.lean:mutual
+Elab/Structure.lean:        throwError "Structure cannot extend types defined in the same mutual block"
+Elab/Command.lean:  (mutual) defs and contained tactics, in which case the `DynamicSnapshot` is a
+Elab/PreDefinition/FixedParams.lean:This module contains the logic for figuring out, given mutually recursive predefinitions,
+Elab/PreDefinition/FixedParams.lean:To determine which parameters in mutually recursive predefinitions are fixed, and how they
+Elab/PreDefinition/FixedParams.lean:Under the assumption that the predefinitions indeed are mutually recursive, then the resulting graph,
+Elab/PreDefinition/PartialFixpoint/Induction.lean:This function handles mutual recursion cases where we have a tuple of predicates being compared. For each predicate in the tuple it projects out the corresponding components from both sides of the relation and unfolds the partial order relation into quantified implications using `unfoldPredRel`
+Elab/PreDefinition/PartialFixpoint/Induction.lean:- `eqnInfo`: Equation information containing declaration names and fixpoint types for each predicate in the mutual block
+Elab/PreDefinition/PartialFixpoint/Induction.lean:An array of expressions, where each element represents the unfolded implication for the corresponding predicate in the mutual block.
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  | .partialFixpoint, true => return `mutual_fixpoint_induct
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  | _, true => return `mutual_induct
+Elab/PreDefinition/PartialFixpoint/Induction.lean:        -- All definitions from `mutual` block as PProdN
+Elab/PreDefinition/PartialFixpoint/Induction.lean:        -- For each predicate in the mutual group we generate an appropriate candidate predicate
+Elab/PreDefinition/PartialFixpoint/Induction.lean:            -- For the `mutual_induct` variant, we are done.
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  | "mutual_induct" =>
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  | "mutual_fixpoint_induct" =>
+Elab/PreDefinition/PartialFixpoint/Induction.lean:      let isMutual := s.endsWith "mutual_induct" || s.endsWith "mutual_fixpoint_induct"
+Elab/PreDefinition/PartialFixpoint/Induction.lean:Returns true if `name` defined by `partial_fixpoint`, the first in its mutual group,
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  | "mutual_partial_correctness" =>
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  let inductName := name ++ if isConclusionMutual then `mutual_partial_correctness else `partial_correctness
+Elab/PreDefinition/PartialFixpoint/Induction.lean:  let fixpointInductThm := name ++ if isConclusionMutual then `mutual_fixpoint_induct else `fixpoint_induct
+Elab/PreDefinition/PartialFixpoint/Induction.lean:        -- the motives, as expected by `f.mutual_induct`:
+Elab/PreDefinition/PartialFixpoint/Induction.lean:    unless s == "partial_correctness" || s == "mutual_partial_correctness" do return false
+Elab/PreDefinition/PartialFixpoint/Induction.lean:    MetaM.run' <| derivePartialCorrectness p (s.startsWith "mutual")
+Elab/PreDefinition/PartialFixpoint/Main.lean:        preDefs[0]!.declName ++ `mutual
+Elab/PreDefinition/Mutual.lean:This module contains code common to mutual-via-fixedpoint constructions, i.e.
+Elab/PreDefinition/Mutual.lean:well-founded recursion and partial fixed-points, but independent of the details of the mutual packing.
+Elab/PreDefinition/Basic.lean:    let decl := Declaration.mutualDefnDecl <| ← preDefs.toList.mapM fun preDef => return {
+Elab/PreDefinition/Basic.lean:          throwError m!"invalid mutual definition, result types must be in the same universe " ++
+Elab/PreDefinition/Structural/IndGroupInfo.lean:   applies to a whole group of mutual inductives and
+Elab/PreDefinition/Structural/IndGroupInfo.lean:A mutually inductive group, identified by the `all` array of the `InductiveVal` of its
+Elab/PreDefinition/Structural/IndGroupInfo.lean:An instance of an mutually inductive group of inductives, identified by the `all` array
+Elab/PreDefinition/Structural/IndGroupInfo.lean:mutual structural recursion on such incompatible types.
+Elab/PreDefinition/Structural/FindRecArg.lean:    -- Is this argument from the same mutual group of inductives?
+Elab/PreDefinition/Structural/BRecOn.lean:combinators. This assumes that all `.brecOn` functions of a mutual inductive have the same structure.
+Elab/PreDefinition/Structural/Basic.lean:Lets say we have `n` mutually recursive functions whose recursive arguments are from a group
+Elab/PreDefinition/Structural/Basic.lean:of `m` mutually inductive data types. This mapping does not have to be one-to-one: for one type
+Elab/PreDefinition/Structural/RecArgInfo.lean:of a mutually recursive group.
+Elab/PreDefinition/Main.lean:  withRef preDefs[0]!.ref <| ensureReservedNameAvailable preDefs[0]!.declName "mutual_induct"
+Elab/PreDefinition/Main.lean:          This function is mutually recursive with {m}, which {doOrDoes} not have \
+Elab/PreDefinition/Main.lean:        throwErrorAt termBy.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:        throwErrorAt termBy.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:      throwErrorAt preDef.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:      throwErrorAt preDef.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:      throwErrorAt preDef.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:          throwErrorAt stx.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:          throwErrorAt stx.ref m!"Incompatible termination hint; this function is mutually \
+Elab/PreDefinition/Main.lean:          because it may use another recursive declaration in the same mutual block.
+Elab/PreDefinition/WF/Rel.lean:a mutual clique, they must be the same for all functions.
+Elab/PreDefinition/WF/Rel.lean:      throwErrorAt termMeasures[i]!.ref m!"The termination measures of mutually recursive functions " ++
+Elab/PreDefinition/WF/PackMutual.lean:This module contains roughly everything needed to turn mutual n-ary functions into a single unary
+Elab/PreDefinition/WF/PackMutual.lean:def mutualName (fixedParamPerms : FixedParamPerms) (argsPacker : ArgsPacker) (preDefs : Array PreDefinition) : Name :=
+Elab/PreDefinition/WF/PackMutual.lean:      preDefs[0]!.declName ++ `_mutual
+Elab/PreDefinition/WF/PackMutual.lean:  let newFn := mutualName fixedParamPerms argsPacker preDefs
+Elab/PreDefinition/WF/Eqns.lean:  Remark: we could do better for mutual declarations that mix theorems and definitions. However, this is a rare
+Binary file Elab/PreDefinition/WF/.Rel.lean.swp matches
+Elab/PreDefinition/WF/GuessLex.lean:For mutual recursion, a single measure is not just one parameter, but one from each recursive
+Elab/PreDefinition/WF/GuessLex.lean:that assign an order to the functions themselves. This way we can support mutual
+Elab/PreDefinition/WF/GuessLex.lean:For non-mutual definitions, we omit `sizeOf` when the measure does not depend on
+Elab/PreDefinition/WF/GuessLex.lean:For mutual definitions, we omit `sizeOf` only when the measure is (at reducible transparency!) of
+Elab/PreDefinition/WF/GuessLex.lean:def mayOmitSizeOf (is_mutual : Bool) (args : Array Expr) (x : Expr) : MetaM Bool := do
+Elab/PreDefinition/WF/GuessLex.lean:  if is_mutual
+Elab/PreDefinition/WF/GuessLex.lean:  let is_mutual : Bool := preDefs.size > 1
+Elab/PreDefinition/WF/GuessLex.lean:            if  ← mayOmitSizeOf is_mutual xs x
+Elab/PreDefinition/WF/GuessLex.lean:try first, when the mutually recursive functions have similar argument structures
+Elab/PreDefinition/WF/GuessLex.lean:/-- Explain what we found out about the recursive calls (non-mutual case) -/
+Elab/PreDefinition/WF/GuessLex.lean:/-- Explain what we found out about the recursive calls (mutual case) -/
+Elab/PreDefinition/WF/GuessLex.lean:  let mutualMeasures ← generateMeasures (basicMeasures.map (·.size))
+Elab/PreDefinition/WF/GuessLex.lean:  if let #[solution] := mutualMeasures then
+Elab/PreDefinition/WF/GuessLex.lean:  match ← liftMetaM <| solve mutualMeasures callMatrix with
+Elab/lean_prototypes.txt:def mayOmitSizeOf (is_mutual : Bool) (args : Array Expr) (x : Expr) : MetaM Bool
+Elab/lean_prototypes.txt:def mutualName (fixedParamPerms : FixedParamPerms) (argsPacker : ArgsPacker) (preDefs : Array PreDefinition) : Name
+Elab/back__/DefView.lean:    to them at `valueStx`, and other declarations in the same mutual block. -/
+Elab/back__/DefView.lean:/-- State before elaboration of a mutual definition. -/
+Elab/back__/DefView.lean:/-- Snapshot after syntax tree has been split into separate mutual def headers. -/
+Elab/back__/DefView.lean:  /-- Definitions of this mutual block. -/
+Elab/back__/ComputedFields.lean:Sets the computed fields for a block of mutual inductives,
+Elab/back__/ComputedFields.lean:for every inductive in the mutual block,
+Elab/MutualInductive.lean:# Elaborator framework for (mutual) inductives
+Elab/MutualInductive.lean:This module defines the framework for elaborating (mutually recursive) inductive types.
+Elab/MutualInductive.lean:and the framework orchestrates their mutual elaboration.
+Elab/MutualInductive.lean:* `Lean.Elab.Command.elabInductives` to elaborate a list of syntaxes as mutually inductive types.
+Elab/MutualInductive.lean:For `mutual ... end` in particular:
+Elab/MutualInductive.lean:* `Lean.Elab.Command.isMutualInductive` to check whether each syntax element of a `mutual ... end` block has a registered inductive elaborator.
+Elab/MutualInductive.lean:* `Lean.Elab.Command.elabMutualInductive` to elaborate a list of syntaxes satisfying `isMutualInductive` as a mutually inductive block.
+Elab/MutualInductive.lean:/-- View of a constructor. Only `ref`, `modifiers`, `declName`, and `declId` are required by the mutual inductive elaborator itself. -/
+Elab/MutualInductive.lean:/-- An intermediate step for mutual inductive elaboration. See `InductiveElabDescr` -/
+Elab/MutualInductive.lean:/-- An intermediate step for mutual inductive elaboration. See `InductiveElabDescr`. -/
+Elab/MutualInductive.lean:/-- An intermediate step for mutual inductive elaboration. See `InductiveElabDescr`. -/
+Elab/MutualInductive.lean:Commands registered using this attribute are allowed to be used together in mutual blocks with
+Elab/MutualInductive.lean:Returns true if the syntax participates in the mutual inductive elaborator.
+Elab/MutualInductive.lean:      throwErrorAt r.view.ref m!"Invalid mutually inductive types: `{r.view.declName}` is {unsafeStr (!isUnsafe)}, \
+Elab/MutualInductive.lean:        ++ .note m!"Safe and unsafe inductive declarations cannot both occur in the same `mutual` block"
+Elab/MutualInductive.lean:        throwErrorAt r.view.ref "Invalid mutually inductive type: Mutually inductive classes are not supported"
+Elab/MutualInductive.lean:      throwErrorAt r.view.ref m!"Invalid mutually inductive types: `{r.view.shortDeclName}` has {r.numParams} \
+Elab/MutualInductive.lean:        ++ .note m!"All inductive types declared in the same `mutual` block must have the same parameters"
+Elab/MutualInductive.lean:Auxiliary function for checking whether the types in mutually inductive declaration are compatible.
+Elab/MutualInductive.lean:            ++ .note "All inductive types declared in the same `mutual` block must belong to the same type universe"
+Elab/MutualInductive.lean:    | Exception.error ref msg => throw (Exception.error ref m!"Invalid mutually inductive types: {msg}")
+Elab/MutualInductive.lean:Auxiliary function for checking whether the types in mutually inductive declaration are compatible.
+Elab/MutualInductive.lean:  throwError m!"Universe parameter mismatch in mutually inductive types: `{curDeclName}` \
+Elab/MutualInductive.lean:    ++ .note m!"All inductive declarations in the same `mutual` block must have the same universe level parameters"
+Elab/MutualInductive.lean:    elabCommand <| ← `(mutual $computedFieldDefs* end)
+Elab/MutualInductive.lean:Returns true if all elements of the `mutual` block (`Lean.Parser.Command.mutual`) are inductive declarations.
+Elab/MutualInductive.lean:Elaborates a `mutual` block, assuming the commands satisfy `Lean.Elab.Command.isMutualInductive`.
+Elab/MutualInductive.lean:    throwError "A mix of `meta` and non-`meta` declarations in the same `mutual` block is not supported"
+Elab/Deriving/Hashable.lean:  `(mutual $auxDefs:command* end)
+Elab/Deriving/FromToJson.lean:  `(mutual
+Elab/Deriving/FromToJson.lean:  `(mutual
+Elab/Deriving/DecEq.lean:  `(command| mutual $[$res:command]* end)
+Elab/Deriving/ReflBEq.lean:    throwError "Deriving `ReflBEq` for mutual inductives is not supported"
+Elab/Deriving/LawfulBEq.lean:    throwError "Deriving `LawfulBEq` for mutual inductives is not supported"
+Elab/Deriving/Repr.lean:  `(mutual
+Elab/Deriving/ToExpr.lean:It supports mutually inductive types as well.
+Elab/Deriving/ToExpr.lean:For mutually recursive types, we rely on the local instances set up by `mkLocalInstanceLetDecls`.
+Elab/Deriving/ToExpr.lean:For nested and mutually recursive inductive types, we define `partial` instances,
+Elab/Deriving/ToExpr.lean:    -- Recall that mutually inductive types all use the same universe levels, hence we pass the same ToLevel instances to each aux function.
+Elab/Deriving/ToExpr.lean:The implementation of each `toExpr` function for a (mutual) inductive type is given as top-level private definitions.
+Elab/Deriving/ToExpr.lean:For mutual/nested inductive types, then each of the types' `ToExpr` instances are provided as local instances,
+Elab/Deriving/ToExpr.lean:Creates all the auxiliary functions (using `mkAuxFunction`) for the (mutual) inductive type(s).
+Elab/Deriving/ToExpr.lean:Wraps the resulting definition commands in `mutual ... end`.
+Elab/Deriving/ToExpr.lean:  `(mutual $auxDefs:command* end)
+Elab/Deriving/ToExpr.lean:creates all the `instance` commands for the `ToExpr` instances for the (mutual) inductive type(s).
+Elab/Deriving/Ord.lean:  `(mutual
+Elab/Deriving/BEq.lean:  `(mutual
+Elab/Do.lean:mutual
+Elab/App.lean:mutual
+Elab/App.lean:           (because of monad namespaces like `IO` and auxiliary declarations like `mutual_induct`) -/
+Elab/SyntheticMVars.lean:mutual
+Elab/MutualDef.lean:       | .error ref msg => throw (.error ref m!"invalid mutually recursive definitions, {msg}")
+Elab/MutualDef.lean:support mutually recursive declarations in Lean 4.
+Elab/MutualDef.lean:Create the `UsedFVarsMap` mapping that takes the variable id for the mutually recursive functions being defined to the set of
+Elab/MutualDef.lean:/-- Mapping from FVarId of mutually recursive functions being defined to "closure" expression. -/
+Elab/MutualDef.lean:  -- Remark: if `r` is not a singleton, then declaration is using `mutual` or `let rec`,
+Elab/MutualDef.lean:- `sectionVars`:   The section variables used in the `mutual` block.
+Elab/MutualDef.lean:- `mainHeaders`:   The elaborated header of the top-level definitions being defined by the mutual block.
+Elab/MutualDef.lean:- `mainFVars`:     The auxiliary variables used to represent the top-level definitions being defined by the mutual block.
+Elab/MutualDef.lean:  -- Store in recFVarIds the fvarId of every function being defined by the mutual block.
+Elab/MutualDef.lean:      let errorMsg := m!"`mutual` block contains two declarations of the same name `{userName}`"
+Elab/MutualDef.lean:`goalsAccomplished` silent message for theorems and `Prop`-typed examples if the entire mutual block
+Elab/MutualDef.lean:      throwErrorAt d "invalid use of 'nonrec' modifier in 'mutual' block"
+Elab/Declaration.lean:/-- Return true if all elements of the mutual-block are definitions/theorems/abbrevs. -/
+Elab/Declaration.lean:        none -- `mutual` block does not contain any preamble commands
+Elab/Declaration.lean:      none -- a `mutual` block containing only preamble commands is not a valid `mutual` block
+Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+Elab/Declaration.lean:    -- Don't trigger the `expandNamespacedDecl` macro, the namespace is handled by the mutual def
+Elab/Declaration.lean:@[builtin_macro Lean.Parser.Command.mutual]
+Elab/Declaration.lean:@[builtin_command_elab «mutual», builtin_incremental]
+Elab/Declaration.lean:      throwError "invalid mutual block: either all elements of the block must be inductive/structure declarations, or they must all be definitions/theorems/abbrevs"
+Elab/Extra.lean:mutual
+Language/Lean.lean:checking/compiling/linting/... the top-level definition, is interrupted immediately when the mutual
+Level.lean:mutual
+Linter/UnusedVariables.lean:  For example in `mutual def foo := ...  def bar := ... where baz := ... end` this would be
+Linter/MissingDocs.lean:@[builtin_missing_docs_handler «mutual»]
+Message.lean:    | _ => "(kernel) declaration type mismatch" -- TODO fix type checker, type mismatch for mutual decls does not have enough information
+Meta/Tactic/back__/FunIndInfo.lean:    declName ++ `mutual_induct_unfolding
+Meta/Tactic/back__/FunIndInfo.lean:    declName ++ `mutual_induct
+Meta/Tactic/Simp/SimpTheorems.lean:mutual
+Meta/Tactic/FunInd.lean:well-founded, possibly mutual), a **functional induction principle** tailored to proofs about that
+Meta/Tactic/FunInd.lean:For a non-mutual, unary function `foo` (or else for the `_unary` function), we
+Meta/Tactic/FunInd.lean:## Implementation overview (mutual/non-unary well-founded recursion)
+Meta/Tactic/FunInd.lean:If `foo` is not unary and/or part of a mutual reduction, then the induction theorem for `foo._unary`
+Meta/Tactic/FunInd.lean:(i.e. the unary non-mutual recursion function produced by the equation compiler)
+Meta/Tactic/FunInd.lean:foo.mutual_induct : {motive1 : a → b → Prop} {motive2 : c → Prop} →
+Meta/Tactic/FunInd.lean:name of the first function in the mutual group, like the `._unary` definition.
+Meta/Tactic/FunInd.lean:Finally, in `deriveUnpackedInduction`, for each of the functions in the mutual group, a simple
+Meta/Tactic/FunInd.lean:For well-founded recursion (unary, non-mutual by construction) the terms are rather simple: they
+Meta/Tactic/FunInd.lean:mutual function packing), and the main function argument isn't even present.
+Meta/Tactic/FunInd.lean:Use to write inside the packed motives used for mutual structural recursion.
+Meta/Tactic/FunInd.lean:  -- we look in to `PProd.mk`, as it occurs in the mutual structural recursion construction
+Meta/Tactic/FunInd.lean:  -- Special case for traversing the PProd’ed bodies in our encoding of structural mutual recursion
+Meta/Tactic/FunInd.lean:Given a realizer for `foo.mutual_induct`, defines `foo.induct`, `bar.induct` etc.
+Meta/Tactic/FunInd.lean:def projectMutualInduct (unfolding : Bool) (names : Array Name) (mutualInduct : MetaM Name) (finalizeFirstInd : MetaM Unit) : MetaM Unit := do
+Meta/Tactic/FunInd.lean:      let ci ← getConstInfo (← mutualInduct)
+Meta/Tactic/FunInd.lean:For a (non-mutual!) definition of `name`, uses the `FunIndInfo` associated with the `unaryInduct` and
+Meta/Tactic/FunInd.lean:  assert!  fixedParamPerms.perms.size = 1 -- only non-mutual for now
+Meta/Tactic/FunInd.lean:    -- If there is no mutual recursion, we generate the `foo.induct` directly.
+Meta/Tactic/FunInd.lean:Given a recursive definition `foo` defined via structural recursion, derive `foo.mutual_induct`,
+Meta/Tactic/FunInd.lean:        -- context, and are the parts relevant for every function in the mutual group
+Meta/Tactic/FunInd.lean:          -- Now assemble the mutual_induct theorem
+Meta/Tactic/FunInd.lean:          -- terms when we have mutual induction.
+Meta/Tactic/FunInd.lean:          trace[Meta.FunInd] "complete body of mutual induction principle:{indentExpr e'}"
+Meta/Tactic/FunInd.lean:  | "mutual_induct"
+Meta/Tactic/FunInd.lean:  | "mutual_induct_unfolding" =>
+Meta/Tactic/Grind/AC/Types.lean:mutual
+Meta/Tactic/Grind/AC/Types.lean:mutual
+Meta/Tactic/Grind/Proof.lean:mutual
+Meta/Tactic/Grind/Arith/Linear/Proof.lean:mutual
+Meta/Tactic/Grind/Arith/Linear/Proof.lean:mutual
+Meta/Tactic/Grind/Arith/Linear/Proof.lean:-- `DiseqCnstr` is currently mutually recursive with `IneqCnstr`, but it will be in the future.
+Meta/Tactic/Grind/Arith/Linear/Types.lean:mutual
+Meta/Tactic/Grind/Arith/Cutsat/Proof.lean:mutual
+Meta/Tactic/Grind/Arith/Cutsat/Proof.lean:mutual
+Meta/Tactic/Grind/Arith/Cutsat/Types.lean:mutual
+Meta/Tactic/Grind/Arith/EvalNum.lean:mutual
+Meta/Tactic/Grind/Arith/CommRing/Types.lean:mutual
+Meta/ExprDefEq.lean:mutual
+Meta/ExprDefEq.lean:mutual
+Meta/LetToHave.lean:mutual
+Meta/back__/CollectMVars.lean:mutual
+Meta/back__/Offset.lean:mutual
+Meta/back__/PProdN.lean:as used in the `.below` construction, in the `.brecOn` construction for mutual recursion and
+Meta/back__/PProdN.lean:and the `mutual_induct` construction.
+Meta/back__/LevelDefEq.lean:mutual
+Meta/back__/ACLt.lean:mutual
+Meta/Constructions/BRecOn.lean:  -- If this is the first inductive in a mutual group with nested inductives,
+Meta/Constructions/BRecOn.lean:  -- If this is the first inductive in a mutual group with nested inductives,
+Meta/WHNF.lean:mutual
+Meta/WHNF.lean:mutual
+Meta/IndPredBelow.lean:  /-- Parameters of the mutual inductive -/
+Meta/Basic.lean:This module provides four (mutually dependent) goodies that are needed for building the elaborator and tactic frameworks.
+Meta/Basic.lean:mutual
+Meta/ArgsPacker.lean:It is used in the translation of a possibly mutual, possibly n-ary recursive function to a single
+Meta/ArgsPacker.lean:to create the mutual-packed argument of type `domain`.
+Meta/ArgsPacker.lean:Unpacks a mutually packed argument created with `Mutual.mk` returning the
+Meta/ArgsPacker.lean:Given the packed argument of a (possibly) mutual and (possibly) nary call,
+Meta/InferType.lean:mutual
+Meta/SizeOf.lean:  Create `sizeOf` functions for all inductive datatypes in the mutual inductive declaration containing `typeName`
+Meta/SizeOf.lean:  There is a function for each element of the mutual inductive declaration, and for auxiliary recursors for nested inductive types.
+Meta/SizeOf.lean:mutual
+Meta/SizeOf.lean:        Recall that if `info.name` is part of a mutually inductive declaration, then the resulting application
+MetavarContext.lean: `MkBinding` and `elimMVarDepsAux` are mutually recursive, but `cache` is only used at `elimMVarDepsAux`.
+MetavarContext.lean:  had to be reversed. Recall that auxiliary declarations are created when compiling (mutually)
+MetavarContext.lean:mutual
+Parser/Command.lean:@[builtin_command_parser] def «mutual» := leading_parser
+Parser/Command.lean:  "mutual" >> many1 (ppLine >> notSymbol "end" >> commandParser) >>
+PrettyPrinter/Delaborator/TopDownAnalyze.lean:mutual
+PrettyPrinter/Formatter.lean:-- Note that there is a mutual recursion
+PrettyPrinter/Formatter.lean:-- break up big mutual recursion
+PrettyPrinter/Parenthesizer.lean:-- Note that there is a mutual recursion
+PrettyPrinter/Parenthesizer.lean:-- break up big mutual recursion
+ResolveName.lean:    mutual
+ResolveName.lean:    mutual
+ResolveName.lean:         The current solution also has a limitation when using `def _root_` in a mutual block.
+ResolveName.lean:         mutual
+ResolveName.lean:         This is not a big problem because we are planning to modify how we handle the mutual block in the future.
+Server/FileWorker/WidgetRequests.lean:mutual
+Server/FileWorker/RequestHandling.lean:      | `(mutual $body* end) => do
+Server/Rpc/Deriving.lean:    throwError "mutually inductive types are not supported"
+Structure.lean:mutual
+Util/CollectFVars.lean:mutual
+Util/CollectMVars.lean:mutual
+Util/SCC.lean:  compiler mutually recursive definitions, where each function
+Util/SCC.lean:  (and nested let-rec) in the mutual block is a vertex.
+Util/CollectLevelMVars.lean:mutual
+Util/CollectLevelMVars.lean:mutual
+Util/FindLevelMVar.lean:mutual
+Util/FindMVar.lean:mutual
+Util/CollectLevelParams.lean:mutual
+Util/CollectLevelParams.lean:mutual

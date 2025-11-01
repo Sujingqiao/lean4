@@ -1,0 +1,484 @@
+Init/Core.lean:inductive Sum (α : Type u) (β : Type v) where
+Init/Core.lean:inductive PSum (α : Sort u) (β : Sort v) where
+Init/Core.lean:inductive Exists {α : Sort u} (p : α → Prop) : Prop where
+Init/Core.lean:inductive ForInStep (α : Type u) where
+Init/Core.lean:inductive DoResultPRBC (α β σ : Type u) where
+Init/Core.lean:inductive DoResultPR (α β σ : Type u) where
+Init/Core.lean:inductive DoResultBC (σ : Type u) where
+Init/Core.lean:inductive DoResultSBC (α σ : Type u) where
+Init/Core.lean:inductive PNonScalar : Type u where
+Init/Core.lean:inductive Relation.TransGen {α : Sort u} (r : α → α → Prop) : α → α → Prop
+Init/While.lean:inductive Loop where
+Init/Internal/Order/Basic.lean:inductive iterates (f : α → α) : α → Prop where
+Init/Internal/Order/Basic.lean:inductive FlatOrder.rel : (x y : FlatOrder b) → Prop where
+Init/Meta/Defs.lean:inductive ApplyNewGoals where
+Init/Meta/Defs.lean:inductive CheckGoalType {α : Sort u} : (val : α) → Prop where
+Init/Tactics.lean:inductive type, in which the target is replaced by a general instance of that constructor.
+Init/Prelude.lean:inductive PUnit : Sort u where
+Init/Prelude.lean:inductive True : Prop where
+Init/Prelude.lean:inductive False : Prop
+Init/Prelude.lean:inductive Empty : Type
+Init/Prelude.lean:inductive PEmpty : Sort u where
+Init/Prelude.lean:inductive Eq : α → α → Prop where
+Init/Prelude.lean:inductive HEq : {α : Sort u} → α → {β : Sort u} → β → Prop where
+Init/Prelude.lean:inductive Or (a b : Prop) : Prop where
+Init/Prelude.lean:inductive Bool : Type where
+Init/Prelude.lean:inductive Nat where
+Init/Prelude.lean:inductive Option (α : Type u) where
+Init/Prelude.lean:inductive List (α : Type u) where
+Init/Prelude.lean:inductive ByteArray.IsValidUTF8 (b : ByteArray) : Prop
+Init/Prelude.lean:inductive Except (ε : Type u) (α : Type v) where
+Init/Prelude.lean:inductive Result (ε σ α : Type u) where
+Init/Prelude.lean:inductive Name where
+Init/Prelude.lean:inductive SourceInfo where
+Init/Prelude.lean:inductive Syntax.Preresolved where
+Init/Prelude.lean:inductive Syntax where
+Init/Prelude.lean:inductive ParserDescr where
+Init/Prelude.lean:inductive Exception where
+Init/System/IO.lean:inductive TaskState
+Init/System/IO.lean:inductive FS.Mode where
+Init/System/IO.lean:inductive FileType where
+Init/System/IO.lean:inductive Stdio where
+Init/System/IOError.lean:inductive IO.Error where
+Init/Data/RArray.lean:inductive RArray (α : Type u) : Type u where
+Init/Data/Dyadic/Basic.lean:inductive Dyadic where
+Init/Data/Nat/SOM.lean:inductive Expr where
+Init/Data/Nat/Linear.lean:inductive Expr where
+Init/Data/Option/Basic.lean:inductive Rel (r : α → β → Prop) : Option α → Option β → Prop
+Init/Data/Int/Linear.lean:inductive Expr where
+Init/Data/Int/Linear.lean:inductive Poly where
+Init/Data/Int/Basic.lean:inductive Int : Type where
+Init/Data/Int/Basic.lean:inductive NonNeg : Int → Prop where
+Init/Data/Sum/Basic.lean:inductive LiftRel (r : α → γ → Prop) (s : β → δ → Prop) : α ⊕ β → γ ⊕ δ → Prop
+Init/Data/Sum/Basic.lean:inductive Lex (r : α → α → Prop) (s : β → β → Prop) : α ⊕ β → α ⊕ β → Prop
+Init/Data/List/Basic.lean:inductive Lex (r : α → α → Prop) : (as : List α) → (bs : List α) → Prop
+Init/Data/List/Basic.lean:inductive Mem (a : α) : List α → Prop
+Init/Data/List/Basic.lean:inductive Sublist {α} : List α → List α → Prop
+Init/Data/List/Basic.lean:inductive Pairwise : List α → Prop
+Init/Data/List/Basic.lean:inductive Perm : List α → List α → Prop
+Init/Data/Format/Basic.lean:inductive Format.FlattenBehavior where
+Init/Data/Format/Basic.lean:inductive Format where
+Init/Data/Format/Basic.lean:inductive FlattenAllowability where
+Init/Data/String/Pattern/String.lean:inductive ForwardSliceSearcher (s : Slice) where
+Init/Data/String/Pattern/Basic.lean:inductive SearchStep (s : Slice) where
+Init/Data/String/Slice.lean:inductive SplitIterator (ρ : Type) [ToForwardSearcher ρ σ] where
+Init/Data/String/Slice.lean:inductive SplitInclusiveIterator (ρ : Type) [ToForwardSearcher ρ σ] where
+Init/Data/String/Slice.lean:inductive RevSplitIterator (ρ : Type) [ToBackwardSearcher ρ σ] where
+Init/Data/Ord/Basic.lean:inductive Ordering where
+Init/Data/AC.lean:inductive Expr
+Init/Data/Iterators/Basic.lean:inductive IterStep (α β) where
+Init/Data/Iterators/Basic.lean:inductive IterM.IsPlausibleIndirectOutput {α β : Type w} {m : Type w → Type w'} [Iterator α m β]
+Init/Data/Iterators/Basic.lean:inductive IterM.IsPlausibleIndirectSuccessorOf {α β : Type w} {m : Type w → Type w'}
+Init/Data/Iterators/Basic.lean:inductive Iter.IsPlausibleIndirectOutput {α β : Type w} [Iterator α Id β] :
+Init/Data/Iterators/Basic.lean:inductive Iter.IsPlausibleIndirectSuccessorOf {α : Type w} {β : Type w} [Iterator α Id β] :
+Init/Data/Iterators/Combinators/Monadic/FilterMap.lean:inductive FilterMap.PlausibleStep {α β γ : Type w} {m : Type w → Type w'} {n : Type w → Type w''}
+Init/Data/Iterators/Consumers/Monadic/Access.lean:inductive IterM.IsPlausibleNthOutputStep {α β : Type w} {m : Type w → Type w'} [Iterator α m β] :
+Init/Grind/Attr.lean:inductive Even : Nat → Prop where
+Init/Grind/Module/NatModuleNorm.lean:inductive Poly.NonnegCoeffs : Poly → Prop
+Init/Grind/PP.lean:inductive NodeDef where
+Init/Grind/Ring/CommSemiringAdapter.lean:inductive Poly.NonnegCoeffs : Poly → Prop
+Init/Grind/Ring/CommSolver.lean:inductive Expr where
+Init/Grind/Ring/CommSolver.lean:inductive Mon where
+Init/Grind/Ring/CommSolver.lean:inductive Poly where
+Init/Grind/ToInt.lean:inductive IntInterval : Type where
+Init/Grind/AC.lean:inductive Expr where
+Init/Grind/AC.lean:inductive Seq where
+Init/Grind/Ordered/Linarith.lean:inductive Expr where
+Init/Grind/Ordered/Linarith.lean:inductive Poly where
+Init/MetaTypes.lean:inductive TransparencyMode where
+Init/MetaTypes.lean:inductive EtaStructMode where
+Init/MetaTypes.lean:inductive Occurrences where
+Init/WF.lean:inductive Acc {α : Sort u} (r : α → α → Prop) : α → Prop where
+Init/WF.lean:inductive WellFounded {α : Sort u} (r : α → α → Prop) : Prop where
+Init/WF.lean:inductive RProd : α × β → α × β → Prop where
+Init/WF.lean:inductive Lex : PSigma β → PSigma β → Prop where
+Init/WF.lean:inductive RevLex (r  : α → α → Prop) (s  : β → β → Prop) : @PSigma α (fun _ => β) → @PSigma α (fun _ => β) → Prop where
+Lean/Widget/UserWidget.lean:inductive PanelWidgetsExtEntry where
+Lean/Widget/InteractiveCode.lean:inductive DiffTag where
+Lean/Widget/InteractiveDiagnostic.lean:inductive StrictOrLazy (α β : Type) : Type
+Lean/Widget/InteractiveDiagnostic.lean:inductive MsgEmbed where
+Lean/Widget/TaggedText.lean:inductive TaggedText (α : Type u) where
+Lean/LocalContext.lean:inductive LocalDeclKind
+Lean/LocalContext.lean:inductive LocalDecl where
+Lean/Util/FindExpr.lean:inductive FindStep where
+Lean/Util/LeanOptions.lean:inductive LeanOptionValue where
+Lean/Util/Diff.lean:inductive Action where
+Lean/back__/Shell.lean:inductive ShellComponent
+Lean/back__/ErrorExplanation.lean:inductive CodeInfo.Kind
+Lean/back__/Exception.lean:inductive Exception where
+Lean/back__/ScopedEnvExtension.lean:inductive Entry (α : Type) where
+Lean/back__/ReducibilityAttrs.lean:inductive ReducibilityStatus where
+Lean/back__/SubExpr.lean:inductive GoalLocation where
+Lean/back__/HeadIndex.lean:inductive HeadIndex where
+Lean/PrettyPrinter/Delaborator/Builtins.lean:inductive AppImplicitArg
+Lean/PrettyPrinter/Delaborator/Basic.lean:inductive OmissionReason
+Lean/Meta/Tactic/AC/Main.lean:inductive PreExpr
+Lean/Meta/Tactic/back__/LibrarySearch.lean:inductive DeclMod
+Lean/Meta/Tactic/back__/NormCast.lean:inductive Label
+Lean/Meta/Tactic/back__/Util.lean:inductive TacticResultCNM where
+Lean/Meta/Tactic/back__/SplitIf.lean:inductive SplitKind where
+Lean/Meta/Tactic/back__/Rewrites.lean:inductive RwDirection : Type where
+Lean/Meta/Tactic/back__/Rewrites.lean:inductive SideConditions
+Lean/Meta/Tactic/back__/FunIndInfo.lean:inductive FunIndParamKind where
+Lean/Meta/Tactic/back__/Injection.lean:inductive InjectionResultCore where
+Lean/Meta/Tactic/back__/Injection.lean:inductive InjectionResult where
+Lean/Meta/Tactic/back__/Injection.lean:inductive InjectionsResult where
+Lean/Meta/Tactic/Simp/SimpTheorems.lean:inductive Origin where
+Lean/Meta/Tactic/Simp/SimpTheorems.lean:inductive SimpEntry where
+Lean/Meta/Tactic/Simp/BuiltinSimprocs/Nat.lean:inductive EqResult where
+Lean/Meta/Tactic/Simp/Rewrite.lean:inductive DischargeResult where
+Lean/Meta/Tactic/Simp/Types.lean:inductive Step where
+Lean/Meta/Tactic/Grind/Order/Types.lean:inductive CnstrKind where
+Lean/Meta/Tactic/Grind/Order/Types.lean:inductive ToPropagate where
+Lean/Meta/Tactic/Grind/AC/Seq.lean:inductive SubseqResult where
+Lean/Meta/Tactic/Grind/AC/Seq.lean:inductive SubsetResult where
+Lean/Meta/Tactic/Grind/AC/Types.lean:inductive EqCnstrProof where
+Lean/Meta/Tactic/Grind/AC/Types.lean:inductive DiseqCnstrProof where
+Lean/Meta/Tactic/Grind/Attr.lean:inductive AttrKind where
+Lean/Meta/Tactic/Grind/Split.lean:inductive SplitStatus where
+Lean/Meta/Tactic/Grind/MatchCond.lean:inductive S where
+Lean/Meta/Tactic/Grind/MatchCond.lean:inductive S where
+Lean/Meta/Tactic/Grind/Arith/Linear/Types.lean:inductive EqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Linear/Types.lean:inductive IneqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Linear/Types.lean:inductive DiseqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Linear/Types.lean:inductive UnsatProof where
+Lean/Meta/Tactic/Grind/Arith/Offset/Types.lean:inductive ToPropagate where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/SearchM.lean:inductive CaseKind where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/SearchM.lean:inductive Search.Kind where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/ToIntInfo.lean:inductive SymbolicIntInterval : Type where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Search.lean:inductive FindIntValResult where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive EqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive CooperSplitProof where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive DvdCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive LeCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive DiseqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/Cutsat/Types.lean:inductive UnsatProof where
+Lean/Meta/Tactic/Grind/Arith/CommRing/Types.lean:inductive EqCnstrProof where
+Lean/Meta/Tactic/Grind/Arith/CommRing/Types.lean:inductive PolyDerivation where
+Lean/Meta/Tactic/Grind/EMatch.lean:inductive Cnstr where
+Lean/Meta/Tactic/Grind/Theorems.lean:inductive Origin where
+Lean/Meta/Tactic/Grind/EMatchTheorem.lean:inductive EMatchTheoremKind where
+Lean/Meta/Tactic/Grind/EMatchTheorem.lean:inductive PatternArgKind where
+Lean/Meta/Tactic/Grind/EMatchTheorem.lean:inductive CheckCoverageResult where
+Lean/Meta/Tactic/Grind/EMatchTheorem.lean:inductive MinIndexableMode where
+Lean/Meta/Tactic/Grind/Types.lean:inductive SplitSource where
+Lean/Meta/Tactic/Grind/Types.lean:inductive SolverTerms where
+Lean/Meta/Tactic/Grind/Types.lean:inductive NewFact where
+Lean/Meta/Tactic/Grind/Types.lean:inductive SplitInfo where
+Lean/Meta/ExprDefEq.lean:inductive DefEqArgsFirstPassResult where
+Lean/Meta/ExprDefEq.lean:inductive DeltaStepResult where
+Lean/Meta/ExprDefEq.lean:inductive DefEqCacheKind where
+Lean/Meta/Match/MatchEqs.lean:inductive InjectionAnyResult where
+Lean/Meta/Match/back__/Basic.lean:inductive Pattern : Type where
+Lean/Meta/Match/back__/Basic.lean:inductive Vec (α : Type u) : Nat → Type u where
+Lean/Meta/Match/back__/Basic.lean:inductive VecPred {α : Type u} (P : α → Prop) : {n : Nat} → Vec α n → Prop where
+Lean/Meta/Match/back__/Basic.lean:inductive Example where
+Lean/Meta/Match/Match.lean:inductive Arrow : Type → Type → Type 1
+Lean/Meta/SynthInstance.lean:inductive Waiter where
+Lean/Meta/LazyDiscrTree.lean:inductive Key where
+Lean/Meta/back__/RecursorInfo.lean:inductive RecursorUnivLevelPos where
+Lean/Meta/back__/Instances.lean:inductive Ty where
+Lean/Meta/back__/SameCtorUtils.lean:inductive Tyₛ : Type (u+1)
+Lean/Meta/back__/SameCtorUtils.lean:inductive Tmₛ.{u} :  Tyₛ.{u} -> Type (u+1)
+Lean/Meta/back__/Transform.lean:inductive TransformStep where
+Lean/Meta/back__/CoeAttr.lean:inductive CoeFnType
+Lean/Meta/back__/DiscrTreeTypes.lean:inductive Key where
+Lean/Meta/back__/DiscrTreeTypes.lean:inductive Trie (α : Type) where
+Lean/Meta/back__/DiscrTreeTypes.lean:inductive Ty where
+Lean/Meta/back__/ACLt.lean:inductive ReduceMode where
+Lean/Meta/back__/TryThis.lean:inductive SuggestionText where
+Lean/Meta/WHNF.lean:inductive ReduceMatcherResult where
+Lean/Meta/IndPredBelow.lean:inductive NewDecl where
+Lean/Meta/Basic.lean:inductive ProjReductionKind where
+Lean/Meta/CongrTheorems.lean:inductive CongrArgKind where
+Lean/Meta/Hint.lean:inductive DiffGranularity where
+Lean/Elab/Tactic/Do/VCGen/Split.lean:inductive SplitInfo where
+Lean/Elab/Tactic/Do/VCGen/SuggestInvariant.lean:inductive ClassifyInvariantUseResult where
+Lean/Elab/Tactic/Do/VCGen/SuggestInvariant.lean:inductive ExceptCondsDefault where
+Lean/Elab/Tactic/Do/VCGen/Basic.lean:inductive Fuel where
+Lean/Elab/Tactic/Do/LetElim.lean:inductive Uses where
+Lean/Elab/Tactic/Do/LetElim.lean:inductive BVarUses (n : Nat) where
+Lean/Elab/Tactic/Do/Attr.lean:inductive SpecProof where
+Lean/Elab/Tactic/BVDecide/Frontend/Normalize/Basic.lean:inductive MatchKind
+Lean/Elab/Tactic/BVDecide/Frontend/Normalize/AC.lean:inductive Op
+Lean/Elab/Tactic/BVDecide/External.lean:inductive SolverResult where
+Lean/Elab/Tactic/BVDecide/External.lean:inductive TimedOut (α : Type u) where
+Lean/Elab/Tactic/back__/Guard.lean:inductive MatchKind
+Lean/Elab/Tactic/back__/Location.lean:inductive Location where
+Lean/Elab/Tactic/Conv/Pattern.lean:inductive PatternMatchState where
+Lean/Elab/Tactic/Simp.lean:inductive SimpKind where
+Lean/Elab/Tactic/Simp.lean:inductive Simp.DischargeWrapper where
+Lean/Elab/Tactic/Simp.lean:inductive ResolveSimpIdResult where
+Lean/Elab/Tactic/Simp.lean:inductive ElabSimpArgResult where
+Lean/Elab/Tactic/Omega/Core.lean:inductive Justification : Constraint → Coeffs → Type
+Lean/Elab/Tactic/RCases.lean:inductive RCasesPatt : Type
+Lean/Elab/Structure.lean:inductive StructFieldViewDefault where
+Lean/Elab/Structure.lean:inductive StructFieldKind where
+Lean/Elab/Structure.lean:inductive StructFieldDefault where
+Lean/Elab/PreDefinition/TerminationHint.lean:inductive PartialFixpointType where
+Lean/Elab/PreDefinition/Structural/IndGroupInfo.lean:inductive Tree α where | node : α → Vector (Tree α) n → Tree α
+Lean/Elab/PreDefinition/Structural/FindRecArg.lean:inductive Tree where | node : List Tree → Tree
+Lean/Elab/PreDefinition/WF/GuessLex.lean:inductive GuessLexRel | lt | eq | le | no_idea
+Lean/Elab/PreDefinition/WF/GuessLex.lean:inductive MutualMeasure where
+Lean/Elab/InfoTree/InlayHints.lean:inductive InlayHintLabel
+Lean/Elab/InfoTree/InlayHints.lean:inductive InlayHintKind where
+Lean/Elab/InfoTree/Types.lean:inductive PartialContextInfo where
+Lean/Elab/InfoTree/Types.lean:inductive CompletionInfo where
+Lean/Elab/InfoTree/Types.lean:inductive DocElabKind where
+Lean/Elab/InfoTree/Types.lean:inductive Info where
+Lean/Elab/InfoTree/Types.lean:inductive InfoTree where
+Lean/Elab/back__/DefView.lean:inductive DefKind where
+Lean/Elab/back__/DeclModifiers.lean:inductive Visibility where
+Lean/Elab/back__/DeclModifiers.lean:inductive RecKind where
+Lean/Elab/back__/DeclModifiers.lean:inductive ComputeKind where
+Lean/Elab/back__/GuardMsgs.lean:inductive FilterSpec
+Lean/Elab/back__/GuardMsgs.lean:inductive WhitespaceMode
+Lean/Elab/back__/GuardMsgs.lean:inductive MessageOrdering
+Lean/Elab/back__/ComputedFields.lean:inductive Exp
+Lean/Elab/back__/ComputedFields.lean:inductive NatList where
+Lean/Elab/back__/Arg.lean:inductive Arg where
+Lean/Elab/Term/TermElabM.lean:inductive TacticMVarKind
+Lean/Elab/Term/TermElabM.lean:inductive SyntheticMVarKind where
+Lean/Elab/Term/TermElabM.lean:inductive MVarErrorKind where
+Lean/Elab/Term/TermElabM.lean:inductive LVal where
+Lean/Elab/Term/TermElabM.lean:inductive UseImplicitLambdaResult where
+Lean/Elab/StructInst.lean:inductive FieldLHS where
+Lean/Elab/Quotation.lean:inductive HeadCheck where
+Lean/Elab/Quotation.lean:inductive MatchResult where
+Lean/Elab/MutualInductive.lean:inductive I (α : Sort u) : Type _ where
+Lean/Elab/DocString/Builtin.lean:inductive DocHighlight where
+Lean/Elab/DocString/Builtin/Scopes.lean:inductive DocScope where
+Lean/Elab/Do.lean:inductive Code where
+Lean/Elab/Do.lean:inductive Kind where
+Lean/Elab/DocString.lean:inductive SuggestionMode where
+Lean/Elab/DocString.lean:inductive DocArg where
+Lean/Elab/App.lean:inductive LValResolution where
+Lean/Elab/SyntheticMVars.lean:inductive PostponeBehavior where
+Lean/Environment.lean:inductive IRPhases where
+Lean/Environment.lean:inductive Exception where
+Lean/Environment.lean:inductive ConstantKind where
+Lean/Environment.lean:inductive AsyncBranch where
+Lean/Environment.lean:inductive EnvExtension.AsyncMode where
+Lean/Environment.lean:inductive OLeanLevel where
+Lean/Server/FileWorker/WidgetRequests.lean:inductive HighlightedSubexprInfo where
+Lean/Server/FileWorker/WidgetRequests.lean:inductive HighlightedMsgEmbed where
+Lean/Server/FileWorker/SignatureHelp.lean:inductive CandidateKind where
+Lean/Server/FileWorker/SignatureHelp.lean:inductive SearchControl where
+Lean/Server/FileWorker/SetupFile.lean:inductive FileSetupResultKind where
+Lean/Server/Requests.lean:inductive SnapshotTree.foldSnaps.Control where
+Lean/Server/Requests.lean:inductive ServerRequestResponse (α : Type) where
+Lean/Server/Requests.lean:inductive RequestHandlerCompleteness where
+Lean/Server/Test/Runner.lean:inductive StrictOrLazy (α β : Type) : Type
+Lean/Server/Test/Runner.lean:inductive MsgEmbed where
+Lean/Server/Test/Runner.lean:inductive HighlightedSubexprInfo where
+Lean/Server/Test/Runner.lean:inductive HighlightedMsgEmbed where
+Lean/Server/CodeActions/Provider.lean:inductive FindTacticResult
+Lean/Server/back__/FileSource.lean:inductive FileIdent where
+Lean/Server/back__/GoTo.lean:inductive GoToKind
+Lean/Server/back__/AsyncList.lean:inductive AsyncList (ε : Type u) (α : Type v) where
+Lean/Server/Completion/CompletionUtils.lean:inductive HoverInfo : Type where
+Lean/Language/Basic.lean:inductive SnapshotTask.ReportingRange where
+Lean/Syntax.lean:inductive IsNode : Syntax → Prop where
+Lean/Message.lean:inductive MessageSeverity where
+Lean/Message.lean:inductive MessageData where
+Lean/Parser/Command.lean:inductive List (α : Type u) where
+Lean/Parser/Extension.lean:inductive OLeanEntry where
+Lean/Parser/Extension.lean:inductive Entry where
+Lean/Parser/Extension.lean:inductive AliasValue (α : Type) where
+Lean/Parser/Extension.lean:inductive ParserResolution where
+Lean/Parser/Basic.lean:inductive OrElseOnAntiquotBehavior where
+Lean/Parser/Basic.lean:inductive LeadingIdentBehavior where
+Lean/Parser/Types.lean:inductive FirstTokens where
+Lean/Attributes.lean:inductive AttributeApplicationTime where
+Lean/Attributes.lean:inductive AttributeKind
+Lean/DocString/Types.lean:inductive MathMode where
+Lean/DocString/Types.lean:inductive Inline (i : Type u) : Type u where
+Lean/DocString/Types.lean:inductive Block (i : Type u) (b : Type v) : Type (max u v) where
+Lean/ErrorExplanations/CtorResultingTypeMismatch.lean:inductive Tree (α : Type) where
+Lean/ErrorExplanations/CtorResultingTypeMismatch.lean:inductive Tree (α : Type) where
+Lean/ErrorExplanations/CtorResultingTypeMismatch.lean:inductive Credential where
+Lean/ErrorExplanations/CtorResultingTypeMismatch.lean:inductive Credential where
+Lean/ErrorExplanations/CtorResultingTypeMismatch.lean:inductive Credential where
+Lean/ErrorExplanations/InductiveParamMissing.lean:inductive List.All {α : Type u} (P : α → Prop) : List α → Prop
+Lean/ErrorExplanations/InductiveParamMissing.lean:inductive RoseTree.All {α : Type u} (P : α → Prop) (t : RoseTree α) : Prop
+Lean/ErrorExplanations/InductiveParamMissing.lean:inductive List.All {α : Type u} (P : α → Prop) : List α → Prop
+Lean/ErrorExplanations/InductiveParamMissing.lean:inductive RoseTree.All {α : Type u} (P : α → Prop) : RoseTree α → Prop
+Lean/ErrorExplanations/UnknownIdentifier.lean:inductive Color where
+Lean/ErrorExplanations/UnknownIdentifier.lean:inductive Color where
+Lean/ErrorExplanations/UnknownIdentifier.lean:inductive Color where
+Lean/ErrorExplanations/UnknownIdentifier.lean:inductive type have names in that type's namespace. Because the `Color` namespace is not open, the
+Lean/ErrorExplanations/InductiveParamMismatch.lean:inductive Vec (α : Type) (n : Nat) : Type where
+Lean/ErrorExplanations/InductiveParamMismatch.lean:inductive Vec (α : Type) : Nat → Type where
+Lean/Level.lean:inductive Level where
+Lean/Level.lean:inductive Result where
+Lean/Expr.lean:inductive Literal where
+Lean/Expr.lean:inductive BinderInfo where
+Lean/Expr.lean:inductive Expr where
+Lean/Data/FuzzyMatching.lean:inductive CharType where
+Lean/Data/FuzzyMatching.lean:inductive CharRole where
+Lean/Data/JsonRpc.lean:inductive RequestID where
+Lean/Data/JsonRpc.lean:inductive ErrorCode where
+Lean/Data/JsonRpc.lean:inductive Message where
+Lean/Data/JsonRpc.lean:inductive MessageMetaData where
+Lean/Data/NameTrie.lean:inductive NamePart
+Lean/Data/RBMap.lean:inductive RBColor where
+Lean/Data/RBMap.lean:inductive RBNode (α : Type u) (β : α → Type v) where
+Lean/Data/RBMap.lean:inductive WellFormed (cmp : α → α → Ordering) : RBNode α β → Prop where
+Lean/Data/OpenDecl.lean:inductive OpenDecl where
+Lean/Data/LBool.lean:inductive LBool where
+Lean/Data/LOption.lean:inductive LOption (α : Type u) where
+Lean/Data/Lsp/TextSync.lean:inductive TextDocumentSyncKind where
+Lean/Data/Lsp/TextSync.lean:inductive TextDocumentContentChangeEvent where
+Lean/Data/Lsp/Internal.lean:inductive RefIdent where
+Lean/Data/Lsp/Internal.lean:inductive RefIdentJsonRepr
+Lean/Data/Lsp/Internal.lean:inductive OpenNamespace
+Lean/Data/Lsp/Window.lean:inductive MessageType where
+Lean/Data/Lsp/Basic.lean:inductive DocumentChange where
+Lean/Data/Lsp/Basic.lean:inductive MarkupKind where
+Lean/Data/Lsp/Workspace.lean:inductive FileChangeType
+Lean/Data/Lsp/LanguageFeatures.lean:inductive CompletionItemKind where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive CompletionItemTag where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive CompletionIdentifier where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive DocumentHighlightKind where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive SymbolKind where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive DocumentSymbol where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive SymbolTag where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive SemanticTokenType where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive SemanticTokenModifier where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive FoldingRangeKind where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive InlayHintTooltip
+Lean/Data/Lsp/LanguageFeatures.lean:inductive InlayHintLabel
+Lean/Data/Lsp/LanguageFeatures.lean:inductive InlayHintKind where
+Lean/Data/Lsp/LanguageFeatures.lean:inductive ParameterInformationLabel
+Lean/Data/Lsp/LanguageFeatures.lean:inductive SignatureHelpTriggerKind where
+Lean/Data/Lsp/InitShutdown.lean:inductive Trace where
+Lean/Data/Lsp/InitShutdown.lean:inductive InitializedParams where
+Lean/Data/Lsp/CodeActions.lean:inductive CodeActionTriggerKind
+Lean/Data/Lsp/Diagnostics.lean:inductive DiagnosticSeverity where
+Lean/Data/Lsp/Diagnostics.lean:inductive DiagnosticCode where
+Lean/Data/Lsp/Diagnostics.lean:inductive DiagnosticTag where
+Lean/Data/Lsp/Diagnostics.lean:inductive LeanDiagnosticTag where
+Lean/Data/Lsp/Extra.lean:inductive DependencyBuildMode where
+Lean/Data/Lsp/Extra.lean:inductive LeanFileProgressKind
+Lean/Data/Lsp/Extra.lean:inductive LeanImportMetaKind where
+Lean/Data/KVMap.lean:inductive DataValue where
+Lean/Data/Xml/Basic.lean:inductive Element
+Lean/Data/Xml/Basic.lean:inductive Content
+Lean/Data/Trie.lean:inductive ByteAssoc α where
+Lean/Data/Trie.lean:inductive Trie (α : Type) where
+Lean/Data/PersistentHashMap.lean:inductive Entry (α : Type u) (β : Type v) (σ : Type w) where
+Lean/Data/PersistentHashMap.lean:inductive Node (α : Type u) (β : Type v) : Type (max u v) where
+Lean/Data/PersistentHashMap.lean:inductive IsCollisionNode : Node α β → Prop where
+Lean/Data/PersistentHashMap.lean:inductive IsEntriesNode : Node α β → Prop where
+Lean/Data/Json/Basic.lean:inductive Json where
+Lean/Data/Json/Basic.lean:inductive Structured where
+Lean/Data/PrefixTree.lean:inductive PrefixTreeNode (α : Type u) (β : Type v) (cmp : α → α → Ordering) where
+Lean/Data/PrefixTree.lean:inductive WellFormed (cmp : α → α → Ordering) : PrefixTreeNode α β cmp → Prop where
+Lean/Data/PersistentArray.lean:inductive PersistentArrayNode (α : Type u) where
+Lean/Data/AssocList.lean:inductive AssocList (α : Type u) (β : Type v) where
+Lean/Declaration.lean:inductive ReducibilityHints where
+Lean/Declaration.lean:inductive DefinitionSafety where
+Lean/Declaration.lean:inductive Declaration where
+Lean/Declaration.lean:inductive QuotKind where
+Lean/Declaration.lean:inductive ConstantInfo where
+Lean/Compiler/LCNF/ElimDeadBranches.lean:inductive Value where
+Lean/Compiler/LCNF/back__/FixedParams.lean:inductive AbsValue where
+Lean/Compiler/LCNF/back__/AuxDeclCache.lean:inductive CacheAuxDeclResult where
+Lean/Compiler/LCNF/back__/CompilerM.lean:inductive Phase where
+Lean/Compiler/LCNF/back__/CompilerM.lean:inductive NormFVarResult where
+Lean/Compiler/LCNF/back__/FloatLetIn.lean:inductive Decision where
+Lean/Compiler/LCNF/back__/SpecInfo.lean:inductive SpecParamInfo where
+Lean/Compiler/LCNF/Basic.lean:inductive LitValue where
+Lean/Compiler/LCNF/Basic.lean:inductive Arg where
+Lean/Compiler/LCNF/Basic.lean:inductive LetValue where
+Lean/Compiler/LCNF/Basic.lean:inductive Alt where
+Lean/Compiler/LCNF/Basic.lean:inductive Code where
+Lean/Compiler/LCNF/Basic.lean:inductive CodeDecl where
+Lean/Compiler/LCNF/Basic.lean:inductive DeclValue where
+Lean/Compiler/LCNF/Simp/DiscrM.lean:inductive CtorInfo where
+Lean/Compiler/LCNF/Simp/FunDeclInfo.lean:inductive FunDeclInfo where
+Lean/Compiler/LCNF/ToLCNF.lean:inductive Element where
+Lean/Compiler/InlineAttrs.lean:inductive InlineAttributeKind where
+Lean/Compiler/IR/EmitLLVM.lean:inductive RefcountKind where
+Lean/Compiler/IR/EmitLLVM.lean:inductive ShouldForwardControlFlow where
+Lean/Compiler/IR/back__/Borrow.lean:inductive Key where
+Lean/Compiler/IR/back__/ToIRType.lean:inductive CtorFieldInfo where
+Lean/Compiler/IR/back__/ElimDeadBranches.lean:inductive Value where
+Lean/Compiler/IR/back__/ResetReuse.lean:inductive UseClassification where
+Lean/Compiler/IR/back__/CompilerM.lean:inductive LogEntry where
+Lean/Compiler/IR/back__/ToIR.lean:inductive TranslatedProj where
+Lean/Compiler/IR/Basic.lean:inductive IRType where
+Lean/Compiler/IR/Basic.lean:inductive Arg where
+Lean/Compiler/IR/Basic.lean:inductive LitVal where
+Lean/Compiler/IR/Basic.lean:inductive Expr where
+Lean/Compiler/IR/Basic.lean:inductive Alt where
+Lean/Compiler/IR/Basic.lean:inductive FnBody where
+Lean/Compiler/IR/Basic.lean:inductive Decl where
+Lean/Compiler/IR/Basic.lean:inductive LocalContextEntry where
+Lean/Compiler/Specialize.lean:inductive SpecializeAttributeKind where
+Lean/Compiler/ExternAttr.lean:inductive ExternEntry where
+Lean/MetavarContext.lean:inductive MetavarKind where
+Lean/MetavarContext.lean:inductive Exception where
+Std/Tactic/Do/Syntax.lean:inductive MCasesPat
+Std/Tactic/Do/Syntax.lean:inductive MRefinePat
+Std/Tactic/BVDecide/Bitblast/BoolExpr/Basic.lean:inductive Gate
+Std/Tactic/BVDecide/Bitblast/BoolExpr/Basic.lean:inductive BoolExpr (α : Type)
+Std/Tactic/BVDecide/Bitblast/BVExpr/Basic.lean:inductive BVBinOp where
+Std/Tactic/BVDecide/Bitblast/BVExpr/Basic.lean:inductive BVUnOp where
+Std/Tactic/BVDecide/Bitblast/BVExpr/Basic.lean:inductive BVExpr : Nat → Type where
+Std/Tactic/BVDecide/Bitblast/BVExpr/Basic.lean:inductive BVBinPred where
+Std/Tactic/BVDecide/Bitblast/BVExpr/Basic.lean:inductive BVPred where
+Std/Tactic/BVDecide/LRAT/Internal/LRATChecker.lean:inductive Result
+Std/Tactic/BVDecide/LRAT/Internal/Clause.lean:inductive ReduceResult (α : Type u)
+Std/Tactic/BVDecide/LRAT/Internal/Assignment.lean:inductive Assignment
+Std/Tactic/BVDecide/LRAT/Actions.lean:inductive Action (β : Type u) (α : Type v)
+Std/Net/Addr.lean:inductive IPAddr where
+Std/Net/Addr.lean:inductive SocketAddress where
+Std/Net/Addr.lean:inductive AddressFamily where
+Std/Do/PostCond.lean:inductive PostShape : Type (u+1) where
+Std/Internal/Async/UDP.lean:inductive Membership
+Std/Internal/Async/Basic.lean:inductive MaybeTask (α : Type)
+Std/Internal/Async/Signal.lean:inductive Signal
+Std/Internal/Parsec/Basic.lean:inductive Error where
+Std/Internal/Parsec/Basic.lean:inductive ParseResult (α : Type) (ι : Type) where
+Std/Time/Date/Unit/Weekday.lean:inductive Weekday
+Std/Time/Date/Unit/Year.lean:inductive Era
+Std/Time/Time/HourMarker.lean:inductive HourMarker
+Std/Time/Format/Basic.lean:inductive Text
+Std/Time/Format/Basic.lean:inductive Fraction
+Std/Time/Format/Basic.lean:inductive Year
+Std/Time/Format/Basic.lean:inductive ZoneId
+Std/Time/Format/Basic.lean:inductive ZoneName
+Std/Time/Format/Basic.lean:inductive OffsetX
+Std/Time/Format/Basic.lean:inductive OffsetO
+Std/Time/Format/Basic.lean:inductive OffsetZ
+Std/Time/Format/Basic.lean:inductive Modifier
+Std/Time/Format/Basic.lean:inductive FormatPart
+Std/Time/Format/Basic.lean:inductive Awareness
+Std/Time/Zoned/ZoneRules.lean:inductive UTLocal
+Std/Time/Zoned/ZoneRules.lean:inductive StdWall
+Std/Sat/AIG/RelabelNat.lean:inductive Inv1 : Nat → HashMap α Nat → Prop where
+Std/Sat/AIG/RelabelNat.lean:inductive Inv2 (decls : Array (Decl α)) : Nat → HashMap α Nat → Prop where
+Std/Sat/AIG/Basic.lean:inductive Decl (α : Type) where
+Std/Sat/AIG/Basic.lean:inductive Cache.WF : Array (Decl α) → HashMap (Decl α) Nat → Prop where
+Std/Sync/Notify.lean:inductive Notify.Consumer (α : Type) where
+Std/Sync/Channel.lean:inductive Error where
+Std/Sync/Channel.lean:inductive Flavors (α : Type) where
+Std/Data/HashSet/Raw.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `HashSet`
+Std/Data/DHashMap/Internal/AssocList/Basic.lean:inductive AssocList (α : Type u) (β : α → Type v) where
+Std/Data/DHashMap/RawDef.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `DHashMap`
+Std/Data/DHashMap/Raw.lean:inductive WF : {α : Type u} → {β : α → Type v} → [BEq α] → [Hashable α] → Raw α β → Prop where
+Std/Data/HashMap/Raw.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `HashMap`
+Std/Data/TreeSet/Raw/Basic.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `TreeSet`
+Std/Data/DTreeMap/Internal/Balanced.lean:inductive Balanced : Impl α β → Prop where
+Std/Data/DTreeMap/Internal/Def.lean:inductive Impl (α : Type u) (β : α → Type v) where
+Std/Data/DTreeMap/Internal/Model.lean:inductive ExplorationStep [Ord α] (k : α → Ordering) where
+Std/Data/DTreeMap/Internal/WF/Lemmas.lean:inductive SameKeys : Impl α β → Impl α β' → Prop where
+Std/Data/DTreeMap/Internal/WF/Defs.lean:inductive WF [Ord α] : {β : α → Type v} → Impl α β → Prop where
+Std/Data/DTreeMap/Raw/Basic.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `DTreeMap`
+Std/Data/TreeMap/Raw/Basic.lean:inductive types. The well-formedness invariant is called `Raw.WF`. When in doubt, prefer `TreeMap`
+Std/Data/Iterators/Combinators/Monadic/Zip.lean:inductive Zip.PlausibleStep (it : IterM (α := Zip α₁ m α₂ β₂) m (β₁ × β₂)) :
+Std/Data/Iterators/Combinators/Monadic/Drop.lean:inductive Drop.PlausibleStep [Iterator α m β] (it : IterM (α := Drop α m β) m β) :
+Std/Data/Iterators/Combinators/Monadic/Take.lean:inductive Take.PlausibleStep [Iterator α m β] (it : IterM (α := Take α m β) m β) :
+Std/Data/Iterators/Combinators/Monadic/TakeWhile.lean:inductive TakeWhile.PlausibleStep [Iterator α m β] {P} (it : IterM (α := TakeWhile α m β P) m β) :
+Std/Data/Iterators/Combinators/Monadic/DropWhile.lean:inductive DropWhile.PlausibleStep [Iterator α m β] {P} (it : IterM (α := DropWhile α m β P) m β) :

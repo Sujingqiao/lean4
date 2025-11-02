@@ -1,0 +1,788 @@
+Algebra/LinearRecurrence.lean:Of course, although we can inductively generate solutions (cf `mkSol`), the
+Algebra/Category/Grp/EpiMono.lean:inductive XWithInfinity
+Algebra/Category/ContinuousCohomology/Basic.lean:For the differential map, instead of a finite sum we use the inductive definition
+Algebra/Category/Ring/Colimits.lean:/-- An inductive type representing all ring expressions (without Relations)
+Algebra/Category/Ring/Colimits.lean:inductive Prequotient
+Algebra/Category/Ring/Colimits.lean:inductive Relation : Prequotient F → Prequotient F → Prop -- Make it an equivalence Relation:
+Algebra/Category/Ring/Colimits.lean:/-- An inductive type representing all commutative ring expressions (without Relations)
+Algebra/Category/Ring/Colimits.lean:inductive Prequotient -- There's always `of`
+Algebra/Category/Ring/Colimits.lean:inductive Relation : Prequotient F → Prequotient F → Prop -- Make it an equivalence Relation:
+Algebra/Category/MonCat/Colimits.lean:inductive Monoid.{u} : Type u → Type u
+Algebra/Category/MonCat/Colimits.lean:/-- An inductive type representing all monoid expressions (without relations)
+Algebra/Category/MonCat/Colimits.lean:inductive Prequotient
+Algebra/Category/MonCat/Colimits.lean:inductive Relation : Prequotient F → Prequotient F → Prop-- Make it an equivalence relation:
+Algebra/Group/Subgroup/Lattice.lean:defined both inductively and as the infimum of the set of subgroups containing a given
+Algebra/BigOperators/Group/Finset/Defs.lean:private inductive FinsetResult where
+Algebra/Module/Presentation/Tautological.lean:inductive tautological.R
+Algebra/RingQuot.lean:inductive Rel (r : R → R → Prop) : R → R → Prop
+Algebra/Lie/UniversalEnveloping.lean:inductive Rel : TensorAlgebra R L → TensorAlgebra R L → Prop
+Algebra/Lie/LieTheorem.lean:-- This lemma is the central inductive argument in the proof of Lie's theorem below.
+Algebra/Lie/Engel.lean:an inductive argument on the dimension of the Lie algebra. One begins by choosing either a maximal
+Algebra/Lie/CartanMatrix.lean:inductive Generators
+Algebra/Lie/Free.lean:an inductively-defined relation.
+Algebra/Lie/Free.lean:inductive Rel : lib R X → lib R X → Prop
+Algebra/Colimit/Module.lean:inductive DirectLimit.Eqv : DirectSum ι G → DirectSum ι G → Prop
+Algebra/Quandle.lean:inductive PreEnvelGroup (R : Type u) : Type u
+Algebra/Quandle.lean:inductive PreEnvelGroupRel' (R : Type u) [Rack R] : PreEnvelGroup R → PreEnvelGroup R → Type u
+Algebra/Quandle.lean:inductive PreEnvelGroupRel (R : Type u) [Rack R] : PreEnvelGroup R → PreEnvelGroup R → Prop
+Algebra/Ring/SumsOfSquares.lean:  an inductive predicate defining the property of being a sum of squares in `R`.
+Algebra/Ring/SumsOfSquares.lean:The property of being a sum of squares is defined inductively by:
+Algebra/Ring/SumsOfSquares.lean:inductive IsSumSq [Mul R] [Add R] [Zero R] : R → Prop
+Algebra/CharP/Defs.lean:class inductive ExpChar : ℕ → Prop
+Algebra/Free.lean:  defined inductively, with traversable instance and decidable equality.
+Algebra/Free.lean:inductive FreeAddMagma (α : Type u) : Type u
+Algebra/Free.lean:compile_inductive% FreeAddMagma
+Algebra/Free.lean:inductive FreeMagma (α : Type u) : Type u
+Algebra/Free.lean:compile_inductive% FreeMagma
+Algebra/Free.lean:inductive AddMagma.AssocRel (α : Type u) [Add α] : α → α → Prop
+Algebra/Free.lean:inductive Magma.AssocRel (α : Type u) [Mul α] : α → α → Prop
+Algebra/Free.lean:compile_inductive% FreeAddSemigroup
+Algebra/Free.lean:compile_inductive% FreeSemigroup
+Algebra/Homology/ExactSequence.lean:Together with the inductive construction of composable arrows
+Algebra/Homology/HomologicalComplex.lean:/-- An inductive constructor for `ℕ`-indexed chain complexes.
+Algebra/Homology/HomologicalComplex.lean:See also `mk'`, which only sees the previous differential in the inductive step.
+Algebra/Homology/HomologicalComplex.lean:-- TODO simp lemmas for the inductive steps? It's not entirely clear that they are needed.
+Algebra/Homology/HomologicalComplex.lean:/-- A simpler inductive constructor for `ℕ`-indexed chain complexes.
+Algebra/Homology/HomologicalComplex.lean:using as an inductive hypothesis the data (and commutativity) of the previous two components.
+Algebra/Homology/HomologicalComplex.lean:/-- An inductive constructor for `ℕ`-indexed cochain complexes.
+Algebra/Homology/HomologicalComplex.lean:See also `mk'`, which only sees the previous differential in the inductive step.
+Algebra/Homology/HomologicalComplex.lean:-- TODO simp lemmas for the inductive steps? It's not entirely clear that they are needed.
+Algebra/Homology/HomologicalComplex.lean:/-- A simpler inductive constructor for `ℕ`-indexed cochain complexes.
+Algebra/Homology/HomologicalComplex.lean:-- TODO simp lemmas for the inductive steps? It's not entirely clear that they are needed.
+Algebra/Homology/HomologicalComplex.lean:using as an inductive hypothesis the data (and commutativity) of the previous two components.
+Algebra/Homology/Homotopy.lean:`Homotopy.mkInductive` allows us to build a homotopy of chain complexes inductively,
+Algebra/Homology/Homotopy.lean:using as an inductive hypothesis the data and homotopy condition for the previous two components.
+Algebra/Homology/Homotopy.lean:`Homotopy.mkCoinductive` allows us to build a homotopy of cochain complexes inductively,
+Algebra/Homology/Homotopy.lean:section MkCoinductive
+Algebra/Homology/Homotopy.lean:/-- An auxiliary construction for `mkCoinductive`.
+Algebra/Homology/Homotopy.lean:in `mkCoinductive`.
+Algebra/Homology/Homotopy.lean:def mkCoinductiveAux₁ :
+Algebra/Homology/Homotopy.lean:    ⟨(mkCoinductiveAux₁ (n + 1)).2.1, (succ (n + 1) (mkCoinductiveAux₁ (n + 1))).1,
+Algebra/Homology/Homotopy.lean:      (succ (n + 1) (mkCoinductiveAux₁ (n + 1))).2⟩
+Algebra/Homology/Homotopy.lean:def mkCoinductiveAux₂ :
+Algebra/Homology/Homotopy.lean:    let I := mkCoinductiveAux₁ e zero one comm_one succ n
+Algebra/Homology/Homotopy.lean:@[simp] theorem mkCoinductiveAux₂_zero :
+Algebra/Homology/Homotopy.lean:    mkCoinductiveAux₂ e zero comm_zero one comm_one succ 0 =
+Algebra/Homology/Homotopy.lean:@[simp] theorem mkCoinductiveAux₂_add_one (n) :
+Algebra/Homology/Homotopy.lean:    mkCoinductiveAux₂ e zero comm_zero one comm_one succ (n + 1) =
+Algebra/Homology/Homotopy.lean:      letI I := mkCoinductiveAux₁ e zero one comm_one succ n
+Algebra/Homology/Homotopy.lean:theorem mkCoinductiveAux₃ (i j : ℕ) (h : i + 1 = j) :
+Algebra/Homology/Homotopy.lean:    (P.xNextIso h).inv ≫ (mkCoinductiveAux₂ e zero comm_zero one comm_one succ i).2.1 =
+Algebra/Homology/Homotopy.lean:      (mkCoinductiveAux₂ e zero comm_zero one comm_one succ j).1 ≫ (Q.xPrevIso h).hom := by
+Algebra/Homology/Homotopy.lean:  rcases i with (_ | _ | i) <;> simp [mkCoinductiveAux₂]
+Algebra/Homology/Homotopy.lean:using as an inductive hypothesis the data and homotopy condition for the previous two components.
+Algebra/Homology/Homotopy.lean:def mkCoinductive : Homotopy e 0 where
+Algebra/Homology/Homotopy.lean:      (P.xNextIso h).inv ≫ (mkCoinductiveAux₂ e zero comm_zero one comm_one succ j).2.1
+Algebra/Homology/Homotopy.lean:    refine (mkCoinductiveAux₂ e zero comm_zero one comm_one succ i).2.2.trans ?_
+Algebra/Homology/Homotopy.lean:      · dsimp [toPrev, mkCoinductiveAux₂]
+Algebra/Homology/Homotopy.lean:        rw [mkCoinductiveAux₃ e zero comm_zero one comm_one succ]
+Algebra/Homology/Homotopy.lean:end MkCoinductive
+Algebra/ContinuedFractions/ConvergentsEquiv.lean:By the inductive hypothesis, the two computations for the `n`th convergent of `c` coincide.
+Algebra/FreeAlgebra.lean:6. An inductive principle `induction`.
+Algebra/FreeAlgebra.lean:We construct the free algebra on `X` as a quotient of an inductive type `FreeAlgebra.Pre` by an
+Algebra/FreeAlgebra.lean:inductively defined relation `FreeAlgebra.Rel`. Explicitly, the construction involves three steps:
+Algebra/FreeAlgebra.lean:1. We construct an inductive type `FreeAlgebra.Pre R X`, the terms of which should be thought
+Algebra/FreeAlgebra.lean:2. We construct an inductive relation `FreeAlgebra.Rel R X` on `FreeAlgebra.Pre R X`.
+Algebra/FreeAlgebra.lean:/-- This inductive type is used to express representatives of the free algebra.
+Algebra/FreeAlgebra.lean:inductive Pre
+Algebra/FreeAlgebra.lean:/-- An inductively defined relation on `Pre R X` used to force the initial algebra structure on
+Algebra/FreeAlgebra.lean:inductive Rel : Pre R X → Pre R X → Prop
+Algebra/FreeAlgebra.lean:as a quotient of an inductive type as completely hidden. -/
+AlgebraicGeometry/EllipticCurve/NormalForms.lean:class inductive IsCharThreeNF : Prop
+AlgebraicGeometry/EllipticCurve/NormalForms.lean:class inductive IsCharTwoNF : Prop
+AlgebraicGeometry/EllipticCurve/Affine/Point.lean:affine coordinates. The type of nonsingular points `W⟮F⟯` in affine coordinates is an inductive,
+AlgebraicGeometry/EllipticCurve/Affine/Point.lean:inductive Point
+AlgebraicTopology/DoldKan/Projections.lean:/-- This is the inductive definition of the projections `P q : K[X] ⟶ K[X]`,
+AlgebraicTopology/DoldKan/Homotopies.lean:the inductive construction of the projections `P q : K[X] ⟶ K[X]` -/
+AlgebraicTopology/SimplicialSet/HomotopyCat.lean:inductive HoRel₂ {V : SSet.Truncated 2} :
+AlgebraicTopology/SimplexCategory/GeneratorsRelations/NormalForms.lean:-- easier to perform inductive constructions and proofs on such lists, and we instead bundle
+AlgebraicTopology/SimplexCategory/GeneratorsRelations/Basic.lean:inductive Hom : FreeSimplexQuiver → FreeSimplexQuiver → Type
+AlgebraicTopology/SimplexCategory/GeneratorsRelations/Basic.lean:inductive homRel : HomRel (Paths FreeSimplexQuiver)
+AlgebraicTopology/SimplexCategory/GeneratorsRelations/Basic.lean:inductive faces : MorphismProperty SimplexCategoryGenRel
+AlgebraicTopology/SimplexCategory/GeneratorsRelations/Basic.lean:inductive degeneracies : MorphismProperty SimplexCategoryGenRel
+Analysis/InnerProductSpace/Projection/FiniteDimensional.lean:    -- So apply the inductive hypothesis to `φ.trans ρ`
+Analysis/FunctionalSpaces/SobolevInequality.lean:inductive argument that involves manipulating an `n+1`-fold iterated integral and a product of
+Analysis/FunctionalSpaces/SobolevInequality.lean:/-- The "grid-lines operation" (not a standard name) which is central in the inductive proof of the
+Analysis/FunctionalSpaces/SobolevInequality.lean:/-- The main inductive step in the grid-lines lemma for the Gagliardo-Nirenberg-Sobolev inequality.
+Analysis/FunctionalSpaces/SobolevInequality.lean:  -- apply the lemma designed to encapsulate the inductive step
+Analysis/FunctionalSpaces/SobolevInequality.lean:    -- `(#ι - 1) * p ≤ 1` is in the valid range for the inductive-step lemma
+Analysis/Convex/Birkhoff.lean:This particular formulation is chosen to make the inductive step easier: we no longer need to
+Analysis/ODE/PicardLindelof.lean:/-- A key step in the inductive case of `dist_iterate_next_apply_le` -/
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:only possible to generalize over all spaces in some fixed universe in an inductive definition.
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:inductive approach where one would prove smoothness statements without giving a formula for the
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:but it is very complicated and barely usable, while the inductive proof is very simple. Thus, we
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:give the inductive proof. As explained above, it works by generalizing over the target space, hence
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:/-- The `n`-th derivative of a function along a set, defined inductively by saying that the `n+1`-th
+Analysis/Calculus/ContDiff/FTaylorSeries.lean:/-- The `n`-th derivative of a function, as a multilinear map, defined inductively. -/
+Analysis/Calculus/ContDiff/FaaDiBruno.lean:and `OrderedFinpartition (n + 1)`. This equivalence shows up prominently in the inductive proof
+Analysis/Calculus/ContDiff/Basic.lean:use the following simple inductive proof. Assume it is done for `n`.
+Analysis/Calculus/ContDiff/Basic.lean:it is `C^n` by the inductive assumption. The term `Df(x)` is also `C^n`. Then, the matrix
+Analysis/Calculus/ContDiff/Operations.lean:      -- For showing `n.succ` times continuous differentiability (the main inductive step), it
+Analysis/Calculus/ContDiff/Bounds.lean:    and apply the inductive assumption to each of those two terms. For this induction to make sense,
+Analysis/Calculus/ContDiff/Bounds.lean:    derivatives of `g' ∘ f` are controlled thanks to the inductive assumption, and those of `f'` are
+Analysis/Calculus/ContDiff/Bounds.lean:  -- use the inductive assumption to bound the derivatives of `g' ∘ f`.
+Analysis/Calculus/ContDiff/Bounds.lean:    -- bound each of the terms using the estimates on previous derivatives (that use the inductive
+Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean:    `dist (u (n+1)) (u n)` becomes exponentally small, making it possible to get an inductive
+Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean:    control. Therefore, the bound can be checked at the next step, and so on inductively.
+Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean:  /- Main inductive control: `f (u n)` becomes exponentially close to `y`, and therefore
+Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean:    `dist (u (n+1)) (u n)` becomes exponentally small, making it possible to get an inductive
+Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean:  -- Deduce from the inductive bound that `uₙ` is a Cauchy sequence, therefore converging.
+Analysis/Analytic/Inverse.lean:/-- The left inverse of a formal multilinear series, where the `n`-th term is defined inductively
+Analysis/Analytic/Inverse.lean:/-- The right inverse of a formal multilinear series, where the `n`-th term is defined inductively
+Analysis/Analytic/Inverse.lean:  -- inductive control from Lemma `radius_rightInv_pos_of_radius_pos_aux2`.
+CategoryTheory/Join/Basic.lean:inductive Join (C : Type u₁) [Category.{v₁} C] (D : Type u₂) [Category.{v₂} D] : Type (max u₁ u₂)
+CategoryTheory/Category/ReflQuiv.lean:inductive FreeReflRel {V} [ReflQuiver V] : (X Y : Paths V) → (f g : X ⟶ Y) → Prop
+CategoryTheory/Category/Pairwise.lean:/-- An inductive type representing either a single term of a type `ι`, or a pair of terms.
+CategoryTheory/Category/Pairwise.lean:inductive Pairwise (ι : Type v)
+CategoryTheory/Category/Pairwise.lean:inductive Hom : Pairwise ι → Pairwise ι → Type v
+CategoryTheory/Groupoid/Subgroupoid.lean:* Equivalent inductive characterization of generated (normal) subgroupoids.
+CategoryTheory/Groupoid/Subgroupoid.lean:inductive Discrete.Arrows : ∀ c d : C, (c ⟶ d) → Prop
+CategoryTheory/Groupoid/Subgroupoid.lean:inductive Map.Arrows (hφ : Function.Injective φ.obj) (S : Subgroupoid C) : ∀ c d : D, (c ⟶ d) → Prop
+CategoryTheory/Groupoid/FreeGroupoid.lean:inductive redStep : HomRel (Paths (Quiver.Symmetrify V))
+CategoryTheory/FiberedCategory/HomLift.lean:using the auxiliary inductive type `IsHomLiftAux` which expresses the fact that `f = p(φ)`.
+CategoryTheory/FiberedCategory/HomLift.lean:inductive IsHomLiftAux : ∀ {R S : 𝒮} {a b : 𝒳} (_ : R ⟶ S) (_ : a ⟶ b), Prop
+CategoryTheory/MorphismProperty/Composition.lean:inductive multiplicativeClosure (W : MorphismProperty C) : MorphismProperty C
+CategoryTheory/MorphismProperty/Composition.lean:`multiplicativeClosure_eq_multiplicativeClosure'` in cases where the inductive principle of this
+CategoryTheory/MorphismProperty/Composition.lean:inductive multiplicativeClosure' (W : MorphismProperty C) : MorphismProperty C
+CategoryTheory/MorphismProperty/Basic.lean:inductive ofHoms {ι : Type*} {X Y : ι → C} (f : ∀ i, X i ⟶ Y i) : MorphismProperty C
+CategoryTheory/MorphismProperty/Limits.lean:inductive limitsOfShape : MorphismProperty C
+CategoryTheory/MorphismProperty/Limits.lean:inductive colimitsOfShape : MorphismProperty C
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:this is the inductive system `Set.Iio j ⥤ C` which sends `⟨i, _⟩` to
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:noncomputable def inductiveSystem : Set.Iio j ⥤ C where
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:/-- The extension of `inductiveSystem iter` to a functor `Set.Iic j ⥤ C` which
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:sends the top element to the colimit of `inductiveSystem iter`. -/
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:  ofCocone (colimit.cocone (inductiveSystem iter))
+CategoryTheory/SmallObject/Iteration/Nonempty.lean:      Arrow.mk (colimit.ι (inductiveSystem iter) ⟨i, hi⟩) :=
+CategoryTheory/Limits/Types/Shapes.lean:inductive Pushout.Rel (f : S ⟶ X₁) (g : S ⟶ X₂) : X₁ ⊕ X₂ → X₁ ⊕ X₂ → Prop
+CategoryTheory/Limits/Types/Shapes.lean:inductive Pushout.Rel' : X₁ ⊕ X₂ → X₁ ⊕ X₂ → Prop
+CategoryTheory/Limits/Shapes/Reflexive.lean:inductive WalkingReflexivePair : Type where
+CategoryTheory/Limits/Shapes/Reflexive.lean:inductive Hom : (WalkingReflexivePair → WalkingReflexivePair → Type)
+CategoryTheory/Limits/Shapes/Equalizers.lean:inductive WalkingParallelPair : Type
+CategoryTheory/Limits/Shapes/Equalizers.lean:inductive WalkingParallelPairHom : WalkingParallelPair → WalkingParallelPair → Type
+CategoryTheory/Limits/Shapes/WidePullbacks.lean:inductive Hom : WidePullbackShape J → WidePullbackShape J → Type w
+CategoryTheory/Limits/Shapes/WidePullbacks.lean:inductive Hom : WidePushoutShape J → WidePushoutShape J → Type w
+CategoryTheory/Limits/Shapes/Multiequalizer.lean:inductive WalkingMulticospan (J : MulticospanShape.{w, w'}) : Type max w w'
+CategoryTheory/Limits/Shapes/Multiequalizer.lean:inductive WalkingMultispan (J : MultispanShape.{w, w'}) : Type max w w'
+CategoryTheory/Limits/Shapes/Multiequalizer.lean:inductive Hom : ∀ _ _ : WalkingMulticospan J, Type max w w'
+CategoryTheory/Limits/Shapes/Multiequalizer.lean:inductive Hom : ∀ _ _ : WalkingMultispan J, Type max w w'
+CategoryTheory/Limits/Shapes/WideEqualizers.lean:inductive WalkingParallelFamily (J : Type w) : Type w
+CategoryTheory/Limits/Shapes/WideEqualizers.lean:inductive WalkingParallelFamily.Hom (J : Type w) :
+CategoryTheory/Limits/Shapes/BinaryProducts.lean:inductive WalkingPair : Type
+CategoryTheory/Limits/Bicones.lean:inductive Bicone (J : Type u₁)
+CategoryTheory/Limits/Bicones.lean:inductive BiconeHom : Bicone J → Bicone J → Type max u₁ v₁
+CategoryTheory/WithTerminal/Basic.lean:inductive WithTerminal : Type u
+CategoryTheory/WithTerminal/Basic.lean:inductive WithInitial : Type u
+CategoryTheory/Quotient.lean:inductive CompClosure (r : HomRel C) ⦃s t : C⦄ : (s ⟶ t) → (s ⟶ t) → Prop
+CategoryTheory/Filtered/Small.lean:inductive filteredClosure : ObjectProperty C
+CategoryTheory/Filtered/Small.lean:    The strategy is to define a type `AbstractFilteredClosure` which should be an inductive type
+CategoryTheory/Filtered/Small.lean:    in `C`. This would require some kind of inductive-recursive definition, which Lean does not
+CategoryTheory/Filtered/Small.lean:/-- One step of the inductive procedure consists of adjoining all maxima and coequalizers of all
+CategoryTheory/Filtered/Small.lean:private inductive InductiveStep (n : ℕ) (X : ∀ (k : ℕ), k < n → Σ t : Type (max v w), t → C) :
+CategoryTheory/Filtered/Small.lean:private noncomputable def inductiveStepRealization (n : ℕ)
+CategoryTheory/Filtered/Small.lean:  | (n + 1) => ⟨_, inductiveStepRealization (n + 1) (fun m _ => bundledAbstractFilteredClosure m)⟩
+CategoryTheory/Filtered/Small.lean:inductive cofilteredClosure : ObjectProperty C
+CategoryTheory/Filtered/Small.lean:private inductive InductiveStep (n : ℕ) (X : ∀ (k : ℕ), k < n → Σ t : Type (max v w), t → C) :
+CategoryTheory/Filtered/Small.lean:private noncomputable def inductiveStepRealization (n : ℕ)
+CategoryTheory/Filtered/Small.lean:  | (n + 1) => ⟨_, inductiveStepRealization (n + 1) (fun m _ => bundledAbstractCofilteredClosure m)⟩
+CategoryTheory/Sigma/Basic.lean:inductive SigmaHom : (Σ i, C i) → (Σ i, C i) → Type max w₁ v₁ u₁
+CategoryTheory/Sites/Coverage.lean:inductive Saturate (K : Coverage C) : (X : C) → Sieve X → Prop where
+CategoryTheory/Sites/Coverage.lean:It is defined *inductively* as follows:
+CategoryTheory/Sites/Coverage.lean:in the inductive construction is not needed.
+CategoryTheory/Sites/Sieves.lean:inductive singleton : Presieve X
+CategoryTheory/Sites/Sieves.lean:inductive pullbackArrows (R : Presieve X) [R.HasPullbacks f] : Presieve Y
+CategoryTheory/Sites/Sieves.lean:inductive ofArrows {ι : Type*} (Y : ι → C) (f : ∀ i, Y i ⟶ X) : Presieve X
+CategoryTheory/Sites/Sieves.lean:inductive bindOfArrows {ι : Type*} {X : C} (Y : ι → C)
+CategoryTheory/Abelian/GrothendieckAxioms/Colim.lean:given by the colimit API. We also show that when an inductive system
+CategoryTheory/Abelian/Injective/Resolution.lean:  Homotopy.mkCoinductive _ (descHomotopyZeroZero f comm) (by simp)
+CategoryTheory/Monoidal/Free/Coherence.lean:inductive NormalMonoidalObject : Type u
+CategoryTheory/Monoidal/Free/Basic.lean:inductive FreeMonoidalCategory : Type u
+CategoryTheory/Monoidal/Free/Basic.lean:inductive Hom : F C → F C → Type u
+CategoryTheory/Monoidal/Free/Basic.lean:inductive HomEquiv : ∀ {X Y : F C}, (X ⟶ᵐ Y) → (X ⟶ᵐ Y) → Prop
+CategoryTheory/Bicategory/Free.lean:inductive Hom : B → B → Type max u v
+CategoryTheory/Bicategory/Free.lean:inductive Hom₂ : ∀ {a b : FreeBicategory B}, (a ⟶ b) → (a ⟶ b) → Type max u v
+CategoryTheory/Bicategory/Free.lean:inductive Rel : ∀ {a b : FreeBicategory B} {f g : a ⟶ b}, Hom₂ f g → Hom₂ f g → Prop
+CategoryTheory/IsConnected.lean:/-- An inductive-like property for the objects of a connected category.
+CategoryTheory/Localization/Construction.lean:inductive relations : HomRel (Paths (LocQuiver W))
+Combinatorics/Enumerative/DyckWord.lean:inductive DyckStep
+Combinatorics/Enumerative/IncidenceAlgebra.lean:a multiplicative inverse in the incidence algebra, an inductively definable function called the
+Combinatorics/Quiver/Path.lean:Given a quiver `V`, we define the type of paths from `a : V` to `b : V` as an inductive
+Combinatorics/Quiver/Path.lean:inductive Path {V : Type u} [Quiver.{v} V] (a : V) : V → Sort max (u + 1) v
+Combinatorics/Quiver/Path.lean:compile_inductive% Path
+Combinatorics/Quiver/Push.lean:inductive PushQuiver {V : Type u} [Quiver.{v} V] {W : Type u₂} (σ : V → W) : W → W → Type max u u₂ v
+Combinatorics/Hindman.lean:subsequence of `a`. We give a direct inductive definition instead of talking about subsequences. -/
+Combinatorics/Hindman.lean:inductive FS {M} [AddSemigroup M] : Stream' M → Set M
+Combinatorics/Hindman.lean:subsequence of `a`. We give a direct inductive definition instead of talking about subsequences. -/
+Combinatorics/Hindman.lean:inductive FP {M} [Semigroup M] : Stream' M → Set M
+Combinatorics/SimpleGraph/Triangle/Tripartite.lean:@[mk_iff] inductive Rel (t : Finset (α × β × γ)) : α ⊕ β ⊕ γ → α ⊕ β ⊕ γ → Prop
+Combinatorics/SimpleGraph/Regularity/Equitabilise.lean:  /- We will call the inductive hypothesis on a partition of `s \ t` for a carefully chosen `t ⊆ s`.
+Combinatorics/SimpleGraph/Regularity/Bound.lean:* `SzemerediRegularity.stepBound`: During the inductive step, a partition of size `n` is blown to
+Combinatorics/SimpleGraph/Walk.lean:inductive Walk : V → V → Type u
+Combinatorics/SimpleGraph/Walk.lean:inductive Nil : {v w : V} → G.Walk v w → Prop
+Combinatorics/Additive/SmallTripling.lean:private lemma inductive_claim_mul (hm : 3 ≤ m)
+Combinatorics/Additive/SmallTripling.lean:  refine inductive_claim_mul hm (fun δ hδ ↦ ?_) ε hε
+Combinatorics/Additive/SmallTripling.lean:      inductive_claim_mul hm (fun δ hδ ↦ by simpa [this _ (hδ _), pow_succ'] using hA) _ (by simp)
+Combinatorics/Hall/Finite.lean:/-- First case of the inductive step: assuming that
+Combinatorics/Hall/Finite.lean:theorem hall_hard_inductive_step_A {n : ℕ} (hn : Fintype.card ι = n + 1)
+Combinatorics/Hall/Finite.lean:/-- Second case of the inductive step: assuming that
+Combinatorics/Hall/Finite.lean:theorem hall_hard_inductive_step_B {n : ℕ} (hn : Fintype.card ι = n + 1)
+Combinatorics/Hall/Finite.lean:/-- Here we combine the two inductive steps into a full strong induction proof,
+Combinatorics/Hall/Finite.lean:theorem hall_hard_inductive (ht : ∀ s : Finset ι, #s ≤ #(s.biUnion t)) :
+Combinatorics/Hall/Finite.lean:    · refine hall_hard_inductive_step_A hn ht (@fun ι' => ih' ι') h
+Combinatorics/Hall/Finite.lean:      exact hall_hard_inductive_step_B hn ht (@fun ι' => ih' ι')
+Combinatorics/Hall/Finite.lean:  · exact HallMarriageTheorem.hall_hard_inductive
+Combinatorics/Derangements/Basic.lean:  used to inductively count the number of derangements.
+Computability/PostTuringMachine.lean:  finite, and for later models it is an infinite inductive type representing "possible program
+Computability/PostTuringMachine.lean:inductive Stmt
+Computability/PostTuringMachine.lean:inductive Stmt
+Computability/PostTuringMachine.lean:inductive Λ'
+Computability/PostTuringMachine.lean:inductive Λ'
+Computability/Primrec.lean:protected inductive Primrec : (ℕ → ℕ) → Prop
+Computability/Primrec.lean:/-- An alternative inductive definition of `Primrec` which
+Computability/Primrec.lean:inductive Primrec' : ∀ {n}, (List.Vector ℕ n → ℕ) → Prop
+Computability/ContextFreeGrammar.lean:inductive Rewrites (r : ContextFreeRule T N) : List (Symbol T N) → List (Symbol T N) → Prop
+Computability/NFA.lean:inductive Path : σ → σ → List α → Type (max u v)
+Computability/Partrec.lean:inductive Partrec : (ℕ →. ℕ) → Prop
+Computability/TMConfig.lean:inductive Code
+Computability/TMConfig.lean:inductive Cont
+Computability/TMConfig.lean:inductive Cfg
+Computability/Ackermann.lean:The important bounds we show during the main inductive proof (`exists_lt_ack_of_nat_primrec`)
+Computability/Ackermann.lean:        -- We now use the inductive hypothesis, and some simple algebraic manipulation.
+Computability/Tape.lean:inductive Dir
+Computability/TuringDegree.lean:  An inductive definition representing that a partial function `f` is partial recursive given access
+Computability/TuringDegree.lean:inductive RecursiveIn (O : Set (ℕ →. ℕ)) : (ℕ →. ℕ) → Prop
+Computability/RegularExpressions.lean:inductive RegularExpression (α : Type u) : Type u
+Computability/Halting.lean:inductive Partrec' : ∀ {n}, (List.Vector ℕ n →. ℕ) → Prop
+Computability/EpsilonNFA.lean:inductive εClosure (S : Set σ) : Set σ
+Computability/EpsilonNFA.lean:inductive IsPath : σ → σ → List (Option α) → Prop
+Computability/TMToPartrec.lean:    inductive Γ'  | consₗ | cons | bit0 | bit1
+Computability/TMToPartrec.lean:infinite inductive type `Λ'` so that we can execute a program and then return to do something else
+Computability/TMToPartrec.lean:inductive Γ'
+Computability/TMToPartrec.lean:inductive K'
+Computability/TMToPartrec.lean:inductive Cont'
+Computability/TMToPartrec.lean:/-- The set of program positions. We make extensive use of inductive types here to let us describe
+Computability/TMToPartrec.lean:inductive Λ'
+Computability/TMToPartrec.lean:compile_inductive% Code
+Computability/TMToPartrec.lean:compile_inductive% Cont'
+Computability/TMToPartrec.lean:compile_inductive% K'
+Computability/TMToPartrec.lean:compile_inductive% Λ'
+Computability/Encoding.lean:inductive Γ'
+Computability/Language.lean:inductive Symbol (T N : Type*)
+Computability/PartrecCode.lean:This file defines `Nat.Partrec.Code`, an inductive datatype describing code for partial
+Computability/PartrecCode.lean:inductive Code : Type
+Computability/PartrecCode.lean:compile_inductive% Code
+Computability/TuringMachine.lean:  finite, and for later models it is an infinite inductive type representing "possible program
+Computability/TuringMachine.lean:inductive Stmt
+Computability/TuringMachine.lean:inductive StAct (k : K)
+Computability/TuringMachine.lean:inductive Λ'
+Computability/TuringMachine.lean:inductive TrCfg : TM2.Cfg Γ Λ σ → TM1.Cfg (Γ' K Γ) (Λ' K Γ Λ σ) σ → Prop
+Data/Ordmap/Ordnode.lean:inductive Ordnode (α : Type u) : Type u
+Data/Ordmap/Ordnode.lean:compile_inductive% Ordnode
+Data/Ordmap/Invariants.lean:An `Ordnode`, defined in `Mathlib/Data/Ordmap/Ordnode.lean`, is an inductive type which describes a
+Data/Sym/Sym2.lean:inductive Rel (α : Type u) : α × α → α × α → Prop
+Data/Tree/Basic.lean:inductive Tree.{u} (α : Type u) : Type u
+Data/Tree/Basic.lean:compile_inductive% Tree
+Data/Ineq.lean:inductive Ineq : Type
+Data/QPF/Multivariate/Constructions/Fix.lean:inductive WEquiv {α : TypeVec n} : q.P.W α → q.P.W α → Prop
+Data/QPF/Multivariate/Basic.lean:for defining inductive and coinductive types, their quotients and nesting.
+Data/QPF/Multivariate/Basic.lean:inductive ListShape (a b : Type)
+Data/QPF/Multivariate/Basic.lean:inductive Tree (a : Type)
+Data/QPF/Multivariate/Basic.lean:an inductive type inside of a quotient. We can go further and define
+Data/QPF/Multivariate/Basic.lean:coinductive Tree' (a : Type)
+Data/QPF/Univariate/Basic.lean:inductive Wequiv : q.P.W → q.P.W → Prop
+Data/QPF/Univariate/Basic.lean:/-- inductive type defined as initial algebra of a Quotient of Polynomial Functor -/
+Data/QPF/Univariate/Basic.lean:/-- coinductive type defined as the final coalgebra of a qpf -/
+Data/Fin/Tuple/Basic.lean:inductively from `Fin n` starting from the left, not from the right. This implies that Lean needs
+Data/Fin/Fin2.lean:defined inductively. This is useful for its induction principle and different definitional
+Data/Fin/Fin2.lean:/-- An alternate definition of `Fin n` defined as an inductive type instead of a subtype of `ℕ`. -/
+Data/Fin/Fin2.lean:inductive Fin2 : ℕ → Type
+Data/WSeq/Relation.lean:  `LiftRel R` related. (This is a coinductive definition.) -/
+Data/PFunctor/Multivariate/Basic.lean:`B : A → TypeVec n`. They interact well with Lean's inductive definitions because
+Data/PFunctor/Multivariate/W.lean:* `W`: data type inductively defined by a triple:
+Data/PFunctor/Multivariate/W.lean:  (specified inductively by `W_path`) from the root of `t` to any given node.
+Data/PFunctor/Multivariate/W.lean:inductive WPath : P.last.W → Fin2 n → Type u
+Data/PFunctor/Multivariate/W.lean:Now think of W as defined inductively by the data ⟨a, f', f⟩ where
+Data/PFunctor/Multivariate/M.lean:inductive M.Path : P.last.M → Fin2 n → Type u
+Data/PFunctor/Univariate/M.lean:inductive CofixA : ℕ → Type (max uA uB)
+Data/PFunctor/Univariate/M.lean:inductive Agree : ∀ {n : ℕ}, CofixA F n → CofixA F (n + 1) → Prop
+Data/PFunctor/Univariate/M.lean:inductive Agree' : ℕ → M F → M F → Prop
+Data/PFunctor/Univariate/M.lean:inductive IsPath : Path F → M F → Prop
+Data/Finset/Card.lean:define an object on `s`. Then one can inductively define an object on all finsets, starting from
+Data/Finset/Card.lean:one knows how to define an object on `s`. Then one can inductively define an object on all finsets,
+Data/Finset/Card.lean:`n`, one knows how to define `p s`. Then one can inductively define `p s` for all finsets `s` of
+Data/Seq/Computation.lean:# Coinductive formalization of unbounded computations.
+Data/Seq/Computation.lean:coinductive Computation (α : Type u) : Type u
+Data/Seq/Computation.lean:/-- `destruct c` is the destructor for `Computation α` as a coinductive type.
+Data/Seq/Computation.lean:/-- `corec f b` is the corecursor for `Computation α` as a coinductive type.
+Data/Seq/Defs.lean:* `Seq.corec`: Corecursion principle for `Seq α` as a coinductive type.
+Data/Seq/Defs.lean:coinductive seq (α : Type u) : Type u
+Data/Seq/Defs.lean:/-- Corecursor for `Seq α` as a coinductive type. Iterates `f` to produce new elements
+Data/Finite/Defs.lean:class inductive Finite (α : Sort*) : Prop
+Data/Nat/Choose/Basic.lean:* `Nat.choose`: binomial coefficients, defined inductively
+Data/Nat/Choose/Central.lean:* `Nat.succ_mul_centralBinom_succ`: the inductive relationship between successive central binomial
+Data/Nat/Choose/Central.lean:/-- An inductive property of the central binomial coefficient.
+Data/Nat/Factors.lean:/-- `primeFactorsList` can be constructed inductively by extracting `minFac`, for sufficiently
+Data/FP/Basic.lean:inductive RMode
+Data/FP/Basic.lean:inductive Float
+Data/Setoid/Basic.lean:inductively defined equivalence closure of a binary relation, and the analogues of some isomorphism
+Data/Setoid/Basic.lean:/-- The inductively defined equivalence closure of a binary relation r is the infimum
+Data/Num/Bitwise.lean:inductive NzsNum : Type
+Data/Num/Bitwise.lean:inductive SNum : Type
+Data/Num/Basic.lean:# Binary representation of integers using inductive types
+Data/Num/Basic.lean:inductive PosNum : Type
+Data/Num/Basic.lean:inductive Num : Type
+Data/Num/Basic.lean:inductive ZNum : Type
+Data/Sigma/Lex.lean:inductive Lex (r : ι → ι → Prop) (s : ∀ i, α i → α i → Prop) : ∀ _ _ : Σ i, α i, Prop
+Data/Sigma/Order.lean:protected inductive LE [∀ i, LE (α i)] : ∀ _a _b : Σ i, α i, Prop
+Data/Sigma/Order.lean:protected inductive LT [∀ i, LT (α i)] : ∀ _a _b : Σ i, α i, Prop
+Data/Holor.lean:inductive CPRankMax1 [Mul α] : ∀ {ds}, Holor α ds → Prop
+Data/Holor.lean:inductive CPRankMax [Mul α] [AddMonoid α] : ℕ → ∀ {ds}, Holor α ds → Prop
+Data/Sum/Basic.lean:mk_iff_of_inductive_prop Sum.LiftRel Sum.liftRel_iff
+Data/List/Chain.lean:mk_iff_of_inductive_prop List.Chain List.chain_iff
+Data/List/Pairwise.lean:mk_iff_of_inductive_prop List.Pairwise List.pairwise_iff
+Data/List/Forall2.lean:mk_iff_of_inductive_prop List.Forall₂ List.forall₂_iff
+Data/List/Forall2.lean:inductive SublistForall₂ (R : α → β → Prop) : List α → List β → Prop
+Data/List/Duplicate.lean:* `List.Duplicate x l : Prop` is an inductive property that holds when `x` is a duplicate in `l`
+Data/List/Duplicate.lean:inductive Duplicate (x : α) : List α → Prop
+Data/List/Triplewise.lean:inductive Triplewise (p : α → α → α → Prop) : List α → Prop
+Data/List/Palindrome.lean:The main result is the `Palindrome` inductive type, and its associated `Palindrome.rec` induction
+Data/List/Palindrome.lean:[casteran]: https://www.labri.fr/perso/casteran/CoqArt/inductive-prop-chap/palindrome.html
+Data/List/Palindrome.lean:/-- `Palindrome l` asserts that `l` is a palindrome. This is defined inductively:
+Data/List/Palindrome.lean:inductive Palindrome : List α → Prop
+Data/Set/Constructions.lean:inductive finiteInterClosure : Set (Set α)
+Data/PNat/Xgcd.lean:needs to be introduced in all the inductive proofs of properties
+Data/Multiset/ZeroCons.lean:inductive Rel (r : α → β → Prop) : Multiset α → Multiset β → Prop
+Data/Multiset/Basic.lean:`n`, one knows how to define `p s`. Then one can inductively define `p s` for all multisets `s` of
+Data/Vector/Snoc.lean:  `snoc xs x` for its inductive case. Effectively doing induction from right-to-left
+Data/Vector/Snoc.lean:and `snoc` defines the inductive step using `∀ x : α, C xs → C (xs.snoc x)`.
+Data/Vector/Basic.lean:and `cons` defines the inductive step using `∀ x : α, C w → C (x ::ᵥ w)`.
+Data/Sign/Defs.lean:inductive SignType
+Data/Sign/Defs.lean:protected inductive LE : SignType → SignType → Prop
+Data/W/Basic.lean:inductively defined type of trees where the nodes are labeled by elements of `α` and the children of
+Data/W/Basic.lean:encodable. This can be used to show the encodability of other inductive types, such as those that
+Data/W/Basic.lean:inductive WType {α : Type*} (β : α → Type*)
+Data/W/Constructions.lean:We take the view of W types as inductive types.
+Data/W/Constructions.lean:inductively with constructors from `α` and arities of each constructor `a : α` given by `β a`.
+Data/W/Constructions.lean:inductive Natα : Type
+Data/W/Constructions.lean:inductive Listα : Type u
+FieldTheory/AbelRuffini.lean:inductive IsSolvableByRad : E → Prop
+FieldTheory/AbelRuffini.lean:/-- The statement to be proved inductively -/
+FieldTheory/PerfectClosure.lean:inductive PerfectClosure.R : ℕ × K → ℕ × K → Prop
+Geometry/Euclidean/Circumcenter.lean:inductive PointsWithCircumcenterIndex (n : ℕ)
+GroupTheory/CoprodI.lean:- `Monoid.CoprodI.NeWord M i j`: an inductive description of non-empty words
+GroupTheory/CoprodI.lean:inductive Monoid.CoprodI.Rel : FreeMonoid (Σ i, M i) → FreeMonoid (Σ i, M i) → Prop
+GroupTheory/CoprodI.lean:inductive NeWord : ι → ι → Type _
+GroupTheory/Congruence/Defs.lean:extending a `Setoid` (an equivalence relation), and the inductive definition of the smallest
+GroupTheory/Congruence/Defs.lean:The inductive definition of a congruence relation could be a nested inductive type, defined using
+GroupTheory/Congruence/Defs.lean:A nested inductive definition could conceivably shorten proofs, because they would allow invocation
+GroupTheory/Congruence/Defs.lean:/-- The inductively defined smallest additive congruence relation containing a given binary
+GroupTheory/Congruence/Defs.lean:inductive AddConGen.Rel [Add M] (r : M → M → Prop) : M → M → Prop
+GroupTheory/Congruence/Defs.lean:/-- The inductively defined smallest multiplicative congruence relation containing a given binary
+GroupTheory/Congruence/Defs.lean:inductive ConGen.Rel [Mul M] (r : M → M → Prop) : M → M → Prop
+GroupTheory/Congruence/Defs.lean:/-- The inductively defined smallest multiplicative congruence relation containing a given binary
+GroupTheory/Congruence/Defs.lean:@[to_additive addConGen /-- The inductively defined smallest additive congruence relation containing
+GroupTheory/Congruence/Defs.lean:/-- The inductive principle used to prove propositions about the elements of a quotient by a
+GroupTheory/Congruence/Defs.lean:@[to_additive (attr := elab_as_elim) /-- The inductive principle used to prove propositions about
+GroupTheory/Congruence/Defs.lean:/-- The inductively defined smallest congruence relation containing a binary relation `r` equals
+GroupTheory/Congruence/Defs.lean:@[to_additive addConGen_eq /-- The inductively defined smallest additive congruence relation
+GroupTheory/SpecificGroups/Dihedral.lean:inductive DihedralGroup (n : ℕ) : Type
+GroupTheory/SpecificGroups/Quaternion.lean:inductive QuaternionGroup (n : ℕ) : Type
+GroupTheory/FreeGroup/Basic.lean:inductive FreeAddGroup.Red.Step : List (α × Bool) → List (α × Bool) → Prop
+GroupTheory/FreeGroup/Basic.lean:inductive FreeGroup.Red.Step : List (α × Bool) → List (α × Bool) → Prop
+Lean/Meta/RefinedDiscrTree/Basic.lean:inductive Key where
+Lean/Meta/RefinedDiscrTree/Basic.lean:inductive StackEntry where
+Lean/Meta/RefinedDiscrTree/Basic.lean:We store all of the nodes in one `Array`, `tries`, instead of using a 'normal' inductive type.
+LinearAlgebra/PiTensorProduct.lean:inductive Eqv : FreeAddMonoid (R × Π i, s i) → FreeAddMonoid (R × Π i, s i) → Prop
+LinearAlgebra/Projectivization/Independence.lean:We use an inductive definition to define the independence of points in projective
+LinearAlgebra/Projectivization/Independence.lean:inductive Independent : (ι → ℙ K V) → Prop
+LinearAlgebra/Projectivization/Independence.lean:inductive Dependent : (ι → ℙ K V) → Prop
+LinearAlgebra/Projectivization/Subspace.lean:/-- The span of a set of points in a projective space is defined inductively to be the set of points
+LinearAlgebra/Projectivization/Subspace.lean:inductive spanCarrier (S : Set (ℙ K V)) : Set (ℙ K V)
+LinearAlgebra/Multilinear/Basic.lean:coordinate. Here, we give an auxiliary statement tailored for an inductive proof. Use instead
+LinearAlgebra/Multilinear/Basic.lean:  -- for `i ≠ i₀`, apply the inductive assumption to `B` and `C`, and add up the corresponding
+LinearAlgebra/Multilinear/Basic.lean:  -- Express the inductive assumption for `B`
+LinearAlgebra/Multilinear/Basic.lean:  -- Express the inductive assumption for `C`
+LinearAlgebra/Reflection.lean:    -- Apply the inductive hypothesis.
+LinearAlgebra/Reflection.lean:    -- Apply the inductive hypothesis.
+LinearAlgebra/Reflection.lean:    -- Apply the inductive hypothesis.
+LinearAlgebra/SymmetricAlgebra/Basic.lean:inductive TensorAlgebra.SymRel : TensorAlgebra R M → TensorAlgebra R M → Prop where
+LinearAlgebra/TensorProduct/Basic.lean:inductive Eqv : FreeAddMonoid (M × N) → FreeAddMonoid (M × N) → Prop
+LinearAlgebra/ExteriorPower/Basic.lean:inductive Rels (ι : Type*) (M : Type*)
+LinearAlgebra/CliffordAlgebra/Basic.lean:inductive Rel : TensorAlgebra R M → TensorAlgebra R M → Prop
+LinearAlgebra/FreeProduct/Basic.lean:inductive rel : FreeTensorAlgebra R A → FreeTensorAlgebra R A → Prop
+LinearAlgebra/TensorAlgebra/Basic.lean:/-- An inductively defined relation on `Pre R M` used to force the initial algebra structure on
+LinearAlgebra/TensorAlgebra/Basic.lean:inductive Rel : FreeAlgebra R M → FreeAlgebra R M → Prop
+LinearAlgebra/Matrix/ZPow.lean:The main definition is a direct recursive call on the integer inductive type,
+LinearAlgebra/Matrix/Transvection.lean:  `i ≠ j`. These are often easier to manipulate than straight matrices, especially in inductive
+LinearAlgebra/Matrix/Transvection.lean:The proof of the reduction results is done inductively on the size of the matrices, reducing an
+LinearAlgebra/Matrix/Transvection.lean:recorded in `list_transvec_col M` and `list_transvec_row M`. We have to analyze inductively how
+LinearAlgebra/Dimension/StrongRankCondition.lean:"inductive step": the property is true for a submodule `N` if it's true for all submodules `N'`
+Logic/Function/Basic.lean:and `recursor` should be an inductive recursor partially applied in all but that constructor,
+Logic/Function/Basic.lean:inductive types. -/
+Logic/Function/OfArity.lean:* `Function.OfArity α β n`: `n`-ary function `α → α → ... → β`. Defined inductively.
+Logic/Function/Coequalizer.lean:inductive Coequalizer.Rel {α β : Type*} (f g : α → β) : β → β → Prop where
+Logic/Relation.lean:inductive ReflTransGen (r : α → α → Prop) (a : α) : α → Prop
+Logic/Relation.lean:inductive ReflGen (r : α → α → Prop) (a : α) : α → Prop
+Logic/Relation.lean:inductive EqvGen : α → α → Prop
+Logic/Relator.lean:* should we introduce relators of datatypes as recursive function or as inductive
+MeasureTheory/VectorMeasure/Decomposition/Hahn.lean:- lastly, given the set `i`, `restrictNonposSeq s i` is the sequence of sets defined inductively
+MeasureTheory/VectorMeasure/Decomposition/Hahn.lean:/-- Given the set `i`, `restrictNonposSeq s i` is the sequence of sets defined inductively where
+MeasureTheory/MeasurableSpace/Card.lean:For the proof, we rely on an explicit inductive construction of the sigma-algebra generated by
+MeasureTheory/MeasurableSpace/Card.lean:`s` (instead of the inductive predicate `GenerateMeasurable`). This transfinite inductive
+MeasureTheory/MeasurableSpace/Card.lean:/-- An inductive principle for the elements of `generateMeasurableRec`. -/
+MeasureTheory/MeasurableSpace/Card.lean:/-- At each step of the inductive construction, the cardinality bound `≤ #s ^ ℵ₀` holds. -/
+MeasureTheory/MeasurableSpace/Defs.lean:inductive GenerateMeasurable (s : Set (Set α)) : Set α → Prop
+MeasureTheory/Constructions/Polish/Basic.lean:  -- construct inductively decreasing sequences of cylinders whose images are not separated
+MeasureTheory/SetAlgebra.lean:inductive generateSetAlgebra {α : Type*} (𝒜 : Set (Set α)) : Set (Set α)
+MeasureTheory/PiSystem.lean:inductive generatePiSystem (S : Set (Set α)) : Set (Set α)
+MeasureTheory/PiSystem.lean:  This inductive type gives the underlying collection of sets. -/
+MeasureTheory/PiSystem.lean:inductive GenerateHas (s : Set (Set α)) : Set α → Prop
+MeasureTheory/Covering/Besicovitch.lean:Then define inductively a coloring of the balls. A ball will be of color `i` if it intersects
+MeasureTheory/Covering/Besicovitch.lean:different colors. Moreover, the inductive construction ensures that the radii of all the balls are
+MeasureTheory/Covering/Besicovitch.lean:/-- A satellite configuration is a configuration of `N+1` points that shows up in the inductive
+MeasureTheory/Covering/Besicovitch.lean:in the inductive construction: otherwise, the second ball would have been chosen before.
+MeasureTheory/Covering/Besicovitch.lean:/-- Choose inductively large balls with centers that are not contained in the union of already
+MeasureTheory/Covering/Besicovitch.lean:distinct families in the Besicovitch inductive construction. -/
+MeasureTheory/Covering/BesicovitchVectorSpace.lean:points and the parameter `goodτ E`. This will ensure that in the inductive construction to get
+ModelTheory/Graph.lean:inductive graphRel : ℕ → Type
+ModelTheory/Complexity.lean:inductive IsAtomic : L.BoundedFormula α n → Prop
+ModelTheory/Complexity.lean:inductive IsQF : L.BoundedFormula α n → Prop
+ModelTheory/Complexity.lean:inductive IsPrenex : ∀ {n}, L.BoundedFormula α n → Prop
+ModelTheory/Complexity.lean:inductive IsUniversal : ∀ {n}, L.BoundedFormula α n → Prop
+ModelTheory/Complexity.lean:inductive IsExistential : ∀ {n}, L.BoundedFormula α n → Prop
+ModelTheory/Order.lean:inductive orderRel : ℕ → Type
+ModelTheory/Syntax.lean:inductive Term (α : Type u') : Type max u u'
+ModelTheory/Syntax.lean:inductive BoundedFormula : ℕ → Type max u v u'
+ModelTheory/Arithmetic/Presburger/Basic.lean:inductive presburgerFunc : ℕ → Type
+ModelTheory/Algebra/Field/Basic.lean:inductive FieldAxiom : Type
+ModelTheory/Algebra/Ring/Basic.lean:inductive ringFunc : ℕ → Type
+NumberTheory/Dioph.lean:inductive IsPoly : ((α → ℕ) → ℤ) → Prop
+NumberTheory/SumFourSquares.lean:  -- the inductive step follows from `Nat.euler_four_squares`.
+NumberTheory/EllipticDivisibilitySequence.lean:One reason is to avoid the necessity for ring division by `b` in the inductive definition of
+NumberTheory/DiophantineApproximation/Basic.lean:/-- Define the technical condition to be used as assumption in the inductive proof. -/
+NumberTheory/DiophantineApproximation/Basic.lean:-- An auxiliary lemma for the inductive step.
+NumberTheory/DiophantineApproximation/Basic.lean:-- The key step: the relevant inequality persists in the inductive step.
+NumberTheory/DiophantineApproximation/Basic.lean:-- The conditions `ass ξ u v` persist in the inductive step.
+Order/DirectedInverseSystem.lean:the stronger `PEquivOn`s that bundles the `compat` condition, in order for the inductive argument
+Order/Booleanisation.lean:protected inductive LE : Booleanisation α → Booleanisation α → Prop
+Order/Booleanisation.lean:protected inductive LT : Booleanisation α → Booleanisation α → Prop
+Order/GameAdd.lean:inductive GameAdd : α × β → α × β → Prop
+Order/Filter/Basic.lean:inductive GenerateSets (g : Set (Set α)) : Set α → Prop
+Order/Filter/CountableInter.lean:inductive CountableGenerateSets : Set α → Prop
+Order/Filter/CardinalInter.lean:inductive CardinalGenerateSets : Set α → Prop
+Order/CompleteLattice/Chain.lean:inductive ChainClosure (r : α → α → Prop) : Set α → Prop
+RingTheory/FiniteLength.lean:inductive IsFiniteLength : ∀ (M : Type*) [AddCommGroup M] [Module R M], Prop
+RingTheory/NoetherNormalization.lean:We use the inductive hypothesis on k[X_1,...,X_n] and the kernel of `hom2` to get `s, g`.
+RingTheory/PowerSeries/WeierstrassPreparation.lean:/-- The inductively constructed sequence `qₖ` in the proof of Weierstrass division. -/
+RingTheory/PowerSeries/WeierstrassPreparation.lean:inductively constructed sequence `qₖ` in the proof of Weierstrass division. -/
+RingTheory/PowerSeries/WeierstrassPreparation.lean:inductively constructed sequence `qₖ` in the proof of Weierstrass division. -/
+RingTheory/Congruence/Basic.lean:* `RingConGen r`: the inductively defined smallest ring congruence relation containing a given
+RingTheory/Congruence/Basic.lean:/-- The inductively defined smallest congruence relation containing a binary relation `r` equals
+RingTheory/Congruence/Defs.lean:* `RingConGen r`: the inductively defined smallest ring congruence relation containing a given
+RingTheory/Congruence/Defs.lean:/-- The inductively defined smallest ring congruence relation containing a given binary
+RingTheory/Congruence/Defs.lean:inductive RingConGen.Rel [Add R] [Mul R] (r : R → R → Prop) : R → R → Prop
+RingTheory/Congruence/Defs.lean:/-- The inductively defined smallest ring congruence relation containing a given binary
+RingTheory/Regular/RegularSequence.lean:/-- Weakly regular sequences can be inductively characterized by:
+RingTheory/Regular/RegularSequence.lean:This is the induction principle produced by the inductive definition above.
+RingTheory/Regular/RegularSequence.lean:/-- Regular sequences can be inductively characterized by:
+RingTheory/Regular/RegularSequence.lean:This is the induction principle produced by the inductive definition above.
+RingTheory/Polynomial/Basic.lean:This fact is proven inductively,
+RingTheory/Polynomial/Bernstein.lean:The inductive step relies on the observation that the `(n-k)`-th derivative, evaluated at 1,
+SetTheory/ZFC/PSet.lean:A pre-set is inductively defined by its indexing type and its members, which are themselves
+SetTheory/ZFC/PSet.lean:After defining pre-sets we define extensional equality over them, also inductively. We construct a
+SetTheory/ZFC/PSet.lean:* `PSet.Equiv`: Extensional equivalence of pre-sets. Defined inductively.
+SetTheory/ZFC/PSet.lean:inductive PSet : Type (u + 1)
+SetTheory/Lists.lean:  by inductive appending of (not necessarily proper) ZFA lists.
+SetTheory/Lists.lean:* `Lists' α true`: Proper ZFA prelists. Defined inductively from the empty ZFA prelist
+SetTheory/Lists.lean:`Lists' α true` are the "proper" ZFA prelists, inductively defined from the empty ZFA prelist and
+SetTheory/Lists.lean:inductive Lists'.{u} (α : Type u) : Bool → Type u
+SetTheory/Lists.lean:compile_inductive% Lists'
+SetTheory/Lists.lean:corresponding to an element of `α`, or a "proper" ZFA list, inductively defined from the empty ZFA
+SetTheory/Lists.lean:  /-- Equivalence of ZFA lists. Defined inductively. -/
+SetTheory/Lists.lean:  inductive Lists.Equiv : Lists α → Lists α → Prop
+SetTheory/Lists.lean:  /-- Subset relation for ZFA lists. Defined inductively. -/
+SetTheory/Lists.lean:  inductive Lists'.Subset : Lists' α true → Lists' α true → Prop
+SetTheory/Surreal/Multiplication.lean:An inductive argument proves the following three main theorems:
+SetTheory/Surreal/Multiplication.lean:shown, a further inductive argument (this time using the `GameAdd` relation) proves P3 in full.
+SetTheory/Surreal/Multiplication.lean:Implementation strategy of the inductive argument: we
+SetTheory/Surreal/Multiplication.lean:inductive Args : Type (u + 1)
+SetTheory/Surreal/Multiplication.lean:/-- One additional inductive argument that supplies the last missing part of Theorem 8. -/
+SetTheory/Ordinal/Notation.lean:inductive ONote : Type
+SetTheory/Ordinal/Notation.lean:compile_inductive% ONote
+SetTheory/Ordinal/Notation.lean:inductive NFBelow : ONote → Ordinal.{0} → Prop
+SetTheory/Ordinal/Notation.lean:It would have been nicer to define this right in the inductive type, but `NF o` requires `repr`
+SetTheory/Ordinal/Notation.lean:/-- This is a recursor-like theorem for `NONote` suggesting an inductive definition, which can't
+SetTheory/Cardinal/Arithmetic.lean:  -- the only nontrivial part is `c * c ≤ c`. We prove it inductively.
+SetTheory/Cardinal/Arithmetic.lean:      `β × β` for some `β` of cardinality `< c`. By the inductive assumption, this set has the
+SetTheory/Game/Short.lean:inductive Short : PGame.{u} → Type (u + 1)
+SetTheory/Game/Short.lean:class inductive ListShort : List PGame.{u} → Type (u + 1)
+SetTheory/Game/Short.lean:  -- Is this a bug in `class inductive`?
+SetTheory/Game/Basic.lean:  inductively from two families of combinatorial games indexed over any type
+SetTheory/Game/Basic.lean:on each side, we have to define the two families inductively.
+SetTheory/Game/Basic.lean:inductive InvTy (l r : Type u) : Bool → Type u
+SetTheory/Game/Basic.lean:of each side, we have to define the two families inductively.
+SetTheory/Game/Basic.lean:definition, the sets and elements are inductively generated. -/
+SetTheory/Game/Birthday.lean:/-- The birthday of a pre-game is inductively defined as the least strict upper bound of the
+SetTheory/PGame/Order.lean:/- We prove that `x ≤ y → y ≤ z → x ≤ z` inductively, by also simultaneously proving its cyclic
+SetTheory/PGame/Basic.lean:A pregame (`SetTheory.PGame` below) is axiomatised via an inductive type, whose sole constructor
+SetTheory/PGame/Basic.lean:obligations in inductive proofs relying on this relation.
+SetTheory/PGame/Basic.lean:  inductively from two families of pre-games indexed over any type
+SetTheory/PGame/Basic.lean:inductive PGame : Type (u + 1)
+SetTheory/PGame/Basic.lean:compile_inductive% PGame
+SetTheory/PGame/Basic.lean:inductive IsOption : PGame → PGame → Prop
+SetTheory/PGame/Basic.lean:for Right, and under these bijections we inductively have `Relabelling`s for the consequent games.
+SetTheory/PGame/Basic.lean:inductive Relabelling : PGame.{u} → PGame.{u} → Type (u + 1)
+Tactic/TacticAnalysis.lean:inductive TriggerCondition (ctx : Type _)
+Tactic/LinearCombination/Lemmas.lean:/-- Finite inductive type extending `Mathlib.Ineq`: a type of inequality (`eq`, `le` or `lt`),
+Tactic/LinearCombination/Lemmas.lean:protected inductive WithStrictness : Type
+Tactic/Algebraize.lean:1. An inductive type (i.e. the `Algebra` property itself), in this case it is assumed that the
+Tactic/Algebraize.lean:1. An inductive type (i.e. the `Algebra` property itself), in this case it is assumed that the
+Tactic/Order/CollectFacts.lean:inductive AtomicFact
+Tactic/Widget/LibraryRewrite.lean:inductive Kind where
+Tactic/Widget/StringDiagram.lean:inductive Node : Type
+Tactic/Widget/StringDiagram.lean:inductive Kind where
+Tactic/Conv.lean:of the expression is reduced to a primitive - a lambda or forall, or an axiom or inductive type.
+Tactic/Constructor.lean:(it calls `apply` using the first matching constructor of an inductive datatype)
+Tactic/Constructor.lean:(it calls `apply` using the first matching constructor of an inductive datatype)
+Tactic/Simps/Basic.lean:inductive ProjectionRule where
+Tactic/Linter/UpstreamableDecl.lean:`structure`, `inductive`, etc.
+Tactic/Linter/UpstreamableDecl.lean:  -- We explicitly allow constructors since `inductive` declarations are reported to depend on their
+Tactic/Linter/UpstreamableDecl.lean:  -- own constructors, and we want inductives to behave the same as definitions, so place one
+Tactic/Linter/UpstreamableDecl.lean:  -- warning on the inductive itself but nothing on its downstream uses.
+Tactic/Linter/TextBased.lean:inductive BroadImports
+Tactic/Linter/TextBased.lean:-- We collect these in one inductive type to centralise error reporting.
+Tactic/Linter/TextBased.lean:inductive StyleError where
+Tactic/Linter/TextBased.lean:inductive ErrorFormat
+Tactic/Linter/TextBased.lean:inductive ComparisonResult
+Tactic/Linter/FlexibleLinter.lean:inductive Stained
+Tactic/Linter/CommandStart.lean:    if let some ind := cmd.find? (·.isOfKind ``Parser.Command.inductive) then
+Tactic/SplitIfs.lean:private inductive SplitPosition
+Tactic/IntervalCases.lean:inductive Bound
+Tactic/FBinop.lean:private inductive Tree where
+Tactic/MkIffOfInductiveProp.lean:# mk_iff_of_inductive_prop
+Tactic/MkIffOfInductiveProp.lean:This file defines a command `mk_iff_of_inductive_prop` that generates `iff` rules for
+Tactic/MkIffOfInductiveProp.lean:inductive `Prop`s. For example, when applied to `List.Chain`, it creates a declaration with
+Tactic/MkIffOfInductiveProp.lean:This tactic can be called using either the `mk_iff_of_inductive_prop` user command or
+Tactic/MkIffOfInductiveProp.lean:/-- Auxiliary data associated with a single constructor of an inductive declaration.
+Tactic/MkIffOfInductiveProp.lean:  the "params" that apply to the entire inductive type, this list contains `true`
+Tactic/MkIffOfInductiveProp.lean:/-- Converts an inductive constructor `c` into a `Shape` that will be used later in
+Tactic/MkIffOfInductiveProp.lean:/-- Implementation for both `mk_iff` and `mk_iff_of_inductive_prop`.
+Tactic/MkIffOfInductiveProp.lean:    throwError "mk_iff only applies to inductive declarations"
+Tactic/MkIffOfInductiveProp.lean:Applying the `mk_iff` attribute to an inductively-defined proposition `mk_iff` makes an `iff` rule
+Tactic/MkIffOfInductiveProp.lean:  the indices to the inductive type `i`.
+Tactic/MkIffOfInductiveProp.lean:See also the user command `mk_iff_of_inductive_prop`.
+Tactic/MkIffOfInductiveProp.lean:`mk_iff_of_inductive_prop i r` makes an `iff` rule for the inductively-defined proposition `i`.
+Tactic/MkIffOfInductiveProp.lean:  each constructor for each of the indices to the inductive type `i`.
+Tactic/MkIffOfInductiveProp.lean:For example, `mk_iff_of_inductive_prop` on `List.Chain` produces:
+Tactic/MkIffOfInductiveProp.lean:syntax (name := mkIffOfInductiveProp) "mk_iff_of_inductive_prop " ident ppSpace ident : command
+Tactic/MkIffOfInductiveProp.lean:| `(command| mk_iff_of_inductive_prop $i:ident $r:ident) =>
+Tactic/MkIffOfInductiveProp.lean:  descr := "Generate an `iff` lemma for an inductive `Prop`."
+Tactic/FieldSimp/Lemmas.lean:inductive Sign (M : Q(Type v))
+Tactic/NormNum/Result.lean:inductive IsRat [Ring α] (a : α) (num : ℤ) (denom : ℕ) : Prop
+Tactic/NormNum/Result.lean:inductive IsNNRat [Semiring α] (a : α) (num : ℕ) (denom : ℕ) : Prop
+Tactic/NormNum/Result.lean:inductive Result' where
+Tactic/NormNum/BigOperators.lean:inductive Nat.UnifyZeroOrSuccResult (n : Q(ℕ))
+Tactic/NormNum/BigOperators.lean:inductive List.ProveNilOrConsResult {α : Q(Type u)} (s : Q(List $α))
+Tactic/NormNum/BigOperators.lean:inductive Multiset.ProveZeroOrConsResult {α : Q(Type u)} (s : Q(Multiset $α))
+Tactic/NormNum/BigOperators.lean:inductive Finset.ProveEmptyOrConsResult {α : Q(Type u)} (s : Q(Finset $α))
+Tactic/Order.lean:inductive OrderType
+Tactic/ToAdditive/Frontend.lean:and definitions (but not inductive types and structures) from a multiplicative
+Tactic/ToAdditive/Frontend.lean:  Note: the linter will never raise an error for inductive types and structures. -/
+Tactic/ToAdditive/Frontend.lean:It translates each identifier (inductive type, defined function etc) in an expression, unless
+Tactic/ToAdditive/Frontend.lean:  -- add translations for the constructors of an inductive type
+Tactic/FunProp/FunctionData.lean:inductive MaybeFunctionData where
+Tactic/FunProp/FunctionData.lean:inductive MorApplication where
+Tactic/FunProp/Theorems.lean:inductive LambdaTheoremArgs
+Tactic/FunProp/Theorems.lean:inductive LambdaTheoremType
+Tactic/FunProp/Theorems.lean:inductive TheoremForm where
+Tactic/FunProp/Theorems.lean:inductive Theorem where
+Tactic/FunProp/Types.lean:inductive Origin where
+Tactic/CategoryTheory/Coherence/Normalize.lean:inductive WhiskerRight : Type
+Tactic/CategoryTheory/Coherence/Normalize.lean:inductive HorizontalComp : Type
+Tactic/CategoryTheory/Coherence/Normalize.lean:inductive WhiskerLeft : Type
+Tactic/CategoryTheory/Coherence/Normalize.lean:inductive NormalExpr : Type
+Tactic/CategoryTheory/Coherence/Datatypes.lean:inductive Mor₁ : Type
+Tactic/CategoryTheory/Coherence/Datatypes.lean:inductive StructuralAtom : Type
+Tactic/CategoryTheory/Coherence/Datatypes.lean:inductive Mor₂Iso : Type where
+Tactic/CategoryTheory/Coherence/Datatypes.lean:inductive Mor₂ : Type where
+Tactic/CategoryTheory/Coherence/Datatypes.lean:inductive NormalizedHom : Type
+Tactic/DeriveTraversable.lean:/-- Derive the `cls` instance for the inductive type constructor `n` using the `tac` tactic. -/
+Tactic/DeriveTraversable.lean:    throwError m!"failed to derive '{cls}', '{n}' is not an inductive type"
+Tactic/DeriveTraversable.lean:  -- where `p ...` are the inductive parameter types of `n`
+Tactic/DeriveTraversable.lean:      -- add typeclass hypothesis for each inductive parameter
+Tactic/DeriveTraversable.lean:  let #[n] := a | return false -- mutually inductive types are not supported yet
+Tactic/DeriveTraversable.lean:For a sum type `inductive Foo (α : Type) | foo1 : List α → ℕ → Foo α | ...`
+Tactic/DeriveTraversable.lean:For a sum type `inductive Foo (α : Type) | foo1 : List α → ℕ → Foo α | ...`
+Tactic/Polyrith.lean:inductive Poly
+Tactic/Polyrith.lean:inductive Source where
+Tactic/ITauto.lean:inductive AndKind | and | iff | eq
+Tactic/ITauto.lean:/-- A reified inductive type for propositional logic. -/
+Tactic/ITauto.lean:inductive IProp : Type
+Tactic/ITauto.lean:/-- A reified inductive proof type for intuitionistic propositional logic. -/
+Tactic/ITauto.lean:inductive Proof
+Tactic/ProxyType.lean:This module gives tools to create an equivalence between a given inductive type and a
+Tactic/ProxyType.lean:It works for any non-recursive inductive type without indices.
+Tactic/ProxyType.lean:the above five types (and whichever additional types appear in the inductive type).
+Tactic/ProxyType.lean:For inductive types with `n` constructors, the `proxy_equiv%` elaborator creates a proxy
+Tactic/ProxyType.lean:of the inductive type. Uses `Unit`, `PLift`, `Sigma`, `Empty`, and `Sum`. -/
+Tactic/ProxyType.lean:Generates a proxy type for the inductive type and an equivalence from the proxy type to the type.
+Tactic/ProxyType.lean:      "proxy equivalence: recursive inductive types are not supported (and are usually infinite)"
+Tactic/ProxyType.lean:    throwError "proxy equivalence: inductive indices are not supported"
+Tactic/ProxyType.lean:        that represents the inductive type using `Unit`, `PLift`, `Sigma`, `Empty`, and `Sum` \
+Tactic/ProxyType.lean:        (and whatever other inductive types appear within the inductive type), and the \
+Tactic/ProxyType.lean:This only works for inductive types `α` that are neither recursive nor have indices.
+Tactic/ProxyType.lean:If `α` is an inductive type with name `I`, then as a side effect this elaborator defines
+Tactic/ProxyType.lean:For example, given this inductive type
+Tactic/ProxyType.lean:inductive foo (n : Nat) (α : Type)
+Tactic/DepRewrite.lean:inductive CastMode where
+Tactic/Sat/FromLRAT.lean:inductive Literal
+Tactic/Sat/FromLRAT.lean:inductive LRATStep
+Tactic/LinearCombination'.lean:inductive Expanded
+Tactic/Abel.lean:inductive NormalExpr : Type
+Tactic/Abel.lean:inductive AbelMode where
+Tactic/DeriveFintype.lean:for structures and inductive types.
+Tactic/DeriveFintype.lean:inductive MyOption (α : Type*)
+Tactic/DeriveFintype.lean:This deriving handler does not attempt to process inductive types that are either
+Tactic/DeriveFintype.lean:There are two kinds of `Fintype` instances that we generate, depending on the inductive type.
+Tactic/DeriveFintype.lean:If it is an enum (an inductive type with only 0-ary constructors), then we generate the
+Tactic/DeriveFintype.lean:`Fintype` instance on the proxy type (if one exists) to our inductive type. For example, with
+Tactic/DeriveFintype.lean:in general, we add `Fintype` instances for every type parameter of our inductive type (and
+Tactic/DeriveFintype.lean:inductive type with `n` constructors has a proxy type of the form `C₁ ⊕ (C₂ ⊕ (⋯ ⊕ Cₙ))`,
+Tactic/DeriveFintype.lean:needs an extra `DecidableEq` instance. It works only if `α` is an inductive
+Tactic/DeriveFintype.lean:the namespace associated to the inductive type `α`.
+Tactic/DeriveFintype.lean:    return false -- mutually inductive types are not supported
+Tactic/Linarith/Oracle/FourierMotzkin.lean:inductive CompSource : Type
+Tactic/Linarith/Oracle/SimplexAlgorithm/SimplexAlgorithm.lean:inductive SimplexAlgorithmException
+Tactic/ProdAssoc.lean:inductive ProdTree where
+Tactic/CC/Datatypes.lean:inductive ACApps where
+Tactic/CC/Datatypes.lean:inductive DelayedExpr where
+Tactic/CC/Datatypes.lean:inductive EntryExpr
+Tactic/CC/Datatypes.lean:inductive CongruencesKey
+Tactic/Ring/Basic.lean:- Define a mutual inductive family of types `ExSum`, `ExProd`, `ExBase`,
+Tactic/Ring/Basic.lean:inductive ExBase : ∀ {u : Lean.Level} {α : Q(Type u)}, Q(CommSemiring $α) → (e : Q($α)) → Type
+Tactic/Ring/Basic.lean:inductive ExProd : ∀ {u : Lean.Level} {α : Q(Type u)}, Q(CommSemiring $α) → (e : Q($α)) → Type
+Tactic/Ring/Basic.lean:inductive ExSum : ∀ {u : Lean.Level} {α : Q(Type u)}, Q(CommSemiring $α) → (e : Q($α)) → Type
+Tactic/Ring/Basic.lean:inductive Overlap (e : Q($α)) where
+Tactic/Ring/Compare.lean:inductive ExceptType | tooSmall | notComparable
+Tactic/Ring/RingNF.lean:inductive RingMode where
+Tactic/Explode/Datatypes.lean:inductive Status where
+Tactic/Positivity/Core.lean:inductive Strictness (e : Q($α)) where
+Tactic/Positivity/Core.lean:private inductive OrderRel : Type
+Tactic/DeriveEncodable.lean:The idea is that every encodable inductive type can be represented as a tree of natural numbers.
+Tactic/DeriveEncodable.lean:inductive S : Type where
+Tactic/DeriveEncodable.lean:inductive T (α : Type) where
+Tactic/DeriveEncodable.lean:private inductive S : Type where
+Tactic/DeriveEncodable.lean:/-- Constructs a function from the inductive type to `S`. -/
+Tactic/DeriveEncodable.lean:/-- Constructs a function from `S` to the inductive type. -/
+Tactic/DeriveEncodable.lean:for the `ToExpr` instances for the (mutual) inductive type(s). -/
+Tactic/DeriveEncodable.lean:Handles non-nested non-reflexive inductive types.
+Tactic/DeriveCountable.lean:We use the `Nat.pair` function to encode an inductive type in the natural numbers,
+Tactic/DeriveCountable.lean:inductive T (α : Type)
+Tactic/DeriveCountable.lean:/-- Constructs a function from the inductive type to `Nat`. -/
+Tactic/DeriveCountable.lean:for the `ToExpr` instances for the (mutual) inductive type(s). -/
+Tactic/DeriveCountable.lean:Handles non-nested non-reflexive inductive types.
+Tactic/ReduceModChar.lean:inductive TypeToCharPResult (α : Q(Type u))
+Tactic/TermCongr.lean:inductive CongrType
+Tactic/StacksAttribute.lean:inductive Database where
+Tactic/MinImports.lean:inductive Rel (α : Type) : α × α → α × α → Prop
+Tactic/LinearCombination.lean:inductive Expanded
+Tactic/Use.lean:The `use` and `use!` tactics are for instantiating one-constructor inductive types
+Tactic/Use.lean:When the goal `mvarId` is an inductive datatype with a single constructor,
+Tactic/Use.lean:                  m!"target is not an inductive datatype{indentExpr target}")
+Tactic/Use.lean:                m!"target inductive type does not have exactly one constructor{indentExpr target}"
+Tactic/Use.lean:inductive type. In `eager` mode, instead we always first try to refine, and if that fails we
+Tactic/Use.lean:      -- Goals might become assigned in inductive types with indices.
+Tactic/Choose.lean:inductive ElimStatus
+Tactic/Choose.lean:      -- TODO: support Σ, ×, or even any inductive type with 1 constructor ?
+Testing/Plausible/Functions.lean:inductive InjectiveFunction (α : Type u) : Type u
+Topology/UrysohnsLemma.lean:  /-- The inner set in the inductive construction towards Urysohn's lemma -/
+Topology/UrysohnsLemma.lean:  /-- The outer set in the inductive construction towards Urysohn's lemma -/
+Topology/Category/Profinite/Nobeling/Successor.lean:The intersection of `C0` and the projection of `C1`. We will apply the inductive hypothesis to
+Topology/Category/Profinite/Nobeling/Basic.lean:Secondly, in the inductive argument, we need to project `C` down to "smaller" sets satisfying the
+Topology/Category/Profinite/Nobeling/Basic.lean:inductive hypothesis.
+Topology/Category/Profinite/Nobeling/Basic.lean:  to satisfy the inductive hypothesis.
+Topology/Category/Profinite/Nobeling/Basic.lean:/-- A predicate saying that `C` is "small" enough to satisfy the inductive hypothesis. -/
+Topology/Category/Profinite/Nobeling/ZeroLimit.lean:`o' < o`, and these are linearly independent by the inductive hypothesis.
+Topology/Homotopy/Lifting.lean:  /- We aim to inductively prove the existence of Nₙ and g' continuous on [0, tₙ] × Nₙ for each n,
+Topology/Perfect.lean:  The main inductive step in the construction of an embedding from the Cantor space to a
+Topology/Perfect.lean:This is the main inductive step in the proof of the Cantor-Bendixson Theorem. -/
+Topology/Order.lean:inductive GenerateOpen (g : Set (Set α)) : Set α → Prop
+Topology/MetricSpace/GromovHausdorff.lean:embedding of `X 2`. Go on, to obtain a sequence of spaces `Y n`. Let `Z0` be the inductive
+Topology/MetricSpace/GromovHausdorff.lean:  -- consider the inductive limit `Z0` of the `Y n`, and then its completion `Z`
+Topology/MetricSpace/Closeds.lean:           to find a point in `t0` which is close to `x`. Define inductively a sequence of
+Topology/MetricSpace/Gluing.lean:We also define the inductive limit of metric spaces. Given
+Topology/MetricSpace/Gluing.lean:where the `X n` are metric spaces and `f n` isometric embeddings, we define the inductive
+Topology/MetricSpace/Gluing.lean:In this section, we define the inductive limit of
+Topology/MetricSpace/Gluing.lean:premetric space is the desired inductive limit.
+Topology/MetricSpace/Gluing.lean:def inductiveLimitDist (f : ∀ n, X n → X (n + 1)) (x y : Σ n, X n) : ℝ :=
+Topology/MetricSpace/Gluing.lean:theorem inductiveLimitDist_eq_dist (I : ∀ n, Isometry (f n)) (x y : Σ n, X n) :
+Topology/MetricSpace/Gluing.lean:    ∀ m (hx : x.1 ≤ m) (hy : y.1 ≤ m), inductiveLimitDist f x y =
+Topology/MetricSpace/Gluing.lean:      exact inductiveLimitDist_eq_dist I x y m xm ym
+Topology/MetricSpace/Gluing.lean:def inductivePremetric (I : ∀ n, Isometry (f n)) : PseudoMetricSpace (Σ n, X n) where
+Topology/MetricSpace/Gluing.lean:  dist := inductiveLimitDist f
+Topology/MetricSpace/Gluing.lean:  dist_self x := by simp [inductiveLimitDist]
+Topology/MetricSpace/Gluing.lean:    rw [inductiveLimitDist_eq_dist I x y m hx hy, inductiveLimitDist_eq_dist I y x m hy hx,
+Topology/MetricSpace/Gluing.lean:      inductiveLimitDist f x z = dist (leRecOn hx (f _) x.2 : X m) (leRecOn hz (f _) z.2 : X m) :=
+Topology/MetricSpace/Gluing.lean:        inductiveLimitDist_eq_dist I x z m hx hz
+Topology/MetricSpace/Gluing.lean:      _ = inductiveLimitDist f x y + inductiveLimitDist f y z := by
+Topology/MetricSpace/Gluing.lean:        rw [inductiveLimitDist_eq_dist I x y m hx hy, inductiveLimitDist_eq_dist I y z m hy hz]
+Topology/MetricSpace/Gluing.lean:attribute [local instance] inductivePremetric
+Topology/MetricSpace/Gluing.lean:/-- The type giving the inductive limit in a metric space context. -/
+Topology/MetricSpace/Gluing.lean:  @SeparationQuotient _ (inductivePremetric I).toUniformSpace.toTopologicalSpace
+Topology/MetricSpace/Gluing.lean:    @SeparationQuotient _ (inductivePremetric I).toUniformSpace.toTopologicalSpace
+Topology/MetricSpace/Gluing.lean:/-- Mapping each `X n` to the inductive limit. -/
+Topology/MetricSpace/Gluing.lean:/-- The map `toInductiveLimit n` mapping `X n` to the inductive limit is an isometry. -/
+Topology/MetricSpace/Gluing.lean:    change inductiveLimitDist f ⟨n, x⟩ ⟨n, y⟩ = dist x y
+Topology/MetricSpace/Gluing.lean:    rw [inductiveLimitDist_eq_dist I ⟨n, x⟩ ⟨n, y⟩ n (le_refl n) (le_refl n), leRecOn_self,
+Topology/MetricSpace/Gluing.lean:  let h := inductivePremetric I
+Topology/MetricSpace/Gluing.lean:  change inductiveLimitDist f ⟨n.succ, f n x⟩ ⟨n, x⟩ = 0
+Topology/MetricSpace/Gluing.lean:  rw [inductiveLimitDist_eq_dist I ⟨n.succ, f n x⟩ ⟨n, x⟩ n.succ, leRecOn_self,
+Topology/MetricSpace/CantorScheme.lean:We consider end-appending to be the fundamental way to build lists (say on `β`) inductively,
+Topology/Instances/CantorSet.lean:* `preCantorSet n`: The order `n` pre-Cantor set, defined inductively as the union of the images
+Topology/Instances/CantorSet.lean:      -- follows by the inductive hypothesis, since 3 / 4 ∈ preCantorSet n
+Topology/Instances/CantorSet.lean:      -- follows by the inductive hypothesis, since 1 / 4 ∈ preCantorSet n
+Topology/Instances/AddCircle/Defs.lean:inductive EndpointIdent : Icc a (a + p) → Icc a (a + p) → Prop
+Topology/Baire/CompleteMetrizable.lean:    `f n`. For this, we construct inductively a sequence `F n = (c n, r n)` such that the closed
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:then endow `Πʳ i, [R i, A i]_[𝓕]` with the inductive limit / final topology associated to the
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:  taking the inductive limit of the `Πʳ i, [R i, A i]_[𝓟 s]` over all *cofinite* sets `s : Set ι`.
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:  `s` belongs to the indexing set of the inductive limit.
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:and that the topology for a general `𝓕` is indeed the expected inductive limit
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:  inductive limit / final topology associated to the natural maps
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:then endow `Πʳ i, [R i, A i]_[𝓕]` with the inductive limit / final topology associated to the
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:  taking the inductive limit of the `Πʳ i, [R i, A i]_[𝓟 s]` over all *cofinite* sets `s : Set ι`.
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:  `s` belongs to the indexing set of the inductive limit.
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:and that the topology for a general `𝓕` is indeed the expected inductive limit
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:is still the inductive limit of the `X × Πʳ i, [R i, A i]_[𝓟 S]` for `S` cofinite.
+Topology/Algebra/RestrictedProduct/TopologicalSpace.lean:This fact, which is **not true** for a general inductive limit, will allow us to prove continuity
+Topology/Algebra/Module/ModuleTopology.lean:  · -- "inductive step" is to check for product over `Option ι` case when known for product over `ι`
+Topology/Algebra/Module/ModuleTopology.lean:    -- The product over `ι` has the module topology by the inductive hypothesis,
+Util/WhatsNew.lean:  let mut m ← mkHeader' "inductive" id levelParams type isUnsafe
+Util/FormatTable.lean:inductive Alignment where
+Util/Notation3.lean:inductive DelabKey where
+Util/Notation3.lean:inductive BoundValueType
+Util/CompileInductive.lean:# Define the `compile_inductive%` command.
+Util/CompileInductive.lean:The command `compile_inductive% Foo` adds compiled code for the recursor `Foo.rec`,
+Util/CompileInductive.lean:For technical reasons, the recursor code generated by `compile_inductive%`
+Util/CompileInductive.lean:/-- Returns the names of the recursors for a nested or mutual inductive,
+Util/CompileInductive.lean:          let .const iv levels' := head | throwError "not an inductive"
+Util/CompileInductive.lean:Compiles the `sizeOf` auxiliary functions. It also recursively compiles any inductives required to
+Util/CompileInductive.lean:          -- We only want to recompile inductives defined in external modules, because attempting
+Util/CompileInductive.lean:          -- to errors. An entire mutual block of inductives is compiled when compiling any
+Util/CompileInductive.lean:          -- inductive within it, so every inductive within the same module can be explicitly
+Util/CompileInductive.lean:          -- compiled using `compile_inductive%` if necessary.
+Util/CompileInductive.lean:`compile_inductive% Foo` creates compiled code for the recursor `Foo.rec`,
+Util/CompileInductive.lean:elab tk:"compile_inductive% " i:ident : command => Command.liftTermElabM do
+Util/CompileInductive.lean:compile_inductive% Prod
+Util/CompileInductive.lean:compile_inductive% List
+Util/CompileInductive.lean:compile_inductive% PUnit
+Util/CompileInductive.lean:compile_inductive% PEmpty
+Util/CompileInductive.lean:compile_inductive% Sum
+Util/CompileInductive.lean:compile_inductive% PSum
+Util/CompileInductive.lean:compile_inductive% And
+Util/CompileInductive.lean:compile_inductive% False
+Util/CompileInductive.lean:compile_inductive% Empty
+Util/CompileInductive.lean:compile_inductive% Bool
+Util/CompileInductive.lean:compile_inductive% Sigma
+Util/CompileInductive.lean:compile_inductive% Option
+Util/CompileInductive.lean:compile_inductive% String
+Util/CompileInductive.lean:compile_inductive% Lean.Name
+Util/Export.lean:inductive Entry
